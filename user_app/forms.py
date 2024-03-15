@@ -10,6 +10,6 @@ class CustomUserCreationForm(UserCreationForm):
 class CustomUserChangeForm(UserChangeForm):
         class Meta:
             model = CustomUser
-            fields = UserChangeForm.Meta.fields
+            fields = UserChangeForm.Meta.fields # ('add the field you want to show in the login page','')
             
             
