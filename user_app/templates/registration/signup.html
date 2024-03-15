@@ -1,1 +1,16 @@
-here is the signup page
+<!-- templates/signup.html -->
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+
+<h2>Sign Up</h2>
+
+<form method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<!--form.as_p is one of the built-in methods provided by Django's form rendering system -->
+<button type="submit">Sign Up</button>
+</form>
+{% endblock %} 

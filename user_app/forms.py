@@ -5,7 +5,7 @@ from .models import CustomUser
 class CustomUserCreationForm(UserCreationForm):
         class Meta(UserCreationForm.Meta):
             model = CustomUser
-            fields = UserCreationForm.Meta.fields + ('location','name')
+            fields = UserCreationForm.Meta.fields # ('add the field you want to show in the login page','')
         
 class CustomUserChangeForm(UserChangeForm):
         class Meta:
