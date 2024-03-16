@@ -22,11 +22,15 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-
-    <nav>
-        navigation content
-        <a href="{% url 'home' %}">Home</a>
-        <!-- navigation zone content -->
+    <nav class="bg-secondary navbar navbar-expand-lg">
+        <div class="container-fluid"><a class="navbar-brand" href="#">LOGO</a>
+            <button data-mdb-collapse-init class="navbar-toggler" type="button" data-mdb-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style="border: solid;"><i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav"><a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a><a class="nav-link" href="#">Features</a><a class="nav-link" href="#">Sign up</a><a class="nav-link disabled">link2</a>
+                </div>
+            </div>
+        </div>
     </nav>
 
     <main>
