@@ -1,4 +1,4 @@
-
+fi
 <!---templates/home.html-->
 {% extends 'base.html' %}
 
@@ -11,7 +11,7 @@
 Welcome {{ user.username }} you logged in successfully  
 
 <!---<p><a href="{% url 'logout' %}">Log Out</a></p> -->
-
+<!--in Django 5 method get is not supported anymore-->
 <form method="post" action="{% url 'logout' %}">
     {% csrf_token %}
     <button type="submit">logout</button>
