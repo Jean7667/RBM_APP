@@ -26,3 +26,16 @@ def logout(request):
 def cxprofile (request):
     return render (request,'customer/customer.html')
 
+
+#view for customer profile CRUD
+
+class CxProfileView(View):
+    cx_profile_template = 'cxprofile.html'
+
+    def get(self, request):
+        # find the current user
+        user = request.user
+            if user.is_authenticated and user.is_customer:
+            return render(request, self.cx_profile_emplate, {'user': user})
+        else:
+            return redirect('login')
