@@ -14,5 +14,11 @@ def list (request):
     return render (request,'')
 """
 
+## access about page
 def about(request):
     return render(request, 'about.html')
+
+## sign out 
+def logout(request):
+    logout(request)
+    return redirect('home')
