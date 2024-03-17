@@ -22,3 +22,7 @@ def about(request):
 def logout(request):
     logout(request)
     return redirect('home')
+
+def cxprofile (request):
+    return render (request,'customer/customer.html')
+
