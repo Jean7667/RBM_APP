@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView, ListView
 from .forms import CustomUserCreationForm
 from django.views import View
+from .models import Expert, Skill
 
 
 class SignUpView(CreateView):
@@ -31,12 +32,12 @@ def ConfirmLogout(request):
     return render (request,'registration/logout.html')
     
 
-
+""" 
 def cxprofile (request):
     return render (request,'customer/cxprofile.html')
 
-
-#view for customer profile CRUD
+ """
+#view for customer profile CRUD class based view
 
 class CxProfileView(View):
     cx_profile_template = 'customer/cxprofile.html'
@@ -68,3 +69,33 @@ def delete(self, request):
         else:
             
             return redirect('login') 
+
+#Read        
+
+#Display in cxprofileview
+#fct to show last Customer since created_date 
+#fct last connection 
+
+#Generic based view
+# views for displaying a list of experts
+
+class ExpertListView(ListView):
+    model = Expert
+    template_name = 'customer/listexpert.html'
+    object_name = 'experts'
+    paginate_by = 5
+   
+  # list of objects to display.  
+def get_object(self):
+    queryset = super().get_queryset()
+    categery = self.request.GET.get('category')
+        if category:
+            queryset = queryset.filter(skills__category=category)
+        return queryset
+ #add mising information from 
+def get_context_data(self, **kwargs):
+     context = super().get_context_data(**kwargs)
+        context['categories] = Skill.objects.values_list(category', flat=True).distinct()
+        return context
+
+
