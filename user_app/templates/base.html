@@ -20,6 +20,8 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/main.js' %}" defer></script>
+
 </head>
 <body>
     <nav class="bg-secondary navbar navbar-expand-lg">
@@ -28,9 +30,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <!--condition to show links-->
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-                    <a class="nav-link" href="{% url 'about'%}">About</a>
+                <div class="navbar">
+                    <a class="link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                    <a class="link" href="{% url 'about'%}">About</a>
                     {% if user.is_authenticated %}
                         <a class="nav-link" href="{% url 'logout'%}">log out</a>
                         <a class="nav-link" href="{% url 'cxprofile'%}">profile</a>
@@ -40,7 +42,7 @@
                         <a class="nav-link" href="{% url 'signup'%}">Sign up</a>
                         <a class="nav-link" href="{% url 'login'%}">Log In</a>
                         
-                        <a class="nav-link" href="#">link</a>  
+                        <a class="nav-link" href="#">nav-link</a>  
                     {% endif %}    
                 </div>
             </div>

@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from .forms import CustomUserCreationForm
+from django.views import View
+
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
@@ -24,18 +26,38 @@ def logout(request):
     return redirect('home')
 
 def cxprofile (request):
-    return render (request,'customer/customer.html')
+    return render (request,'customer/cxprofile.html')
 
 
 #view for customer profile CRUD
 
 class CxProfileView(View):
-    cx_profile_template = 'cxprofile.html'
+    cx_profile_template = 'customer/cxprofile.html'
 
     def get(self, request):
         # find the current user
         user = request.user
-            if user.is_authenticated and user.is_customer:
-            return render(request, self.cx_profile_emplate, {'user': user})
+        if user.is_authenticated and user.is_customer:
+            return render(request, self.cx_profile_template, {'user': user})
         else:
-            return redirect('login')
+            return redirect('home')
+        
+def post(self, request):
+    user = request.user
+    
+    if user.is_customer:
+        user.name = request.POST.get('name', '')
+        user.location = request.POST.get('location', '')
+        user.save()
+        return redirect('customer_profile')  
+    else:
+        return redirect('login')
+
+def delete(self, request):
+        user = request.user
+        if user.is_customer:
+            user.delete()
+            return redirect('home')
+        else:
+            
+            return redirect('login') 

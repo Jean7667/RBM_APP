@@ -1,9 +1,31 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
 
-{% block title %}Customer Profile{% endblock %}
 
 {% block content %}
+
+
     <h1>Customer Profile</h1>
-    <p> Welcome, {{firstName}} {{lastName}} you logged in successfully </p> 
+    <div>
+        <button onclick="openTab('edit')">Edit Profile</button>
+        <button onclick="openTab('view')">View Profile</button>
+    </div>
+    <div id="editTab" class="tab">
+        <form method="post" action="{% url 'customer_profile' %}">
+            {% csrf_token %}
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" value="{{ user.name }}"><br>
+            <label for="name">email:</label><br>
+            <input type="text" id="name" name="name" value="{{ user.email }}"><br>
+            <label for="location">Location:</label><br>
+            <input type="text" id="location" name="location" value="{{ user.location }}"><br><br>
+            <button type="submit">Update Profile</button>
+        </form>
+    </div>
+    <div id="viewTab" class="tab">
+        <p><strong>Name:</strong> {{ user.name }}</p>
+        <p><strong>Location:</strong> {{ user.location }}</p>
+    </div>
 
 {% endblock %}

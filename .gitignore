@@ -1,0 +1,7 @@
+/notes
+*.txt
+django.dot
+code.txt
+cxprofile.htmlback
+static/js/main.js
+*.pyc

@@ -14,7 +14,7 @@ urlpatterns = [
     path('user_app/', include('django.contrib.auth.urls')), 
     path('user_app/', auth_views.LogoutView.as_view(next_page='home'), name='logout'),
     path('cxprofile/', cxprofile, name='cxprofile'),
-    path('', TemplateView.as_view(template_name='home.html'),name='home'), 
-    
+    path('', TemplateView.as_view(template_name='home.html'),name='home'),
+   
    
 ]

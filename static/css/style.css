@@ -1,0 +1,39 @@
+.tab {
+    display: none;
+}
+.tab.active {
+    display: block;
+}
+
+body {
+    background-color: rgb(77, 77, 77);
+}
+
+.navbar {
+    display: block;
+    position: fixed;
+    top: 0;
+    border-bottom: 2px solid #ffb700;
+    width: 100%;
+    background-color: black;
+    overflow: visible;
+    height: 50px;
+  }
+  
+  .nav-link {
+    display: inline-flex;
+    text-align: center;
+    padding: 13px;
+    color: rgb(178, 243, 39);
+    text-decoration: none;
+    font-size: 8 ems;
+    font-weight: 200;
+  }
+  
+  .nav-link:hover {
+    border-bottom: 4px solid rgb(233, 180, 8);
+  }
+  
+  .active {
+    border-bottom: 4px solid #ffb700;
+  }
