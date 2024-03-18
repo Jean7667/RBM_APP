@@ -4,7 +4,12 @@
 
 {% block content %}
 
+<main>
+    <div class="main">
+
 {% if user.is_authenticated %}
+
+
 Welcome {{ user.username }} you logged in successfully  
 <!---<p><a href="{% url 'logout' %}">Log Out</a></p> -->
 <!--in Django 5 method get is not supported anymore-->
@@ -23,4 +28,6 @@ Welcome {{ user.username }} you logged in successfully
 
 {% endif %}
 
-{% endblock content %}
+</div>
+</main>
+{% endblock %}

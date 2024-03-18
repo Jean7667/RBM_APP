@@ -6,11 +6,12 @@
 {% block content %}
 
 <main>
+    <div class="main">
     <br>
     <br>
     <h1>Sign out confirmatiom</h1>
     <div>
-        <form action="{% url 'conf_logout' %}" method="post">
+        <form action="{% url 'logout' %}" method="post">
             {% csrf_token %}
             <button type="submit" class="nav-link">Log out</button>
         </form>

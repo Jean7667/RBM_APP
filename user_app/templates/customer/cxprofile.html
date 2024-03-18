@@ -5,7 +5,8 @@
 
 {% block content %}
 
-
+<main>
+    <div class="main">
     <h1>Customer Profile</h1>
     <div>
         <button onclick="openTab('edit')">Edit Profile</button>
@@ -27,5 +28,7 @@
         <p><strong>Name:</strong> {{ user.name }}</p>
         <p><strong>Location:</strong> {{ user.location }}</p>
     </div>
+</div>
+</main>    
 
 {% endblock %}

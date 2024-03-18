@@ -34,7 +34,7 @@
                     <a class="link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     <a class="link" href="{% url 'about'%}">About</a>
                     {% if user.is_authenticated %}
-                        <a class="nav-link" href="{% url 'logout'%}">log out</a>
+                        <a class="nav-link" href="{% url 'confirmlogout'%}">log out</a>
                         <a class="nav-link" href="{% url 'cxprofile'%}">profile</a>
                         
                         <!--add-other links when auth-->

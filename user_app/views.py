@@ -5,7 +5,6 @@ from .forms import CustomUserCreationForm
 from django.views import View
 
 
-
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')
@@ -28,7 +27,7 @@ class LogoutView(View):
          return redirect("about") #review that later
 
 #intermediate page to logout    
-def logout(request):
+def ConfirmLogout(request):
     return render (request,'registration/logout.html')
     
 
