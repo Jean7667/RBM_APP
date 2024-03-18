@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Sign out confirmatiom{% endblock %}
+
+
+{% block content %}
+
+    <h1>Sign out confirmatiom</h1>
+    <div>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="nav-link">Log out</button>
+        </form>
+    </div>
+
+{% endblock %}
