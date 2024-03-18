@@ -50,20 +50,19 @@ class CxProfileView(View):
         else:
             return redirect('home')
         
-def post(self, request):
-    user = request.user
-    
-    if user.is_customer:
+    def post(self, request):
+        user = request.user
+        if user.is_authenticated and user.is_customer:
         user.name = request.POST.get('name', '')
         user.location = request.POST.get('location', '')
         user.save()
         return redirect('customer_profile')  
-    else:
-        return redirect('login')
+        else:
+            return redirect('login')
 
-def delete(self, request):
+    def delete(self, request):
         user = request.user
-        if user.is_customer:
+        if user.is_authenticated and user.is_customer:
             user.delete()
             return redirect('home')
         else:
@@ -82,20 +81,21 @@ def delete(self, request):
 class ExpertListView(ListView):
     model = Expert
     template_name = 'customer/listexpert.html'
-    object_name = 'experts'
+    context_object_name = 'experts'
     paginate_by = 5
    
   # list of objects to display.  
-def get_object(self):
-    queryset = super().get_queryset()
-    categery = self.request.GET.get('category')
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        category = self.request.GET.get('category')
         if category:
             queryset = queryset.filter(skills__category=category)
         return queryset
- #add mising information from 
-def get_context_data(self, **kwargs):
-     context = super().get_context_data(**kwargs)
-        context['categories] = Skill.objects.values_list(category', flat=True).distinct()
+    
+ #add mising information from gen view
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = Skill.objects.values_list('category', flat=True).distinct()
         return context
 
 
