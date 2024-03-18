@@ -22,24 +22,16 @@ def list (request):
 def about(request):
     return render(request, 'about.html')
 
-## use a ckeck of type of request b
+class LogoutView(View):
+     def post(self, request):
+         logout(request)
+         return redirect("about") #review that later
 
-# "class LogoutView(View):
-#     def post(self, request):
-#         logout(request)
-#         return redirect("home")"
-    
+#intermediate page to logout    
 def logout(request):
     return render (request,'registration/logout.html')
     
 
-
-    #return render(request, "accounts/logout.html", {})
-
-
-# def logoutView(request):
-#     logout(request)
-#     return redirect('home')
 
 def cxprofile (request):
     return render (request,'customer/cxprofile.html')
