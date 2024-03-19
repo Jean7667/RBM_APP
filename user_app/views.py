@@ -38,7 +38,6 @@ def cxprofile (request):
 
  """
 #view for customer profile CRUD class based view
-
 class CxProfileView(View):
     cx_profile_template = 'customer/cxprofile.html'
 
@@ -53,10 +52,10 @@ class CxProfileView(View):
     def post(self, request):
         user = request.user
         if user.is_authenticated and user.is_customer:
-        user.name = request.POST.get('name', '')
-        user.location = request.POST.get('location', '')
-        user.save()
-        return redirect('customer_profile')  
+            user.name = request.POST.get('name', '')
+            user.location = request.POST.get('location', '')
+            user.save()
+            return redirect('customer_profile')  
         else:
             return redirect('login')
 

@@ -1,15 +1,45 @@
 {% extends 'base.html' %}
-{% load static %}
-{% block title %}Home{% endblock %}
 
+{% block title %}Consultant Expert list{% endblock %}
 
 {% block content %}
 
 <main>
     <div class="main">
-    <h1>Our consultants</h1>
-    
+    <h1>Our Expert consultants</h1>
 </div>
+<table border="2">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Location</th>
+            <th>Last Update </th>
+            <th>Skillset</th>
+            <th>Joined the company</th>
+        </tr>
+    </thead>
+<!--show the coresponding fiels -->
+    <tbody>
+        {% for expert in experts %}
+            <tr>
+                <td>{{ expert.user.first_name }}</td>
+                <td>{{ expert.user.last_name }}</td>
+                <td>{{ expert.user.location }}</td>
+                <td>{{ expert.user.updated_at }}</td>
+                <td>
+                    <ul>
+                        {% for skill in expert.skills.all %}
+                            <li>{{ skill.name }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+                <td>{{ expert.start_date }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
 </main>    
 
 {% endblock %}
