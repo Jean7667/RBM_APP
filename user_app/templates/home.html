@@ -1,45 +1,27 @@
 {% extends 'base.html' %}
-
 {% block title %}Home{% endblock title %}
-
 {% block content %}
-
 {% if user.is_authenticated %}
-
-<div class="container-fluid"> 
-    <div class="row" style ="border solid 2px color:black">
-    <div class="main">
-    <div class="grid" style="--bs-columns: 10; --bs-gap: 1rem;">
-        <div class="g-col-2">
+    <div class="d-flex align-items-center primary justify-content-center" style="height: 550px;">
+        <div class="p-5 m-5 bg-secondary bg-gradient text-black shadow rounded-5">
+            <h1>Join us</h1>
             <form method="post" action="{% url 'logout' %}">
                 {% csrf_token %}
                 <button type="submit">logout</button>
             </form>
-        </div>
-        
-        <div class="g-col-2">
             Welcome {{ user.username }} you logged in successfully  
             <!---<p><a href="{% url 'logout' %}">Log Out</a></p> -->
             <!--in Django 5 method get is not supported anymore-->
-            
-
         </div>
     </div>
-    
-    
-    </div>
     {% else %}
-
-<p>You are not logged in</p>
-
-<a href="{% url 'login' %}">Log In</a> |
-
-<a href="{% url 'signup' %}">Sign Up</a>
-
+    <div class="d-flex align-items-center primary justify-content-center" style="height: 550px;">
+        <div class="p-5 m-5 bg-secondary bg-gradient text-black shadow rounded-5">
+            <h1>RBM.io</h1>
+                <p>You are not logged in</p>
+                <a href="{% url 'login' %}">Access your customer profile</a> 
+                <a href="{% url 'signup' %}">Not customer yet, register your business</a>
 {% endif %}
-
-
-
-</div>
-</main>
+        </div>
+    </div>
 {% endblock %}

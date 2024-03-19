@@ -4,16 +4,20 @@
 {% block title %}Sign Up{% endblock %}
 
 {% block content %}
-<main>
-    <div class="main">
-<h2>Sign Up</h2>
 
-<form method="post">
-{% csrf_token %}
-{{ form.as_p }}
-<!--form.as_p is one of the built-in methods provided by Django's form rendering system -->
-<button type="submit">Sign Up</button>
-</form>
-</div>
-</main>
+
+<div class="d-flex align-items-center primary justify-content-center" style="height: 550px;">
+    
+    <div class="p-5 m-5 bg-secondary bg-gradient text-black shadow rounded-5">
+        <div class="main">
+            <h2>Sign Up</h2>
+        
+            <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+        <!--form.as_p is one of the built-in methods provided by Django's form rendering system -->
+            <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
 {% endblock %} 
