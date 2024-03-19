@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>inside home</title>
+    <title>Home</title>
 
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -25,14 +25,16 @@
 </head>
 <body>
     <nav class="bg-secondary navbar navbar-expand-lg">
-        <div class="container-fluid"><a class="navbar-brand" href="#">LOGO</a>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">LOGO</a>
             <button data-mdb-collapse-init class="navbar-toggler" type="button" data-mdb-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style="border: solid;"><i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <!--condition to show links-->
                 <div class="navbar">
-                    <a class="nav-link"href="{% url 'home' %}">Home</a>
-                    <a class="nav-link" href="{% url 'about'%}">About</a>
+                        <a class="nav-link"href="{% url 'home' %}">Home</a>
+                        <a class="nav-link" href="{% url 'about'%}">About</a>
+                        <!--Placeholder contact -->
                     {% if user.is_authenticated %}
                         <a class="nav-link" href="{% url 'confirmlogout'%}">log out</a>
                         <a class="nav-link" href="{% url 'customer_profile'%}">profile</a>
@@ -41,11 +43,12 @@
                     {% else %}
                         <a class="nav-link" href="{% url 'signup'%}">Sign up</a>
                         <a class="nav-link" href="{% url 'login'%}">Log In</a>
-                                                  
+                                                                         
                     {% endif %}    
                 </div>
             </div>
         </div>
+        
     </nav>
 
     <main>
@@ -65,7 +68,7 @@
         
         <!-- Copyright -->
         <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-            © 2020 Copyright:<a class="text-body" href="https://mdbootstrap.com/">&nbsp;RBM.io</a>
+            © 2020 Copyright:<a class="text-body" href="RBM.io">&nbsp;RBM.io</a>
         </div>
         <!-- Copyright -->
     </footer>

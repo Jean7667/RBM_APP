@@ -14,7 +14,7 @@ body {
   margin-top: 100px;
 }
 
-.navbar {
+/* .navbar {
     display: block;
     position: fixed;
     top: 0;
@@ -32,12 +32,13 @@ body {
     text-decoration: burlywood;
     font-size: 8 ems;
     font-weight: 200;
-  }
+  } */
   
   .nav-link:hover {
-    border-bottom: 4px solid rgb(233, 180, 8);
+  text-decoration: 0.5rem solid rgb(6, 5, 0);
   }
   
-  .nav-link[aria-current="page"] {
-    border-bottom: 4px solid #ffb700;
+  .nav-link[aria-current="page"]{
+    text-decoration: underline #f8c348 0.15rem;
+    text-underline-offset: 0.5rem;
   }

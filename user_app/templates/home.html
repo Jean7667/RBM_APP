@@ -4,21 +4,31 @@
 
 {% block content %}
 
-<main>
-    <div class="main">
-
 {% if user.is_authenticated %}
 
+<div class="container-fluid"> 
+    <div class="row" style ="border solid 2px color:black">
+    <div class="main">
+    <div class="grid" style="--bs-columns: 10; --bs-gap: 1rem;">
+        <div class="g-col-2">
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit">logout</button>
+            </form>
+        </div>
+        
+        <div class="g-col-2">
+            Welcome {{ user.username }} you logged in successfully  
+            <!---<p><a href="{% url 'logout' %}">Log Out</a></p> -->
+            <!--in Django 5 method get is not supported anymore-->
+            
 
-Welcome {{ user.username }} you logged in successfully  
-<!---<p><a href="{% url 'logout' %}">Log Out</a></p> -->
-<!--in Django 5 method get is not supported anymore-->
-<form method="post" action="{% url 'logout' %}">
-    {% csrf_token %}
-    <button type="submit">logout</button>
-</form>
-
-{% else %}
+        </div>
+    </div>
+    
+    
+    </div>
+    {% else %}
 
 <p>You are not logged in</p>
 
@@ -27,6 +37,8 @@ Welcome {{ user.username }} you logged in successfully
 <a href="{% url 'signup' %}">Sign Up</a>
 
 {% endif %}
+
+
 
 </div>
 </main>
