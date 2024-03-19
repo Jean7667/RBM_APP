@@ -5,7 +5,6 @@ from .forms import CustomUserCreationForm
 from django.views import View
 from .models import Expert, Skill
 
-
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')
