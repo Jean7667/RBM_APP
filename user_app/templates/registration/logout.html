@@ -1,20 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}Sign out confirmatiom{% endblock %}
-
-
 {% block content %}
-
-<main>
-    <div class="main">
-    <br>
-    <br>
-    <h1>Sign out confirmatiom</h1>
-    <div>
-        <form action="{% url 'logout' %}" method="post">
+<div class="d-flex align-items-center primary justify-content-center" style="height: 550px;">
+    <div class="p-5 m-5 bg-secondary bg-gradient text-black shadow rounded-5">
+        <h1>RBM.io</h1>
+        <br>
+        <br>
+        <h1>Sign out confirmatiom</h1>
+        <div>
+        <form mb-3 action="{% url 'logout' %}" method="post">
             {% csrf_token %}
             <button type="submit" class="nav-link">Log out</button>
         </form>
+        </div>
     </div>
-</main>
+</div>
+
+
 {% endblock %}

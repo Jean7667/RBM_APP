@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Home{% endblock %}
-
+{% block title %}Customer Profile{% endblock %}
 
 {% block content %}
+<script src="{% static 'js/tab.js' %}" defer></script>
 
-<main>
-    <div class="main">
-    <h1>Customer Profile</h1>
-    <div>
+<div class="d-flex align-items-center primary justify-content-center" style="height: 550px;">
+    <div class="p-5 m-5 bg-secondary bg-gradient text-black shadow rounded-5">
+        <h1>Customer Profile</h1>
+    
         <button onclick="openTab('edit')">Edit Profile</button>
         <button onclick="openTab('view')">View Profile</button>
-    </div>
+        <button onclick="openTab('view')">check your booking</button>
     <div id="editTab" class="tab">
         <form method="post" action="{% url 'customer_profile' %}">
             {% csrf_token %}
@@ -29,6 +29,21 @@
         <p><strong>Location:</strong> {{ user.location }}</p>
     </div>
 </div>
-</main>    
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled">Disabled</a>
+    </li>
+  </ul>
+
 
 {% endblock %}

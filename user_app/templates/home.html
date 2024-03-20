@@ -19,8 +19,15 @@
         <div class="p-5 m-5 bg-secondary bg-gradient text-black shadow rounded-5">
             <h1>RBM.io</h1>
                 <p>You are not logged in</p>
-                <a href="{% url 'login' %}">Access your customer profile</a> 
-                <a href="{% url 'signup' %}">Not customer yet, register your business</a>
+            call to action
+            <p>
+                Partner with [Company Name] today and experience the difference of working with a truly global leader in IT services. 
+                Let us be your strategic ally in navigating the complexities of the digital 
+                age and unlocking new opportunities for growth and innovation. Together, we can build a brighter, more connected future for your business.
+            </p>    
+
+            <button class="btn btn-primary"><a href="{% url 'login' %}">Access your customer profile</a></button> 
+            <span><button class="btn btn-success"><a href="{% url 'signup' %}">Not customer yet, register your business</a></button></span> 
 {% endif %}
         </div>
     </div>
