@@ -12,5 +12,5 @@ class CustomUserChangeForm(UserChangeForm):
     email = forms.EmailField(max_length=254, help_text='email')
     class Meta:
         model = CustomUser
-        fields = ['username', 'email']
+        fields = ['username', 'email','last_name']
 

@@ -9,7 +9,7 @@
     <div class="p-5 m-5 bg-secondary bg-gradient text-black shadow rounded-5">
         <h1>Customer Profile</h1>
         <p>Welcome {{ user.first_name }} {{ user.last_name }} you logged in successfully</p>
-        <p>Your username is {{ user.username }} your last connection was on {{ user.last_name_name }} <p/>
+        <p>Your username is {{ user.username }} your last connection was on {{ user.last_name }} <p/>
 
         <button onclick="openTab('edit')">Edit Profile</button>
         <button onclick="openTab('view')">View Profile</button>
@@ -21,7 +21,7 @@
         {% csrf_token %}
         <div class="mb-3">
             <label for="firstname" class="form-label">First Name</label>
-            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="{{ user.first_name }}" required>
+            <input type="text" class="form-control" id="firstname" name="firstname" value="{{ user.first_name }}" required>
             <div class="invalid-feedback">
                 Please provide a first name.
             </div>
@@ -54,7 +54,7 @@
         {% csrf_token %}
         <input type="hidden" name="_method" value="delete">
         <button class="btn btn-primary" type="submit" onclick="return confirm('Are you sure you want to delete your profile?')">Delete Profile</button>   
-         
+    </form>     
     </div>
     <div id="viewTab" class="tab">
       <p><strong>Your Login and User Name is :</strong> {{ user.username }}</p>      
@@ -66,6 +66,14 @@
 
     </div>
 </div>
+
+<script>
+  function confirmDelete() {
+      if (confirm('Are you sure you want to delete your profile?')) {
+          document.getElementById('deleteForm').submit();
+      }
+  }
+</script>
 
 {% comment %} <ul class="nav nav-tabs">
     <li class="nav-item">

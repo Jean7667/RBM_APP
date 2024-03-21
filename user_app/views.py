@@ -4,6 +4,7 @@ from django.views.generic import CreateView, ListView
 from .forms import CustomUserCreationForm
 from django.views import View
 from .models import Expert, Skill
+from django.http import HttpResponse
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
@@ -25,11 +26,6 @@ class SignUpView(CreateView):
 ## >>> new_author = f.save(commit=False)  
 #https://docs.djangoproject.com/en/5.0/topics/forms/modelforms/
 
-
-     
-    
-    
-    
 """ render page
 def list (request):
     return render (request,'')
@@ -52,7 +48,6 @@ def ConfirmLogout(request):
 """ 
 def cxprofile (request):
     return render (request,'customer/cxprofile.html')
-
  """
 #view for customer profile CRUD class based view
 class CxProfileView(View):
@@ -72,19 +67,35 @@ class CxProfileView(View):
             user.first_name = request.POST.get('firstname', user.first_name)
             user.last_name = request.POST.get('lastname', user.last_name)
             user.location = request.POST.get('location', user.location)
+            user.email = request.POST.get('email', user.email)
+            
             user.save()
             return redirect('customer_profile')  
         else:
             return redirect('login')
-
-    def delete(self, request):
+                
+class DeleteCxProfileView(View):
+    def post(self, request):
         user = request.user
         if user.is_authenticated and user.is_customer:
             user.delete()
             return redirect('home')
         else:
-            
-            return redirect('login') 
+            return redirect('unauthorized')
+        
+        
+
+"""     def delete(self, request):
+        user = request.user
+        if user.is_authenticated and user.is_customer:
+            if request.method == 'DELETE':
+                #print (delete received)
+                #user = User.objects.get(pk=user.pk)    
+                user.delete()
+                #print("User profile deleted")
+                return redirect('home')
+            else:
+                return redirect('login')  """
 
 #Read        
 
