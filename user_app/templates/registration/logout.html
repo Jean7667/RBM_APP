@@ -9,13 +9,14 @@
         <br>
         <h1>Sign out confirmatiom</h1>
         <div>
-        <form mb-3 action="{% url 'logout' %}" method="post">
+        
+        
+        
+            <form mb-3 action="{% url 'logout' %}" method="post">
             {% csrf_token %}
             <button type="submit" class="nav-link">Log out</button>
         </form>
         </div>
     </div>
 </div>
-
-
 {% endblock %}

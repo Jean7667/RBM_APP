@@ -3,13 +3,14 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import CustomUser
 
 class CustomUserCreationForm(UserCreationForm):
-        class Meta(UserCreationForm.Meta):
-            model = CustomUser
-            fields = UserCreationForm.Meta.fields # ('add the field you want to show in the login page','')
+    email = forms.EmailField(max_length=254, help_text='email')
+    class Meta:
+        model = CustomUser
+        fields = ['username', 'email', 'password1', 'password2']
         
 class CustomUserChangeForm(UserChangeForm):
-        class Meta:
-            model = CustomUser
-            fields = UserChangeForm.Meta.fields # ('add the field you want to show in the login page','')
-            
-            
+    email = forms.EmailField(max_length=254, help_text='email')
+    class Meta:
+        model = CustomUser
+        fields = ['username', 'email']
+

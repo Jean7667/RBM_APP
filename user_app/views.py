@@ -9,15 +9,23 @@ class SignUpView(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html' 
+    
+    def form_valid(self, form):
+        user = form.save(commit=False)
+        user.is_customer =True 
+        user.save()
+        return super().form_valid(form)
+    
+    
     # template_name = 'base.html' start on base html 
  
  #Making sure the user created from the interface is idendify as a customer
   
-def form_valid(self, form):
-    user = form.save ()
-    user.is_customer =True 
-    user.save()
-    return super().form_valid(form)
+# Create, but don't save the new author instance.
+## >>> new_author = f.save(commit=False)  
+#https://docs.djangoproject.com/en/5.0/topics/forms/modelforms/
+
+
      
     
     
