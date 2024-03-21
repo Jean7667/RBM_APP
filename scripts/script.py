@@ -10,7 +10,7 @@ import time
     # Display usernames
     print("Usernames of Experts:")
     for expert in experts:
-        print(expert.user.username)
+        print(expert.user.username)open
 
 #how to make sure the script is run directly
 if __name__ == "__main__":

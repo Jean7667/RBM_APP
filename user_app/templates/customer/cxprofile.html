@@ -8,29 +8,46 @@
 <div class="d-flex align-items-center primary justify-content-center" style="height: 550px;">
     <div class="p-5 m-5 bg-secondary bg-gradient text-black shadow rounded-5">
         <h1>Customer Profile</h1>
-    
+        <p>Welcome {{ user.first_name }} {{ user.last_name_name }} you logged in successfully</p>
         <button onclick="openTab('edit')">Edit Profile</button>
         <button onclick="openTab('view')">View Profile</button>
-        <button onclick="openTab('view')">check your booking</button>
+        <button onclick="openTab('book')">check your booking</button>
+        <br>
+        <hr>
     <div id="editTab" class="tab">
         <form method="post" action="{% url 'customer_profile' %}">
             {% csrf_token %}
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" value="{{ user.name }}"><br>
-            <label for="name">email:</label><br>
-            <input type="text" id="name" name="name" value="{{ user.email }}"><br>
-            <label for="location">Location:</label><br>
+            
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" name="firstname" placeholder="{{ user.first_name }}"><br><br>
+          
+            <label for="lastname">Last Name</label>     
+            <input type="text" id="lastname" name="lastname" value="{{ user.last_name }}"><br><br>
+            
+            <label for="usernabe">email:</label>
+            <input type="text" id="name" name="name" value="{{ user.email }}"><br><br>
+            
+            <label for="location">Location:</label>
             <input type="text" id="location" name="location" value="{{ user.location }}"><br><br>
+                        
             <button type="submit">Update Profile</button>
         </form>
+        <h2>Delete Profile</h2>
+        <form method="post" action="{% url 'delete_profile' %}">
+            {% csrf_token %}
+            <input type="hidden" name="_method" value="delete">
+            <button type="submit" onclick="return confirm('Are you sure you want to delete your profile?')">Delete Profile</button>   
     </div>
     <div id="viewTab" class="tab">
-        <p><strong>Name:</strong> {{ user.name }}</p>
+        <p><strong>First Name</strong>{{ user.fisrt_name}}</p>
+        <p><strong>Location:</strong> {{ user.last_name }}</p>
         <p><strong>Location:</strong> {{ user.location }}</p>
+        <p><strong>Location:</strong> {{ user.email }}</p>
+
     </div>
 </div>
 
-<ul class="nav nav-tabs">
+{% comment %} <ul class="nav nav-tabs">
     <li class="nav-item">
       <a class="nav-link active" aria-current="page" href="#">Active</a>
     </li>
@@ -43,7 +60,7 @@
     <li class="nav-item">
       <a class="nav-link disabled">Disabled</a>
     </li>
-  </ul>
+  </ul> {% endcomment %}
 
 
 {% endblock %}
