@@ -2,33 +2,40 @@
 {% block title %}Home{% endblock title %}
 {% block content %}
 {% if user.is_authenticated %}
-    <div class="d-flex align-items-center primary justify-content-center" style="height: 550px;">
-        <div class="p-5 m-5 bg-secondary bg-gradient text-black shadow rounded-5">
-            <h1>Join us</h1>
-            <form method="post" action="{% url 'logout' %}">
-                {% csrf_token %}
-                <button type="submit">logout</button>
-            </form>
-            Welcome {{ user.username }} you logged in successfully  
-            <!---<p><a href="{% url 'logout' %}">Log Out</a></p> -->
-            <!--in Django 5 method get is not supported anymore-->
+    <div class="container">
+        <div class="row justify-content-center align-items-center" style="min-height: 550px;">
+            <div class="col-md-6">
+                <div class="p-5 bg-secondary bg-gradient text-black shadow rounded-5">
+                    <h1>Join us</h1>
+                    <form method="post" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Logout</button>
+                    </form>
+                    <p>Welcome {{ user.username }}, you logged in successfully.</p>
+                </div>
+            </div>
         </div>
     </div>
-    {% else %}
-    <div class="d-flex align-items-center primary justify-content-center" style="height: 550px;">
-        <div class="p-5 m-5 bg-secondary bg-gradient text-black shadow rounded-5">
-            <h1>RBM.io</h1>
-                <p>You are not logged in</p>
-            call to action
-            <p>
-                Partner with [Company Name] today and experience the difference of working with a truly global leader in IT services. 
-                Let us be your strategic ally in navigating the complexities of the digital 
-                age and unlocking new opportunities for growth and innovation. Together, we can build a brighter, more connected future for your business.
-            </p>    
+{% else %}
 
-            <button class="btn btn-primary"><a href="{% url 'login' %}">Access your customer profile</a></button> 
-            <span><button class="btn btn-success"><a href="{% url 'signup' %}">Not customer yet, register your business</a></button></span> 
-{% endif %}
+<div class="container">
+        <div class="row justify-content-center align-items-center" style="min-height: 550px;">
+            <div class="col-md-6">
+
+                <div class="p-5 bg-secondary bg-gradient text-black shadow rounded-5">
+                    <h1>RBM.io</h1>
+                    <p>You are not logged in</p>
+
+                    <p>
+                        Partner with [Company Name] today and experience the difference of working with a truly global leader in IT services. 
+                        Let us be your strategic ally in navigating the complexities of the digital 
+                        age and unlocking new opportunities for growth and innovation. Together, we can build a brighter, more connected future for your business.
+                    </p>    
+                    <a href="{% url 'login' %}" class="btn btn-primary">Access your customer profile</a>
+                    <a href="{% url 'signup' %}" class="btn btn-success">Not a customer yet? Register your business</a>
+                </div>
+            </div>
         </div>
     </div>
+{% endif %}
 {% endblock %}
