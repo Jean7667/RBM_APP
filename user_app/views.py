@@ -10,6 +10,16 @@ class SignUpView(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html' 
     # template_name = 'base.html' start on base html 
+ 
+ #Making sure the user created from the interface is idendify as a customer
+  
+def form_valid(self, form):
+    user = form.save ()
+    user.is_customer =True 
+    user.save()
+    return super().form_valid(form)
+     
+    
     
     
 """ render page
