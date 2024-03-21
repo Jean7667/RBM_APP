@@ -44,15 +44,16 @@ class CxProfileView(View):
         # find the current user
         user = request.user
         if user.is_authenticated and user.is_customer:
-            return render(request, self.cx_profile_template, {'user': user})
+            return render(request, self.cx_profile_template, {'user': user, 'edit_mode':True})
         else:
             return redirect('home')
         
     def post(self, request):
         user = request.user
         if user.is_authenticated and user.is_customer:
-            user.name = request.POST.get('name', '')
-            user.location = request.POST.get('location', '')
+            user.first_name = request.POST.get('firstname', user.first_name)
+            user.last_name = request.POST.get('lastname', user.last_name)
+            user.location = request.POST.get('location', user.location)
             user.save()
             return redirect('customer_profile')  
         else:
