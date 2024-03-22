@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, ListView
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, BookingForm
 from django.views import View
-from .models import Expert, Skill
+from .models import Expert, Skill, Booking
 from django.http import HttpResponse
 
 class SignUpView(CreateView):
@@ -126,4 +126,16 @@ class ExpertListView(ListView):
         context['categories'] = Skill.objects.values_list('category', flat=True).distinct()
         return context
 
+def BookExpert(request, expert_id):
+    url = reverse('book_expert')
+    if request.method == 'POST':
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            booking = form.save(commit=False)
+            booking.Expert_id = expert_id
+            booking.save()
+            return redirect('booking_success')  
+    else:
+        form = BookingForm()
+    return render(request, 'customer/bookxpert.html', {'form': form})
 

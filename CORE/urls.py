@@ -10,6 +10,7 @@ from user_app.views import about, ConfirmLogout
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/', about, name='about'),
+    #path('about/', Contact, name='contact'),
     path('user_app/', include('user_app.urls')), 
     path('user_app/', include('django.contrib.auth.urls')), 
     path('user_app/', auth_views.LogoutView.as_view(next_page='home'), name='logout'),

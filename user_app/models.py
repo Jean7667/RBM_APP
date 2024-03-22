@@ -19,7 +19,6 @@ class Skill(models.Model):
     name = models.CharField(max_length=100, null=True, blank=True)
     category = models.CharField(max_length=100, null=True, blank=True)
     level = models.SmallIntegerField()  
-
     def __str__(self):
         return self.name
 
@@ -28,3 +27,13 @@ class Expert(models.Model):
     skills = models.ManyToManyField(Skill, related_name='experts')
     start_date = models.DateField()
 
+class Booking(models.Model):
+    id= models.AutoField(primary_key=True)
+    BookingExpert = models.ForeignKey(CustomUser, related_name='expert_bookings', on_delete=models.CASCADE)
+    CustomerUser = models.ForeignKey(CustomUser, related_name='customer_bookings', on_delete=models.CASCADE)
+    checkin = models.DateTimeField()
+    checkout = models.DateTimeField()
+    location = models.CharField(max_length=200)
+    notes = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

@@ -21,6 +21,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="{% static 'js/main.js' %}" defer></script>
+   
 
 </head>
 <style>
@@ -57,7 +58,10 @@
                                 <a class="nav-link" href="{% url 'customer_profile'%}">profile</a>
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'list_expert'%}">Our consultant</a>
-                            </li>  
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="{% url 'book_expert'  %}">Booking</a>
+                            </li>
                 <!--add-other links when auth-->
                     {% else %}
                             <li class="nav-item">
