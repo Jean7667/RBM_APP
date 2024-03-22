@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}List of Experts{% endblock %}
+
+{% block content %}
+<h3>List of Experts</h3>
+<ul>
+    {% for expert in experts %}
+        <li>
+            <h5><a href="{% url 'expert_detail' expert.id %}">{{ expert.user.last_name }}, {{ expert.user.first_name }} ({{ expert.user.username }})</a></h5>
+            <p>Start Date: {{ expert.start_date }}</p>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

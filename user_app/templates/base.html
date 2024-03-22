@@ -60,7 +60,10 @@
                                 <a class="nav-link" href="{% url 'list_expert'%}">Our consultant</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" href="{% url 'book_expert'  %}">Booking</a>
+                            {% comment %} <a class="nav-link" href="{% url 'book_expert' %}">Booking</a>  {% endcomment %}
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="{% url 'expert_booking' %}">Book an expert</a>
                             </li>
                 <!--add-other links when auth-->
                     {% else %}

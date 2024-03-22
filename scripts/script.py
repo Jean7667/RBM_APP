@@ -1,6 +1,6 @@
 #from django.views.generic import ListView
 from django.db import connection
-from user_app.models import Expert, Skill
+from user_app.models import Expert
 import time
 
 """ def run():
@@ -43,3 +43,24 @@ if __name__ == "__main__":
     
     if __name__ == "__main__":
         run() """
+        
+from user_app.models import Expert
+
+def run ():
+    experts = Expert.objects.all()
+
+    
+    for expert in experts:
+        print(f"Expert ID: {expert.id}")
+        print(f"First Name: {expert.user.first_name}")
+        print(f"Last Name: {expert.user.last_name}")
+        print(f"Location: {expert.user.location}")
+        print(f"Last Update: {expert.user.updated_at}")
+        print("Skillset:")
+        for skill in expert.skills.all():
+            print(f"- {skill.name}")
+        print(f"Joined the company: {expert.start_date}")
+        print()  # Add a blank line between experts
+
+if __name__ == "__main__":
+    run_script()

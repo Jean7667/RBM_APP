@@ -1,10 +1,11 @@
-from django.shortcuts import render, redirect
-from django.urls import reverse_lazy, reverse
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Expert
+from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView
-from .forms import CustomUserCreationForm, BookingForm
+from .forms import CustomUserCreationForm
 from django.views import View
-from .models import Expert, Skill, Booking
-from django.http import HttpResponse
+from .models import Expert, Skill
+
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
@@ -105,7 +106,6 @@ class DeleteCxProfileView(View):
 
 #Generic based view
 # views for displaying a list of experts
-
 class ExpertListView(ListView):
     model = Expert
     template_name = 'customer/listexpert.html'
@@ -118,6 +118,7 @@ class ExpertListView(ListView):
         category = self.request.GET.get('category')
         if category:
             queryset = queryset.filter(skills__category=category)
+            queryset = queryset.order_by('updated_at')
         return queryset
     
  #add mising information from gen view
@@ -126,16 +127,18 @@ class ExpertListView(ListView):
         context['categories'] = Skill.objects.values_list('category', flat=True).distinct()
         return context
 
-def BookExpert(request, expert_id):
-    url = reverse('book_expert')
-    if request.method == 'POST':
-        form = BookingForm(request.POST)
-        if form.is_valid():
-            booking = form.save(commit=False)
-            booking.Expert_id = expert_id
-            booking.save()
-            return redirect('booking_success')  
-    else:
-        form = BookingForm()
-    return render(request, 'customer/bookxpert.html', {'form': form})
 
+""" def ExpertBooking (request):
+    return render(request, 'customer/expertbooking.html') """
+
+def expert_booking(request):
+    experts = Expert.objects.all()
+    return render(request, 'customer/expertbooking.html', {'experts': experts})
+
+
+from django.shortcuts import render, get_object_or_404
+from .models import Expert
+
+def expert_detail(request, expert_id):
+    expert = get_object_or_404(Expert, id=expert_id)
+    return render(request, 'customer/expertdetail.html', {'expert': expert})
