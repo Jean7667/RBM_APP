@@ -19,7 +19,7 @@ button {
   radial-gradient(circle, rgba(6,6,10,1) 6%, rgba(2,0,36,1) 8%, rgba(171,171,171,1) 100%)} */
 
   .nav-link[aria-current="page"]{
-    text-decoration: underline rgb(224, 0, 112) 4px;
+    text-decoration: underline rgb(9, 0, 5) 4px;
     text-underline-offset: 12px;
   }
 

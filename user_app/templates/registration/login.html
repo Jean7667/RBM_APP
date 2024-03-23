@@ -4,27 +4,21 @@
 
 {% block content %}
 
-<div class="d-flex align-items-center primary justify-content-center" style="height: 550px;">
-    
-    <div class="p-5 m-5 bg-secondary bg-gradient text-black shadow rounded-5"> 
-        
-        <h2>Log In</h2>
-            <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            
-            <button type="submit" class="btn btn-primary">Log In</button>
-            
-            </form>
-
+<div class="container">
+    <div class="row justify-content-center align-items-center" style="height:auto;">
+        <div class="col-md-6">
+            <div class="card bg-secondary bg-light text-black shadow rounded-5">
+                <div class="card-body p-5">
+                    <h2 class="card-title">Log In</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-primary">Log In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 
 {% endblock content %}
-
-
-
-
-
-
-
-        

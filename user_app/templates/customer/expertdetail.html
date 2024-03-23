@@ -1,45 +1,51 @@
 {% extends 'base.html' %}
 
-{% block title %}Expert Detail{% endblock %}
+{% block title %}
+    Expert Detail
+{% endblock %}
 
 {% block content %}
-<div class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="col-lg-8">
-            <h3 class="text-center">Expert Detail</h3>
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <tbody>
-                        <tr>
-                            <th scope="row">Username:</th>
-                            <td>{{ expert.user.username }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">First Name:</th>
-                            <td>{{ expert.user.first_name }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Last Name:</th>
-                            <td>{{ expert.user.last_name }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Start Date:</th>
-                            <td>{{ expert.start_date }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Skills:</th>
-                            <td>
-                                <ul>
-                                    {% for skill in expert.skills.all %}
-                                        <li>{{ skill.category }}: {{ skill.name }}</li>
-                                    {% endfor %}
-                                </ul>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <section class="container-fluid bg-light">
+                <div class="container-auto">
+                    <div class="col-lg-8">
+                        <h3 class="text-center">Expert Details</h3>
+                        <div class="table-responsive">
+                            <table class="table table-dark table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Username:</th>
+                                        <td>{{ expert.user.username }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">First Name:</th>
+                                        <td>{{ expert.user.first_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Last Name:</th>
+                                        <td>{{ expert.user.last_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Start Date:</th>
+                                        <td>{{ expert.start_date }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Skills:</th>
+                                        <td>
+                                            <ul>
+                                                {% for skill in expert.skills.all %}
+                                                    <li>{{ skill.category }}: {{ skill.name }}</li>
+                                                {% endfor %}
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
-</div>
 {% endblock %}

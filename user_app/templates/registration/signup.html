@@ -1,25 +1,25 @@
-<!-- templates/signup.html -->
 {% extends 'base.html' %}
 
-{% block title %}Sign Up{% endblock %}
+{% block title %}
+    Sign Up
+{% endblock %}
 
 {% block content %}
-
-
-<div class="container">
-    <div class="row d-flex align-items-center justify-content-center" style="min-height: 550px;">
-        <div class="col-md-6 p-5 m-5 bg-secondary bg-gradient text-black shadow rounded-5">
-            <div class="main">
-                <h2>Sign Up</h2>
-                
-                <form method="post">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <!-- form.as_p is one of the built-in methods provided by Django's form rendering system -->
-                    <button type="submit" class="btn btn-primary">Sign Up</button>
-                </form>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center" style="min-height: 550px;">
+            <div class="col-md-6 p-5 m-5 bg-secondary bg-light text-black shadow rounded-5">
+                <div class="main">
+                    <h2>Sign Up</h2>
+                    
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
-{% endblock %} 
+    
+{% endblock %}
