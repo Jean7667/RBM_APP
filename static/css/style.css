@@ -27,3 +27,11 @@ button {
     border-bottom: 5px solid rgb(84, 84, 134) 3px ;
   } */
 
+
+.background-div {
+      background-image: url("/images/2.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh; /* Set the height of the background to fill the viewport */
+}

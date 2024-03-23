@@ -13,10 +13,9 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"),]
 SECRET_KEY = 'django-insecure-91(qd#ylm0w0q+c$!&w%q)k*f0jrf5d9xt=0qm%oi^srp0l$bh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['127.0.0.1','.herokuapp.com']
 
 # Application definition
 
@@ -123,7 +122,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR,),]
+#STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -131,8 +132,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-
-""" LOGGING = {
+""" 
+LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'handlers': {
@@ -161,7 +162,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
             'propagate': False,
         },
     },
-}  """
+}   """
  
 INTERNAL_IPS = [
     # ...
