@@ -83,26 +83,36 @@ class DeleteCxProfileView(View):
 
 #Generic based view
 # views for displaying a list of experts
+
+from django.views.generic import ListView
+from .models import Expert, Skill
+
 class ExpertListView(ListView):
     model = Expert
     template_name = 'customer/listexpert.html'
     context_object_name = 'experts'
     paginate_by = 5
    
-  # list of objects to display.  
     def get_queryset(self):
         queryset = super().get_queryset()
         category = self.request.GET.get('category')
+        skill = self.request.GET.get('skill')
+        
         if category:
             queryset = queryset.filter(skills__category=category)
-            queryset = queryset.order_by('updated_at')
-        return queryset
+        if skill:
+            queryset = queryset.filter(skills__name=skill)
+        
+        return queryset.distinct()  # Ensure unique experts are returned
     
- #add mising information from gen view
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['categories'] = Skill.objects.values_list('category', flat=True).distinct()
+        context['skills'] = Skill.objects.values_list('name', flat=True).distinct()
         return context
+
+
+
 
 #############Expert list ################
 

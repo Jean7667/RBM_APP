@@ -28,8 +28,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'crispy_bootstrap5',
     'django_extensions',
     'user_app',
+    'debug_toolbar',
 ]
 
 
@@ -44,6 +46,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'CORE.urls'
@@ -68,8 +71,9 @@ TEMPLATES = [
     },
 ]
 
-CRISPY_TEMPLATE_PACK = 'bootstrap5'
-
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+CRISPY_FAIL_SILENTLY = False
 
 WSGI_APPLICATION = 'CORE.wsgi.application'
 
@@ -157,4 +161,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
             'propagate': False,
         },
     },
-} """
+}  """
+ 
+INTERNAL_IPS = [
+    # ...
+    "127.0.0.1",
+    # ...
+] 

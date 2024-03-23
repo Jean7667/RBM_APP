@@ -1,46 +1,59 @@
-
 {% extends 'base.html' %}
-
-{% block title %}Consultant Expert list{% endblock %}
-
+{% block title %}Expert Detail{% endblock %}
 {% block content %}
-
-<div class="d-flex align-items-center primary justify-content-center" style="height: 550px;">
-    
-    <div class="p-5 m-5 bg-secondary bg-gradient text-black shadow rounded-5">
-    
-    <h1>Our Expert consultants</h1>
-
-<table class="table table-dark table-striped">
-    <thead>
-        <tr class="table-secondary">
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Location</th>
-            <th>Last Update </th>
-            <th>Skillset</th>
-            <th>Joined the company</th>
-        </tr>
-    </thead>
-<!--show the coresponding fiels -->
-    <tbody>
-        {% for expert in experts %}
-            <tr class="table-secondary">
-                <td>{{ expert.user.first_name }}</td>
-                <td>{{ expert.user.last_name }}</td>
-                <td>{{ expert.user.location }}</td>
-                <td>{{ expert.user.updated_at }}</td>
-                <td>
-                    <ul>
-                        {% for skill in expert.skills.all %}
-                            <li>{{ skill.name }}</li>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3">
+            <h3>Filters</h3>
+            <div class="form-group">
+                <label for="skill">Skill:</label>
+                <select class="form-control" id="skill" name="skill">
+                    <option value="">All</option>
+                    {% for skill in skills %}
+                    <option value="{{ skill }}">{{ skill }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <h3>All Experts</h3>
+            <div class="table-responsive" id="expert-table">
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Username</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Start Date</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Skill</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for expert in experts %}
+                        <tr>
+                            <td>{{ expert.user.username }}</td>
+                            <td>{{ expert.user.first_name }}</td>
+                            <td>{{ expert.user.last_name }}</td>
+                            <td>{{ expert.start_date }}</td>
+                            <td>
+                                {% for skill in expert.skills.all %}
+                                {{ skill.category }}
+                                {% endfor %}
+                            </td>
+                            <td>
+                                {% for skill in expert.skills.all %}
+                                {{ skill.name }}
+                                {% endfor %}
+                            </td>
+                        </tr>
                         {% endfor %}
-                    </ul>
-                </td>
-                <td>{{ expert.start_date }}</td>
-            </tr>
-        {% endfor %}
-    </tbody>
-</table>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 {% endblock %}

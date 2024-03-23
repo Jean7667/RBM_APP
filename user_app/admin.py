@@ -11,17 +11,31 @@ class CustomUserAdmin(UserAdmin):
     list_display = ['email','first_name','last_name','is_expert','is_customer',]
     add_fieldsets = (
         (None, {
-            'classes': ('wide','extrapretty'),
-            'fields': ('username', 'email', 'password1', 'password2',),
+            'classes': ('wide',),
+            'fields': ('username', 'email', 'password1', 'password2', 'is_customer', 'is_expert'),
         }),
+    )
+    fieldsets = (
+        (None, {'fields': ('username', 'email', 'password')}),
+        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
+        ('Important dates', {'fields': ('last_login', 'date_joined')}),
+        ('Custom Fields', {'fields': ('is_customer', 'is_expert')}),
     )
     
 class SkillAdmin(admin.ModelAdmin):
     list_display = ['name','category','level']
 
-
 class ExpertAdmin(admin.ModelAdmin):
-    list_display = ['user','start_date',]
+    list_display = ['get_user_email', 'get_is_expert', 'start_date']
+
+    def get_user_email(self, obj):
+        return obj.user.email
+
+    def get_is_expert(self, obj):
+        return obj.user.is_expert
+
+    get_user_email.short_description = 'User Email'
+    get_is_expert.short_description = 'Is Expert'
  
 #todo MISSING FIELDS IN ADMIN INTERFACE TIME CONSUMMING PROBLEM
 

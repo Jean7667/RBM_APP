@@ -1,13 +1,45 @@
-<!-- expert_detail.html -->
-
 {% extends 'base.html' %}
 
 {% block title %}Expert Detail{% endblock %}
 
 {% block content %}
-<h3>Expert Detail</h3>
-<p><strong>Username:</strong> {{ expert.user.username }}</p>
-<p><strong>First Name:</strong> {{ expert.user.first_name }}</p>
-<p><strong>Last Name:</strong> {{ expert.user.last_name }}</p>
-<p><strong>Start Date:</strong> {{ expert.start_date }}</p>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h3 class="text-center">Expert Detail</h3>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Username:</th>
+                            <td>{{ expert.user.username }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">First Name:</th>
+                            <td>{{ expert.user.first_name }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Last Name:</th>
+                            <td>{{ expert.user.last_name }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Start Date:</th>
+                            <td>{{ expert.start_date }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Skills:</th>
+                            <td>
+                                <ul>
+                                    {% for skill in expert.skills.all %}
+                                        <li>{{ skill.category }}: {{ skill.name }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

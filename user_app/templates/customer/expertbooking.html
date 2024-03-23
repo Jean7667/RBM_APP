@@ -3,13 +3,39 @@
 {% block title %}List of Experts{% endblock %}
 
 {% block content %}
-<h3>List of Experts</h3>
-<ul>
-    {% for expert in experts %}
-        <li>
-            <h5><a href="{% url 'expert_detail' expert.id %}">{{ expert.user.last_name }}, {{ expert.user.first_name }} ({{ expert.user.username }})</a></h5>
-            <p>Start Date: {{ expert.start_date }}</p>
-        </li>
-    {% endfor %}
-</ul>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h3>Book an Expert</h3>
+
+            <div class="table-responsive">
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <th>Last Name</th>
+                            <th>First Name</th>
+                            <th>Username</th>
+                            <th>Start Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for expert in experts %}
+                        <tr>
+                            <td>{{ expert.user.last_name }}</td>
+                            <td>{{ expert.user.first_name }}</td>
+                            <td>{{ expert.user.username }}</td>
+                            <td>{{ expert.start_date }}</td>
+                            <td>
+                                <a href="{% url 'expert_detail' expert.id %}" class="btn btn-primary">View Details</a>
+                                <a href="{% url 'booking_form' expert.id %}" class="btn btn-success">Book Now</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

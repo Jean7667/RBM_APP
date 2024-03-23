@@ -5,90 +5,79 @@
 {% block content %}
 <script src="{% static 'js/tab.js' %}" defer></script>
 
-<div class="d-flex align-items-center primary justify-content-center" style="height: 550px;">
-    <div class="p-5 m-5 bg-secondary bg-gradient text-black shadow rounded-5">
-        <h1>Customer Profile</h1>
-        <p>Welcome {{ user.first_name }} {{ user.last_name }} you logged in successfully</p>
-        <p>Your username is {{ user.username }} your last connection was on {{ user.last_name }} <p/>
+<div class="container-fluid">
+    <div class="row justify-content-center align-items-center" style="height: 550px;">
+        <div class="col-lg-6 col-md-8 col-sm-10 col-12 p-5 m-5 bg-light text-black shadow rounded-5">
+            <h1 class="text-center">Customer Profile</h1>
+            <p class="text-center">Welcome {{ user.first_name }} {{ user.last_name }}, you logged in successfully.</p>
+            <p class="text-center">Your username is {{ user.username }}. Your last connection was on {{ user.last_login }}.</p>
 
-        <button onclick="openTab('edit')">Edit Profile</button>
-        <button onclick="openTab('view')">View Profile</button>
-        <button onclick="openTab('book')">check your booking</button>
-        <br>
-        <hr>
-    <div id="editTab" class="tab">
-      <form method="post" action="{% url 'customer_profile' %}" class="needs-validation" novalidate>
-        {% csrf_token %}
-        <div class="mb-3">
-            <label for="firstname" class="form-label">First Name</label>
-            <input type="text" class="form-control" id="firstname" name="firstname" value="{{ user.first_name }}" required>
-            <div class="invalid-feedback">
-                Please provide a first name.
+            <div class="text-center">
+                <button onclick="openTab('edit')" class="btn btn-primary">Edit Profile</button>
+                <button onclick="openTab('view')" class="btn btn-primary">View Profile</button>
             </div>
-        </div>
-        <div class="mb-3">
-            <label for="lastname" class="form-label">Last Name</label>
-            <input type="text" class="form-control" id="lastname" name="lastname" value="{{ user.last_name }}" required>
-            <div class="invalid-feedback">
-                Please provide a last name.
-            </div>
-        </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" name="email" value="{{ user.email }}" required>
-            <div class="invalid-feedback">
-                Please provide a valid email.
-            </div>
-        </div>
-        <div class="mb-3">
-            <label for="location" class="form-label">Location</label>
-            <input type="text" class="form-control" id="location" name="location" value="{{ user.location }}" required>
-            <div class="invalid-feedback">
-                Please provide a location.
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Update Profile</button>
-    </form>
-    <h4>Delete Profile</h4>
-    <form method="post" action="{% url 'delete_profile' %}">
-        {% csrf_token %}
-        <input type="hidden" name="_method" value="delete">
-        <button class="btn btn-primary" type="submit" onclick="return confirm('Are you sure you want to delete your profile?')">Delete Profile</button>   
-    </form>     
-    </div>
-    <div id="viewTab" class="tab">
-      <p><strong>Your Login and User Name is :</strong> {{ user.username }}</p>      
-      <p><strong>First Name:</strong> {{ user.first_name }}</p>  
-      <p><strong>Last Name:</strong> {{ user.last_name }}</p>
-      <p><strong>Last Connection:</strong> {{ user.last_login }}</p>  
-      <p><strong>Location:</strong> {{ user.location }}</p>
-      <p><strong>Email:</strong> {{ user.email }}</p>
+            <br>
+            <hr>
 
+            <div id="editTab" class="tab">
+                <form method="post" action="{% url 'customer_profile' %}" class="needs-validation" novalidate>
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="firstname" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="firstname" name="firstname" value="{{ user.first_name }}" required>
+                        <div class="invalid-feedback">
+                            Please provide a first name.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="lastname" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="lastname" name="lastname" value="{{ user.last_name }}" required>
+                        <div class="invalid-feedback">
+                            Please provide a last name.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" value="{{ user.email }}" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid email.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="location" class="form-label">Location</label>
+                        <input type="text" class="form-control" id="location" name="location" value="{{ user.location }}" required>
+                        <div class="invalid-feedback">
+                            Please provide a location.
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update Profile</button>
+                </form>
+                <h4 class="mt-3">Delete Profile</h4>
+                <form method="post" action="{% url 'delete_profile' %}" id="deleteForm">
+                    {% csrf_token %}
+                    <input type="hidden" name="_method" value="delete">
+                    <button class="btn btn-danger" type="button" onclick="confirmDelete()">Delete Profile</button>
+                </form>
+            </div>
+
+            <div id="viewTab" class="tab" style="display: none;">
+                <p><strong>Your Login and User Name is :</strong> {{ user.username }}</p>
+                <p><strong>First Name:</strong> {{ user.first_name }}</p>
+                <p><strong>Last Name:</strong> {{ user.last_name }}</p>
+                <p><strong>Last Connection:</strong> {{ user.last_login }}</p>
+                <p><strong>Location:</strong> {{ user.location }}</p>
+                <p><strong>Email:</strong> {{ user.email }}</p>
+            </div>
+        </div>
     </div>
 </div>
 
 <script>
-  function confirmDelete() {
-      if (confirm('Are you sure you want to delete your profile?')) {
-          document.getElementById('deleteForm').submit();
-      }
-  }
+    function confirmDelete() {
+        if (confirm('Are you sure you want to delete your profile?')) {
+            document.getElementById('deleteForm').submit();
+        }
+    }
 </script>
-
-{% comment %} <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="#">Active</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled">Disabled</a>
-    </li>
-  </ul> {% endcomment %}
-
 
 {% endblock %}

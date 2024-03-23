@@ -9,7 +9,7 @@ button {
   background-color: azure;
 }
 
-.border-cont {
+ .border-cont {
   border-bottom: solid radial-gradient(circle, rgb(251, 6, 124) 6%, rgb(95, 87, 252) 8%, rgba(171,171,171,1) 100%) 4px;
   margin-bottom: -8px;
   z-index: 2;
@@ -19,7 +19,7 @@ button {
   radial-gradient(circle, rgba(6,6,10,1) 6%, rgba(2,0,36,1) 8%, rgba(171,171,171,1) 100%)} */
 
   .nav-link[aria-current="page"]{
-    text-decoration: underline rgb(84, 84, 134) 4px;
+    text-decoration: underline rgb(224, 0, 112) 4px;
     text-underline-offset: 12px;
   }
 
