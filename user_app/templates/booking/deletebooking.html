@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load crispy_forms_filters %} 
+{% load crispy_forms_tags %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                {% if request.user.is_authenticated and request.user.is_customer%}   
+                    <h3>Booking Form</h3>
+                    <form method="post">            
+                        {% csrf_token %}
+                        
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                {% else %}
+                    <div class="alert alert-danger" role="alert">
+                        You don't have permission to access this booking.
+                    </div>
+                               
+                    <a href="{% url 'edit_booking' expert.id %}" class="btn btn-secondary">Edit</a>
+                {% endif %}
+                
+                </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

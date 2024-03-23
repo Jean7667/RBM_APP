@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="d-flex align-items-center primary justify-content-center" style="height:auto;">
+                    <div class="p-5 m-5 bg-secondary bg-gradient text-black shadow rounded-5">
+                    
+                            <H1>Your booking with our experts</h1>
+                        <table class="table table-dark table-striped">
+                        <thead>
+                        <tr>
+                            <th>Expert</th>
+                            <th>Customer</th>
+                            <th>Check-in</th>
+                            <th>Check-out</th>
+                            <th>Location</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for booking in bookings %}
+                        <tr class="table-secondary">
+                            <td>{{ booking.BookingExpert }}</td>
+                            <td>{{ booking.CustomerUser }}</td>
+                            <td>{{ booking.checkin }}</td>
+                            <td>{{ booking.checkout }}</td>
+                            <td>{{ booking.location }}</td>
+                            <td>{{ booking.notes }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
