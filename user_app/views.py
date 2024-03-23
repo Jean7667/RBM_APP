@@ -2,10 +2,12 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Expert
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView
-from .forms import BookingForm, CustomUserCreationForm, CustomUser
+from .forms import BookingForm, CustomUserCreationForm, EditBookingForm
 from django.views import View
 from .models import Expert, Skill, Booking
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages 
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
@@ -117,36 +119,18 @@ def expert_detail(request, expert_id):
     return render(request, 'customer/expertdetail.html', {'expert': expert})
 
 ######## Booking Section ############
-
-def edit_booking(request, booking_id):
-    booking = get_object_or_404(Booking, id=booking_id)
-    form = BookingForm(request.POST or None, instance=booking)
-    
-    if form.is_valid():
-        form.save()
-        return redirect('booking_detail', booking_id=booking.id)  # Redirect to booking detail page
-        
-    return render(request, 'booking/editbooking.html', {'form': form})
-
-def delete_booking(request, booking_id):
-    booking = get_object_or_404(Booking, id=booking_id)
-    
-    if request.method == 'POST':
-        booking.delete()
-        return redirect('home')  # Redirect to booking list page
-    
-    return render(request, 'booking/deletebooking.html', {'booking': booking})
  
 def booking_form(request, expert_id):
     expert = get_object_or_404(Expert, id=expert_id)
     
         # Pre-populate the form with expert's data using the 'initial' argument
-    form = BookingForm(initial={'CustomerUser': expert.user})
+    form = BookingForm(initial={'ExpertUser': expert.user})
     
     context = {'expert': expert, 'form': form}
     return render(request, 'booking/formbooking.html', context)
 
-        
+
+@login_required
 def handle_booking_submission(request, expert_id):
     expert = get_object_or_404(Expert, id=expert_id)
     
@@ -154,6 +138,9 @@ def handle_booking_submission(request, expert_id):
     if request.method == 'POST':
         form = BookingForm(request.POST)  
         if form.is_valid():
+            if Booking.objects.filter(CustomerUser=request.user, checkin=form.cleaned_data['checkin'], checkout=form.cleaned_data['checkout'], location=form.cleaned_data['location']).exists():
+                return HttpResponse("You have already made a booking with similar details.")
+            
             booking_data = form.cleaned_data
             checkin = booking_data['checkin']
             checkout = booking_data['checkout']
@@ -173,11 +160,10 @@ def handle_booking_submission(request, expert_id):
                     location=location,
                     notes=notes
                 )
-        # keep this code till no more error message in debug mode    
-                # For example:
-                return redirect('booking_success')  # success page missing
+                # Redirect to the success page after booking creation
+                return redirect('booking_success')
             except Exception as e:
-                #  Catch exception
+                # Catch exception
                 print("Error creating booking:", e)  
                 return HttpResponse("An error occurred while creating the booking.")  # Debug response
         else:
@@ -186,3 +172,36 @@ def handle_booking_submission(request, expert_id):
     else:
         # Return a 404 response if accessed via GET method
         return HttpResponseNotFound()
+
+@login_required
+def booking_success(request):
+    # Retrieve bookings for the current user
+    bookings = Booking.objects.filter(CustomerUser=request.user)
+    
+    return render(request, 'booking/bookingsuccess.html', {'bookings': bookings})
+
+@login_required
+def delete_booking(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id)
+    
+    if request.method == 'POST':
+        booking.delete()
+        return redirect('booking_success')  # Redirect to booking list page
+    
+    return render(request, 'booking/deletebooking.html', {'booking': booking})
+
+# can't use crispy form 
+
+@login_required
+def edit_booking(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id)
+    if request.method == 'POST':
+        form = EditBookingForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'You are going to edit the booking.')
+            return redirect('booking_success')  # Redirect to booking detail page
+    else:
+        form = EditBookingForm(instance=booking)
+    
+    return render(request, 'booking/editbooking.html', {'form': form, 'booking': booking})    
