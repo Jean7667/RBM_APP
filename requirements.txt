@@ -7,6 +7,7 @@ django-debug-toolbar==4.3.0
 django-extensions==3.2.3
 gunicorn==21.2.0
 packaging==24.0
+psycopg2==2.9.9
 pydot==2.0.0
 pygraphviz==1.12
 pyparsing==3.1.2

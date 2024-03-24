@@ -2,10 +2,16 @@
 import os
 from pathlib import Path
 
+
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"),]
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static/'),]
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -80,12 +86,26 @@ WSGI_APPLICATION = 'CORE.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
+""" DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+ """
+
+    # Use the local database settings
+DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'nimjptlv',
+            'USER': 'nimjptlv',
+            'PASSWORD': 'VQepEI9ADtLXwR1ZXt7uxia7WXFtgwYM',
+            'HOST': 'flora.db.elephantsql.com',
+            'PORT': '5432',
+        }
+    }
+
 
 
 # Password validation
@@ -122,8 +142,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR,),]
+STATIC_URL = 'static/'
+#STATICFILES_DIRS = [os.path.join(BASE_DIR,),]
 #STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # Default primary key field type

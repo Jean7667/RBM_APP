@@ -16,4 +16,5 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'),name='home'),
     path('confirmlogout/', ConfirmLogout, name='confirmlogout'),
     path("__debug__/", include("debug_toolbar.urls")),
+    
     ]
