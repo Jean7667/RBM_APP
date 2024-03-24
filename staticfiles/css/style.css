@@ -1,0 +1,36 @@
+.tab {
+    display: none;
+}
+.tab.active {
+    display: block;
+}
+
+button {
+  background-color: azure;
+}
+
+ .border-cont {
+  border-bottom: solid radial-gradient(circle, rgb(251, 6, 124) 6%, rgb(95, 87, 252) 8%, rgba(171,171,171,1) 100%) 4px;
+  margin-bottom: -8px;
+  z-index: 2;
+}
+
+/* body {background: rgb(84, 84, 134);
+  radial-gradient(circle, rgba(6,6,10,1) 6%, rgba(2,0,36,1) 8%, rgba(171,171,171,1) 100%)} */
+
+  .nav-link[aria-current="page"]{
+    text-decoration: underline rgb(9, 0, 5) 4px;
+    text-underline-offset: 12px;
+  }
+
+   /* .navbar {
+    border-bottom: 5px solid rgb(84, 84, 134) 3px ;
+  } */
+
+.background-div {
+      background-image: url("/static/images/2.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh; /* Set the height of the background to fill the viewport */
+}
