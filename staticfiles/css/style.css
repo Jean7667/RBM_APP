@@ -5,10 +5,6 @@
     display: block;
 }
 
-button {
-  background-color: azure;
-}
-
  .border-cont {
   border-bottom: solid radial-gradient(circle, rgb(251, 6, 124) 6%, rgb(95, 87, 252) 8%, rgba(171,171,171,1) 100%) 4px;
   margin-bottom: -8px;
@@ -20,7 +16,7 @@ button {
 
   .nav-link[aria-current="page"]{
     text-decoration: underline rgb(9, 0, 5) 4px;
-    text-underline-offset: 12px;
+    text-underline-offset: 18px;
   }
 
    /* .navbar {
@@ -34,3 +30,11 @@ button {
       background-repeat: no-repeat;
       height: 100vh; /* Set the height of the background to fill the viewport */
 }
+
+.padtop {
+      padding-top: 4.5rem !important;
+}
+
+.footer {
+      height: 30px;
+  }
