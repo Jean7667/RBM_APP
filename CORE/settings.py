@@ -1,7 +1,7 @@
 
 import os
 from pathlib import Path
-
+import django_on_heroku
 
 
 
@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'user_app',
     'debug_toolbar',
+    'django-on-heroku',
 ]
 
 
@@ -190,3 +191,5 @@ INTERNAL_IPS = [
     "127.0.0.1",
     # ...
 ] 
+
+django_on_heroku.settings(locals())
