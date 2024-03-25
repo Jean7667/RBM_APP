@@ -10,7 +10,7 @@ Get the Expert Right to Your Door: After selecting the desired expert, clients c
 Next Morning Service: RBM prides itself on its swift service, offering clients the convenience of having the expert at their doorsteps as soon as the next morning after booking. This ensures that clients can receive timely assistance and support for their projects or tasks without any delays.
 
 
-<img src="rbmdoc/Screenshot from 2024-03-24 21-18-31.png" width="200" height="200">
+<img src="./rbmdoc/Screenshot from 2024-03-24 21-18-31.png" width="200" height="200">
 
 ## Features 
 
