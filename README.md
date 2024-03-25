@@ -1,13 +1,4 @@
- # Welcome to RBM.io
 
-How it Works
-Booking Consultant: The website acts as a booking consultant, guiding clients through the process of finding the right expert for their requirements. Clients can input their needs, preferences, and desired skill sets into the platform, which then generates a curated list of experts who match those criteria.
-Check the List of Experts: Once the client has specified their requirements, they can browse through the list of experts provided by the website. Each expert is accompanied by a detailed profile outlining their skills, experience, and areas of expertise.
-
-Find the Skillset You Need: Clients can easily filter and search through the list of experts to find the specific skillset they require. Whether it's for IT consulting, marketing strategies, legal advice, or any other expertise, clients can quickly identify the experts who possess the skills necessary to meet their needs.
-
-Get the Expert Right to Your Door: After selecting the desired expert, clients can proceed to book their services directly through the website. RBM ensures a seamless experience by handling all the logistics, including scheduling and coordination, to ensure that the expert arrives at the client's location promptly.
-Next Morning Service: RBM prides itself on its swift service, offering clients the convenience of having the expert at their doorsteps as soon as the next morning after booking. This ensures that clients can receive timely assistance and support for their projects or tasks without any delays.
 
 # Title: Business Case for Customer Booking App for Consultant Services
 
@@ -32,7 +23,16 @@ Higher customer satisfaction leading to repeat business and referrals.
 
 By developing a customer booking app for consultant services, we aim to address the current challenges in the booking process. This initiative aligns with our goal of providing innovative solutions to meet customer needs and stay ahead of the competition in the industry.
 
+ # How it Works
 
+
+Booking Consultant: The website acts as a booking consultant, guiding clients through the process of finding the right expert for their requirements. Clients can input their needs, preferences, and desired skill sets into the platform, which then generates a curated list of experts who match those criteria.
+Check the List of Experts: Once the client has specified their requirements, they can browse through the list of experts provided by the website. Each expert is accompanied by a detailed profile outlining their skills, experience, and areas of expertise.
+
+Find the Skillset You Need: Clients can easily filter and search through the list of experts to find the specific skillset they require. Whether it's for IT consulting, marketing strategies, legal advice, or any other expertise, clients can quickly identify the experts who possess the skills necessary to meet their needs.
+
+Get the Expert Right to Your Door: After selecting the desired expert, clients can proceed to book their services directly through the website. RBM ensures a seamless experience by handling all the logistics, including scheduling and coordination, to ensure that the expert arrives at the client's location promptly.
+Next Morning Service: RBM prides itself on its swift service, offering clients the convenience of having the expert at their doorsteps as soon as the next morning after booking. This ensures that clients can receive timely assistance and support for their projects or tasks without any delays.
 
 <img src="./rbmdoc/Screenshot from 2024-03-24 21-18-31.png" width="auto" height="auto">
 
@@ -142,21 +142,21 @@ Create minimalist and visual interface that is easy navigate.
 
 > Large to medium screens
 
-![About Us page]
+![Home Page]
 
 <img src="./rbmdoc/Pencil Book expert Home.png" width="auto" height="auto">
 
 
-![Home page]
+![Customer Profile]
 <img src="./rbmdoc/Pencil Book expert CxProfile.png" width="auto" height="auto">
 
-![Login page]
+![Welcome Page]
 <img src="./rbmdoc/Pencil Book expert logged.png" width="auto" height="auto">
 
-![About Us page]
+![Sign Up page]
 <img src="./rbmdoc/Pencil Book expert signup.png" width="auto" height="auto">
 
-![Our Experts ]
+![Our Experts per skills ]
 <img src="./rbmdoc/Pencil Book expert.png" width="auto" height="auto">
 
 ![Our Experts page with booking option delete edit]
@@ -168,6 +168,14 @@ Create minimalist and visual interface that is easy navigate.
 
 # Agile Development
 
+In our project, we utilized GitHub for project management, harnessing its robust issue tracking system to effectively manage bugs. Adhering to Agile principles, we divided our work into multiple iterations, ensuring incremental progress and adaptability to evolving requirements. We embarked on two separate projects aimed at defining the optimal architecture and design. Through iterative development cycles, we refined our architectural decisions iteratively, prioritizing flexibility and scalability. Continuous feedback loops enabled us to gather insights, iterate on designs, and promptly address emerging challenges. By embracing Agile methodologies, we fostered collaboration and transparency among team members, facilitating smoother communication and alignment towards project goals. The iterative approach allowed us to incorporate stakeholder feedback iteratively, ensuring the final product met user expectations effectively. Through GitHub's project management features, we maintained visibility into project progress, enabling informed decision-making and timely adjustments. Our dedication to Agile practices and iterative development yielded a robust, adaptable project architecture and design that effectively met functional requirements and stakeholder expectations.
+
+
+<img src="./rbmdoc/Projectmngt.png" width="auto" height="auto">
+
+<img src="./rbmdoc/issues .png" width="auto" height="auto">
+
+
 ## Overview
 
 ## User Stories
@@ -176,8 +184,7 @@ Create minimalist and visual interface that is easy navigate.
 
 [USER STORY] : book a consultant
 [USER STORY] : sign-up form
-[USER STORY] add Google map to locate the client
-[USER STORY] login and sign up with SSO
+[USER STORY] login and sign up 
 [USER STORY] : view edit view my profile
 [USER STORY] : consult available consultants
 
