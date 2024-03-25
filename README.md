@@ -44,7 +44,7 @@ Fourth Project Portfolio for Code Institute.
 
 I use Linux Pencil and hand drawing
 
-<img src="./rbmdoc/Pencil Book expert Home" width="auto" height="auto">
+
 
 
 ## Database planning 
@@ -117,27 +117,20 @@ I wanted the website to look modern, professional and welcoming. I chose the bas
 
 #### Goals for the website
 
-- To allow customers to see the menu before visiting the café
-- To allow customers to plan their booking in advance
-- To safely store the bookings data and make it available for designated staff to approve or decline it in an easy way
+- To allow customers to browse the list of experts and their skills
+- To allow customers to plan to book a consultant 
+- To store the bookings data
+- change the booking update the customer profile
 
 ### Wireframes
 
-The next stage of UX design planning was creating the basic wireframes using [Figma](https://www.figma.com/).
-My intention was to create visually pleasing and easy to navigate website. Below I did not include the base homepage and login page, as I used the initial planning examples from above instead.
+The next stage of UX design planning was creating the basic wireframes using Pencil 
+Create minimalist and visual interface that is easy navigate. 
+
 
 > Large to medium screens
 
 ![About Us page]
-
-
-![Our Cats page]
-
-![Contact Us page]
-
-![Menu page]
-
-> Small screens
 
 ![Home page]
 
@@ -145,21 +138,18 @@ My intention was to create visually pleasing and easy to navigate website. Below
 
 ![About Us page]
 
-![Our Cats page]
+![Our Experts page]
 
-![Contact Us page]
+![Our Experts page with booking option delete edit]
+
 
 
 
 ##### [ Back to Top ](#table-of-contents)
 
----
-
 # Agile Development
 
 ## Overview
-
-
 
 ## User Stories
 
@@ -167,31 +157,14 @@ My intention was to create visually pleasing and easy to navigate website. Below
 
 > List of Mandatory User Stories
 
-1. [USER STORY: DEPLOYMENT](https://github.com//issues/16)
-2. [USER STORY: ADMIN PANEL](https://github.com//issues/17)
-3. [USER STORY: CREATE AN ACCOUNT](https://github.com//issues/18)
-4. [USER STORY: EDITING PROFILE](https://github.com//issues/22)
-5. [USER STORY: DELETING PROFILE](https://github.com//issues/23)
-6. [USER STORY: TABLE BOOKING](https://github.com//issues/21)
-7. [USER STORY: NAVBAR AND FOOTER](https://github.com//issues/20)
-8. [USER STORY: ABOUT US](https://github.com//issues/19)
-9. [USER STORY: MENU](https://github.com//issues/26)
-10. [USER STORY: GOOGLE MAPS](https://github.com//issues/25)
 
-> NINTH: Not Important, Nice To Have
-
-11. [USER STORY: CAT CAROUSEL](https://github.com//issues/24)
-12. [USER STORY: BOOKING CANCELLATION](https://github.com//issues/27)
-
-##### [ Back to Top ](#table-of-contents)
-
----
-
-# Features implemented
-
-- [USER STORY: CREATE AN ACCOUNT](https://github.com//issues/18)
-- [USER STORY: EDITING PROFILE](https://github.com//issues/22)
-- [USER STORY: DELETING PROFILE](https://github.com//issues/23)
+#2
+[USER STORY] : book a consultant
+[USER STORY] : sign-up form
+[USER STORY] add Google map to locate the client
+[USER STORY] login and sign up with SSO
+[USER STORY] : view edit view my profile
+[USER STORY] : consult available consultants
 
 
 
@@ -208,10 +181,7 @@ My intention was to create visually pleasing and easy to navigate website. Below
 
 ### About Us page:
 
-- Main page includes a short information about the café and set of 4 cards with pictures and description.
-- Each of the card includes the button, that triggers a fullscreen modal.
-- The modals contain informations about the menu, contact details with embedded google maps, link to booking page and gallery with cat pictures (cat carousel).
-- About Us page can be accessed without signing in.
+
 
 ### Authentication and profile management:
 
@@ -272,31 +242,7 @@ No feature left for implaementation
 
 ### Responsiveness
 
-I was testing for responsiveness on an Ideapad laptop and a Samsung Galaxy A5 using the most up to date versions of Google Chrome, Mozilla Firefox and Opera versions. For more detailed testing I was using Google DevTools.
-
-> Index page:
-
-![Index page]
-<img src="./rbmdoc/Screenshot from 2024-03-24 21-18-31.png" width="auto" height="auto">
-
-
-> About Us page:
-
-![Index page]
-<img src="./rbmdoc/Screenshot from 2024-03-24 21-18-31.png" width="auto" height="auto">
-
-
-> Sign Up page:
-
-![Index page]
-<img src="./rbmdoc/Screenshot from 2024-03-24 21-18-31.png" width="auto" height="auto">
-
-
-> Sign In page:
-
-![Index page]
-<img src="./rbmdoc/Screenshot from 2024-03-24 21-18-31.png" width="auto" height="auto">
-
+Optmised for large and wide screens 
 
 
 ### Manual testing
@@ -307,8 +253,7 @@ I was testing for responsiveness on an Ideapad laptop and a Samsung Galaxy A5 us
 | User can create profile | Pass |
 | User can log into profile | Pass |
 | User can log out of profile | Pass |
-| Messages are displaying | Pass |
-| Messages are dismissable by button and timeout | Pass |
+
 
 
 
@@ -323,9 +268,7 @@ I was testing for responsiveness on an Ideapad laptop and a Samsung Galaxy A5 us
 | User access their account page|Pass|
 | User can access the card content in About Us|Pass|
 | SuperUser can access admin page|Pass|
-
-
----
+| SuperUser can create a expert add skills add a flag for customer or expert admin page|Pass|
 
 #### Expert Booking and Profile Tests
 
@@ -339,17 +282,7 @@ I was testing for responsiveness on an Ideapad laptop and a Samsung Galaxy A5 us
 |User can delete their account | Pass |
 |User can edit their information | Pass |
 |User can see the confirmation information | Pass |
-
-
-
----
-
-#### Admin Tests
-
-| Test |Result  |
-|--|--|
-|Items display correctly on front-end when updated / added |Pass|
-|Admin can confirm or decline bookings |Pass|
+|User can add skill from Admin interface the confirmation information | Pass |
 
 
 ##### [ Back to Top ](#table-of-contents)
@@ -358,10 +291,7 @@ I was testing for responsiveness on an Ideapad laptop and a Samsung Galaxy A5 us
  
 # Known bugs 
 
-- I observed one blue submit button- it is automatically generated by crispy forms and somehow the form settings did not applied to this button. It's a small bug of low priority for me at the current stage.
-- There's small image clipping during the cat carousel transitions on smaller screens.
-- No error message displaying when passing wrong login details
-- The function that was supposed to prevent booking dates in the past is currently preventing nothing, unfortunately... You may be brave and try to trick the system into timetravelling, but Admin will always see what day the booking was made on anyway and won't accept such a silly tricks!
+JavaScript filter on expert view is not taking into account an expert with multiple skills
 
 
 ##### [ Back to Top ](#table-of-contents)
@@ -457,7 +387,7 @@ Creating a clone enables you to make a copy of the current version of this repos
 - [Django documentation](https://www.djangoproject.com/)
 - [Bootstrap docs](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 - [Stack overflow](https://stackoverflow.com/)
-- [Stack overflow]
+- 
 
 
 ##### [ Back to Top ](#table-of-contents)
@@ -466,9 +396,7 @@ Creating a clone enables you to make a copy of the current version of this repos
 
 # Credits and acknowledgements
 
-> Pictures
 
-- [Mid-coated Brown Cat]on Unsplash
 
 
 
