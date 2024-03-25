@@ -68,9 +68,6 @@ Fourth Project Portfolio for Code Institute.
 
 I use Linux Pencil and hand drawing
 
-
-
-
 ## Database planning 
 
 <img src="./rbmdoc/ERD.png" width="auto" height="auto">
@@ -130,15 +127,6 @@ Early design stage of this project included making png versions of a homepage an
 Thanks to that I could decide on the aesthetic choices before entering the coding stage.
 
 
-
-I wanted the website to look modern, professional and welcoming. I chose the base colours to be in the shades of brown, black and white, as they may be associated with coffee.
-
-#### Site User
-
-- Someone over 16 years old from the café's area
-- A cat loving person looking for the place to relax
-- Someone who prefers to arrange their bookings digitally rather than over the phone or in person
-
 #### Goals for the website
 
 - To allow customers to browse the list of experts and their skills
@@ -156,17 +144,24 @@ Create minimalist and visual interface that is easy navigate.
 
 ![About Us page]
 
+<img src="./rbmdoc/Pencil Book expert Home.png" width="auto" height="auto">
+
+
 ![Home page]
+<img src="./rbmdoc/Pencil Book expert CxProfile.png" width="auto" height="auto">
 
 ![Login page]
+<img src="./rbmdoc/Pencil Book expert logged.png" width="auto" height="auto">
 
 ![About Us page]
+<img src="./rbmdoc/Pencil Book expert signup.png" width="auto" height="auto">
 
-![Our Experts page]
+![Our Experts ]
+<img src="./rbmdoc/Pencil Book expert.png" width="auto" height="auto">
 
 ![Our Experts page with booking option delete edit]
 
-
+<img src="./rbmdoc/Pencil Book expert filter.png" width="auto" height="auto">
 
 
 ##### [ Back to Top ](#table-of-contents)
@@ -177,12 +172,8 @@ Create minimalist and visual interface that is easy navigate.
 
 ## User Stories
 
-
-
 > List of Mandatory User Stories
 
-
-#2
 [USER STORY] : book a consultant
 [USER STORY] : sign-up form
 [USER STORY] add Google map to locate the client
@@ -196,7 +187,7 @@ Create minimalist and visual interface that is easy navigate.
 - The site is design for wide screens and not small design new to the design and the necessity of large tables to offer a complete view of skills experts and information.
 - Navbar and footer are present on every page
 - Navbar's content changes depending on user authentication, allowing access to profile and user bookings
-- Footer includes café's opening times, social links and address to provide the necessary informations in an easy way.
+- Footer includes social links and address to provide the necessary informations in an easy way.
 
 ### Index page:
 
@@ -266,8 +257,7 @@ No feature left for implaementation
 
 ### Responsiveness
 
-Optmised for large and wide screens 
-
+Optmised for large and wide screens due dynamic tables
 
 ### Manual testing
 
@@ -277,9 +267,6 @@ Optmised for large and wide screens
 | User can create profile | Pass |
 | User can log into profile | Pass |
 | User can log out of profile | Pass |
-
-
-
 
 ---
 
@@ -411,7 +398,7 @@ Creating a clone enables you to make a copy of the current version of this repos
 - [Django documentation](https://www.djangoproject.com/)
 - [Bootstrap docs](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 - [Stack overflow](https://stackoverflow.com/)
-- 
+- [Multiple books and Youtube Videos]
 
 
 ##### [ Back to Top ](#table-of-contents)
