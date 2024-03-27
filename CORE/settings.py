@@ -2,6 +2,7 @@
 import os
 from pathlib import Path
 import django_on_heroku
+
 #https://pypi.org/project/django-on-heroku/
 
 
@@ -36,7 +37,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'user_app',
     'debug_toolbar',
-    'django-on-heroku',
+    'django_on_heroku'
 ]
 
 
