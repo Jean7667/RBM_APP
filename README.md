@@ -1,6 +1,7 @@
 
 # Link to the project 
-https://jbl-rbm-0582c6449f44.herokuapp.com/
+https://rbm-io-72c53614ff57.herokuapp.com/
+
 
 # Title: Business Case for Customer Booking App for Consultant Services
 
@@ -186,7 +187,7 @@ In our project, we utilized GitHub for project management, harnessing its robust
 
 [USER STORY] : book a consultant
 [USER STORY] : sign-up form
-[USER STORY] login and sign up 
+[USER STORY] : login and sign up 
 [USER STORY] : view edit view my profile
 [USER STORY] : consult available consultants
 
