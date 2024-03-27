@@ -2,7 +2,7 @@
 import os
 from pathlib import Path
 import django_on_heroku
-
+#https://pypi.org/project/django-on-heroku/
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
