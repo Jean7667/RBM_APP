@@ -3,6 +3,7 @@ django.dot
 code.txt
 cxprofile.htmlback
 *.pyc
+__pycache__/
 script copy.py
 todo.txt
 /Back
