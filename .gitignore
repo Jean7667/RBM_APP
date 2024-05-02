@@ -1,10 +1,11 @@
 /notes
+/scripts
 django.dot
 code.txt
 cxprofile.htmlback
 *.pyc
-user_app/__pycache__/
-CORE/__pycache__/
+user_app/__pycache__
+CORE/__pycache__
 script copy.py
 todo.txt
 /Back

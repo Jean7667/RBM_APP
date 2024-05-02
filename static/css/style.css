@@ -5,6 +5,11 @@
     display: block;
 }
 
+body{
+  overflow-x: hidden;
+  
+}
+
  .border-cont {
   border-bottom: solid radial-gradient(circle, rgb(251, 6, 124) 6%, rgb(95, 87, 252) 8%, rgba(171,171,171,1) 100%) 4px;
   margin-bottom: -8px;
