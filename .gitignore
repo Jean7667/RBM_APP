@@ -7,7 +7,6 @@ cxprofile.htmlback
 user_app/__pycache__
 CORE/__pycache__
 script copy.py
-todo.txt
 /Back
 *.txt
 static/js/main.js
@@ -15,6 +14,5 @@ db.sqlite3
 debug.log
 CORE/__pycache__/settings.cpython-310.pyc
 .vscode/settings.json
-
 todo.txt 
 Tools

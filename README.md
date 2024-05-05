@@ -1,6 +1,17 @@
 # Python compatibility¶
 Django 5.03 and Python 3.12.0 October 2023
 
+# Tools and settings
+Pyenv to manage different versions of python on the machine
+Virtualenv to create Python virtual environements
+Virtualwrapper to help to manage virtual environments
+automation of repositories creation and and remote repositories with gh
+
+# infrastructure
+building Docker images and setting up
+Using minikube with add-ons
+
+
 # Link to the project 
 https://rbm-io-72c53614ff57.herokuapp.com/
 
