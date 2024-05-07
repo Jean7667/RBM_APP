@@ -16,7 +16,8 @@ class CustomUserAdmin(UserAdmin):
         }),
     )
     fieldsets = (
-        (None, {'fields': ('username', 'email', 'password')}),
+        ('Identification', {'fields': ('username', 'email', 'password')}),
+        ('Personal info', {'fields': ('first_name', 'last_name')}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
         ('Important dates', {'fields': ('last_login', 'date_joined')}),
         ('Custom Fields', {'fields': ('is_customer', 'is_expert')}),
@@ -36,36 +37,7 @@ class ExpertAdmin(admin.ModelAdmin):
 
     get_user_email.short_description = 'User Email'
     get_is_expert.short_description = 'Is Expert'
- 
-#todo MISSING FIELDS IN ADMIN INTERFACE TIME CONSUMMING PROBLEM
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
 admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(Skill,SkillAdmin)
 admin.site.register(Expert, ExpertAdmin)

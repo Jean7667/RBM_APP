@@ -7,7 +7,7 @@
             "command": "/usr/bin/zsh",
             "args": [
                 "-c",
-                "source ~/.zshrc && rbmvirt"
+                "source /home/jeanbaptiste/.virtualenvs/rbm_app_3.12_virt_env/bin/activate && echo 'Virtual environment activated.'"
             ],
             "problemMatcher": [],
             "runOptions": {
