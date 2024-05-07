@@ -1,4 +1,4 @@
-# Python compatibility¶
+# Python compatibility
 Django 5.03 and Python 3.12.0 October 2023
 
 # Tools and settings
