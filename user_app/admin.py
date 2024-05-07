@@ -9,12 +9,21 @@ class CustomUserAdmin(UserAdmin):
     form = CustomUserChangeForm
     model = CustomUser
     list_display = ['email','first_name','last_name','is_expert','is_customer',]
+    
+    #create a user in 3 sections
     add_fieldsets = (
-        (None, {
+        ('Authentification', {
             'classes': ('wide',),
-            'fields': ('username', 'email', 'password1', 'password2', 'is_customer', 'is_expert'),
+            'fields': ('username', 'email', 'password1', 'password2'),
+        }),
+         ('Personal info', {
+            'fields': ('first_name', 'last_name'),
+        }),
+         ('Role', {
+            'fields': ('is_customer','is_expert'),
         }),
     )
+    #edit a user in 5 sections
     fieldsets = (
         ('Identification', {'fields': ('username', 'email', 'password')}),
         ('Personal info', {'fields': ('first_name', 'last_name')}),
@@ -22,7 +31,8 @@ class CustomUserAdmin(UserAdmin):
         ('Important dates', {'fields': ('last_login', 'date_joined')}),
         ('Custom Fields', {'fields': ('is_customer', 'is_expert')}),
     )
-    
+
+#TODO level should be a tuple review with UserStory    
 class SkillAdmin(admin.ModelAdmin):
     list_display = ['name','category','level']
 
