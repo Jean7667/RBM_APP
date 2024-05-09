@@ -1,10 +1,17 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-
+from .role_service import update_user_role
 from .forms import CustomUserCreationForm, CustomUserChangeForm
-from .models import CustomUser, Skill, Expert
+from .models import Skill, Expert, CustomUser
 
 class CustomUserAdmin(UserAdmin):
+
+#https://docs.djangoproject.com/en/5.0/ref/contrib/admin/ -- Override Save_model built-in Django method
+    def save_model(self, request, obj, form, change):
+        # Example usage: update expert status when saving CustomUser instance in admin
+        update_user_role (obj, obj.is_expert, is_customer=False)
+        super().save_model(request, obj, form, change)
+    
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
     model = CustomUser
