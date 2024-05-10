@@ -30,13 +30,13 @@ class CustomUserAdmin(UserAdmin):
             'fields': ('is_customer','is_expert'),
         }),
     )
-    #edit a user in 5 sections
+    #edit (change user) a user in 5 sections
     fieldsets = (
         ('Identification', {'fields': ('username', 'email', 'password')}),
         ('Personal info', {'fields': ('first_name', 'last_name')}),
+        ('Custom Fields', {'fields': ('is_customer', 'is_expert')}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
         ('Important dates', {'fields': ('last_login', 'date_joined')}),
-        ('Custom Fields', {'fields': ('is_customer', 'is_expert')}),
     )
 
 #TODO level should be a tuple review with UserStory    

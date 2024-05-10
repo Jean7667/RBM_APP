@@ -8,7 +8,7 @@ import datetime
 def update_user_role (user, is_expert, is_customer):
 #raise error if both roles are selected.    
     if is_expert and is_customer:
-        raise ValueError("You can't set both is_customer and is_manager")
+        raise ValueError("You can't set both is_expert and is_customer")
 #if user is no longer an expert remove instance
 #check the user role profile is_expert is_customer 
     if is_expert: 
