@@ -23,9 +23,9 @@ class Skill(models.Model):
         return self.name
 
 class Expert(models.Model):
-    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, related_name='expert')
     skills = models.ManyToManyField(Skill, related_name='experts')
-    start_date = models.DateField()
+    start_date = models.DateField(null=True)
 
 class Booking(models.Model):
     id= models.AutoField(primary_key=True)

@@ -7,8 +7,11 @@ from .models import Skill, Expert, CustomUser
 class CustomUserAdmin(UserAdmin):
 
 #https://docs.djangoproject.com/en/5.0/ref/contrib/admin/ -- Override Save_model built-in Django method
+    
     def save_model(self, request, obj, form, change):
-        # Example usage: update expert status when saving CustomUser instance in admin
+        # save CustomUser instance first
+        obj.save()
+        # call role service
         update_user_role (obj, obj.is_expert, is_customer=False)
         super().save_model(request, obj, form, change)
     
@@ -27,8 +30,9 @@ class CustomUserAdmin(UserAdmin):
             'fields': ('first_name', 'last_name'),
         }),
          ('Role', {
-            'fields': ('is_customer','is_expert'),
+            'fields': ('is_customer','is_expert','start_date'),
         }),
+               
     )
     #edit (change user) a user in 5 sections
     fieldsets = (
@@ -45,7 +49,7 @@ class SkillAdmin(admin.ModelAdmin):
 
 class ExpertAdmin(admin.ModelAdmin):
     list_display = ['get_user_email', 'get_is_expert', 'start_date']
-
+   
     def get_user_email(self, obj):
         return obj.user.email
 
