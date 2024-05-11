@@ -30,7 +30,7 @@ class CustomUserAdmin(UserAdmin):
             'fields': ('first_name', 'last_name'),
         }),
          ('Role', {
-            'fields': ('is_customer','is_expert','start_date'),
+            'fields': ('is_customer','is_expert'),
         }),
                
     )
