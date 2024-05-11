@@ -11,12 +11,21 @@ class CustomUser(AbstractUser):
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+#TODO class AccountType (models.Model):
+
+#TODO class UserRole (models.Model):
+
+#TODO class BusinessEntity (models.Model):
     
 class Skill(models.Model):
     
     name = models.CharField(max_length=100, null=True, blank=True)
     category = models.CharField(max_length=100, null=True, blank=True)
-    level = models.SmallIntegerField()  
+    level = models.SmallIntegerField()
+    #TODO tupple for level
+    #slug
+    #tag  
     def __str__(self):
         return self.name
 
