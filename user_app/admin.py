@@ -18,7 +18,7 @@ class CustomUserAdmin(UserAdmin):
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
     model = CustomUser
-    list_display = ['email','first_name','last_name','is_expert','is_customer',]
+    list_display = ['username','email','first_name','last_name','is_expert','is_customer',]
     
     #create a user in 3 sections
     add_fieldsets = (
