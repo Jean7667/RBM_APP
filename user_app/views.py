@@ -1,13 +1,14 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Expert
+from django.views import View
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView
 from .forms import BookingForm, CustomUserCreationForm, EditBookingForm
-from django.views import View
 from .models import Expert, Skill, Booking
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages 
+
+
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
@@ -83,9 +84,6 @@ class DeleteCxProfileView(View):
 
 #Generic based view
 # views for displaying a list of experts
-
-from django.views.generic import ListView
-from .models import Expert, Skill
 
 class ExpertListView(ListView):
     model = Expert
