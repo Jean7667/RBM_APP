@@ -85,12 +85,15 @@ class DeleteCxProfileView(View):
 #Generic based view
 # views for displaying a list of experts
 
+# updated view with new context object name to reflect multiple selected skills
+
 class ExpertListView(ListView):
     model = Expert
     template_name = 'customer/listexpert.html'
-    context_object_name = 'experts'
+    context_object_name = 'filtered_experts'
     paginate_by = 5
-   
+
+# Queryset method to select multiple skills   
     def get_queryset(self):
         queryset = super().get_queryset()
         category = self.request.GET.get('category')
