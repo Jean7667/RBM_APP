@@ -98,7 +98,7 @@ class ExpertListView(ListView):
         queryset = super().get_queryset()
         category = self.request.GET.get('category')
         skill = self.request.GET.getlist('skills')
-        #__ lookup lookups is very much like using joins in SQL - 
+        #__ lookup  like using joint in SQL - 
         if category:
             queryset = queryset.filter(skills__category=category)
         if skill:
