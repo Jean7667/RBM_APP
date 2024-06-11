@@ -2,14 +2,17 @@
 {% block title %}Expert Detail{% endblock %}
 {% block content %}
 
+
+<body>
+    <h1>Experts</h1>
 <div class="container-xl">
     <div class="row">
         <div class="col-lg-3">
-            <!--Tagging with multi-value select boxes-->
+            <!--search Tagging with multi-value select boxes Select2-->
             <h3>Filters</h3>
             <form method="get">
                 <label for="skills">Filter by Skills:</label>
-                <select name="skills[]" id="skills" multiple="multiple" style="width: 50%;">
+                <select name="skills[]" id="skills" multiple="multiple" style="width:80%;">
                     {% for skill in skills %}
                     <option value="{{ skill }}">{{ skill }}</option>
                     {% endfor %}
@@ -17,18 +20,27 @@
                 <button type="submit">Filter</button>
             </form>
             <ul>
-               <li>{}</li>
-               <li>{}</li> 
-            </ul>
-        </div>
-        <div class="col-lg-9">
-            <h1>All Experts</h1>
-            <div class="table-responsive" id="expert-table">
-                
-            </div>
+                {% for expert in experts %}
+                    <li>{{ expert.name }}</li>
+                {% empty %}
+                    <li>No results found.</li>
+                {% endfor %}
+            </ul>       
         </div>
     </div>
 </div>
-
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#').select2({
+                placeholder: 'Select skill',
+                tags: true,
+                tokenSeparators: [',', ' '],
+                allowClear: true
+            });
+        });
+    </script>
+</body>
 {% endblock %}
