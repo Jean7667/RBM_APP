@@ -97,14 +97,15 @@ class ExpertListView(ListView):
     def get_queryset(self):
         queryset = super().get_queryset()
         category = self.request.GET.get('category')
-        skill = self.request.GET.get('skill')
-        
+        skill = self.request.GET.getlist('skills')
+        #__ lookup lookups is very much like using joins in SQL - 
         if category:
             queryset = queryset.filter(skills__category=category)
         if skill:
+            #filtering with multiple skills
             queryset = queryset.filter(skills__name=skill)
-        
-        return queryset.distinct()  # Ensure unique experts are returned
+        # remove duplicate and make each result unique
+        return queryset.distinct()  
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
