@@ -1,7 +1,7 @@
 ---
 name: AS a ... I want ... so I can ...
 about: "[USER STORY]"
-title: ''
+title: "[USER STORY ] AS a ... I want ... so I can ..."
 labels: USER STORY
 assignees: Jean7667
 
