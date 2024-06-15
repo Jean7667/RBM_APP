@@ -33,7 +33,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                {% for expert in experts %}
+                {% for expert in filtered_experts %}
                 <tr>
                 <td>{{ expert.user.first_name }}</td>
                 <td>{{ expert.user.last_name }}</td>
