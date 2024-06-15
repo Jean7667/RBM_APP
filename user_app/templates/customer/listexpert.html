@@ -10,6 +10,14 @@
         <div class="col-lg-3">
             <!--search Tagging with multi-value select boxes Select2-->
             <h3>Filters</h3>
+            checking if view is correct listing all the skills
+            <ul>
+    {% for skill in all_skills %}
+        <li>{{ skill.name }}</li>
+    {% endfor %}
+            </ul>
+
+
             <!--Form to send the selection of skills-->    
             <form method="get">
                 <label for="skills">Filter by Skills:</label>
