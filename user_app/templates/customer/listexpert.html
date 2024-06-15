@@ -10,19 +10,12 @@
         <div class="col-lg-3">
             <!--search Tagging with multi-value select boxes Select2-->
             <h3>Filters</h3>
-            checking if view is correct listing all the skills
-            <ul>
-    {% for skill in all_skills %}
-        <li>{{ skill.name }}</li>
-    {% endfor %}
-            </ul>
-
-
+         
             <!--Form to send the selection of skills-->    
             <form method="get">
                 <label for="skills">Filter by Skills:</label>
-                <select name="skills[]" id="skills" style="width:80%;">
-                    {% for skill in skills %}
+                <select name="skills" id="skills" multiple style="width:80%;">
+                    {% for skill in all_skills %}
                     <option value="{{ skill.name }}" {% if skill.name in request.GET.skills %}selected{% endif %}>{{ skill.name }}</option>
                     {% endfor %}
                 </select>
