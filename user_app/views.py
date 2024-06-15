@@ -93,19 +93,16 @@ class ExpertListView(ListView):
         queryset = super().get_queryset()
         skills = self.request.GET.getlist('skills')
         #__ lookup  like using joint in SQL - 
-        if skill:
+        if skills:
             #filtering with multiple skills
-            queryset = queryset.filter(skills__name__in=skills).distinct
+            queryset = queryset.filter(skills__name__in=skills).distinct()
         # remove duplicate and make each result unique
         return queryset  
-    
+    # return data to the page unique skills and associated expert
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['skills'] = Skill.objects.values_list('name', flat=True).distinct()
         return context
-
-
-
 
 #############Expert list ################
 
