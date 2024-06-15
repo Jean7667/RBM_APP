@@ -77,13 +77,8 @@ class DeleteCxProfileView(View):
             return redirect('unauthorized')
         
 
-# Read        
-#Display in cxprofileview
-#fct to show last Customer since created_date 
-#fct last connection 
+# Generic based view with skills filter (single or multiple values) to show matching list of experts
 
-#Generic based view
-# views for displaying a list of experts
 
 # updated view with new context object name to reflect multiple selected skills
 
@@ -93,23 +88,19 @@ class ExpertListView(ListView):
     context_object_name = 'filtered_experts'
     paginate_by = 5
 
-# Queryset method to select multiple skills   
+# defining queryset method to select multiple skills   
     def get_queryset(self):
         queryset = super().get_queryset()
-        category = self.request.GET.get('category')
-        skill = self.request.GET.getlist('skills')
+        skills = self.request.GET.getlist('skills')
         #__ lookup  like using joint in SQL - 
-        if category:
-            queryset = queryset.filter(skills__category=category)
         if skill:
             #filtering with multiple skills
-            queryset = queryset.filter(skills__name=skill)
+            queryset = queryset.filter(skills__name__in=skills).distinct
         # remove duplicate and make each result unique
-        return queryset.distinct()  
+        return queryset  
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['categories'] = Skill.objects.values_list('category', flat=True).distinct()
         context['skills'] = Skill.objects.values_list('name', flat=True).distinct()
         return context
 
