@@ -101,7 +101,7 @@ class ExpertListView(ListView):
     # return data to the page unique skills and associated expert
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['skills'] = Skill.objects.values_list('name', flat=True).distinct()
+        context['all_skills'] = Skill.objects.all()
         return context
 
 #############Expert list ################
