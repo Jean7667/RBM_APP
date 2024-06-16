@@ -2,85 +2,91 @@
 {% block title %}Expert Detail{% endblock %}
 {% block content %}
 
-
 <body>
-    <h1>Experts</h1>
-<div class="container-xl">
-    <div class="row">
-        <div class="col-lg-3">
-            <!--search Tagging with multi-value select boxes Select2-->
-            <h3>Filters</h3>
-         
-            <!--Form to send the selection of skills-->    
-            <form method="get">
+    <div class="container-xl">
+        <h1>Experts</h1>
+        <div class="row">
+            <div class="col-lg-3">
+                <!--search Tagging with multi-value select boxes Select2-->
+                <h3>Filters</h3>
                 <label for="skills">Filter by Skills:</label>
-                <select name="skills" id="skills" multiple style="width:80%;">
-                    {% for skill in all_skills %}
-                    <option value="{{ skill.name }}" {% if skill.name in request.GET.skills %}selected{% endif %}>{{ skill.name }}</option>
-                    {% endfor %}
-                </select>
-                <button type="submit">Filter</button>
-            </form>
-            <!--table to display the selected list of experts by skills-->
-            <table>
-                <thead>
-                    <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Location</th>
-                        <th>Start Date</th>
-                        <th>Skills</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {% for expert in filtered_experts %}
-                <tr>
-                <td>{{ expert.user.first_name }}</td>
-                <td>{{ expert.user.last_name }}</td>
-                <td>{{ expert.user.location }}</td>
-                <td>{{ expert.start_date }}</td>
-                <td>
-                    {% for skill in expert.skills.all %}
-                        {{ skill.name }}{% if not forloop.last %}, {% endif %}
-                    {% endfor %}
-                </td>
-                <td>
-                <!--view detials and booking buttons-->    
-                </td>
-            </tr>
-            </table>
-            <div>
-            <!--pagination -->
-
-            <!-- TODO -->
-            <div class="pagination">
-                <span class="step-links">
-                    {% if page_obj.has_previous %}
-                        <a href="?page=1">&laquo; first</a>
-                        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
-                    {% endif %}
-            
-                    <span class="current">
-                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-                    </span>
-            
-                    {% if page_obj.has_next %}
-                        <a href="?page={{ page_obj.next_page_number }}">next</a>
-                        <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
-                    {% endif %}
-                </span>
-            </div>    
-            </div>    
-
+                <div class="row mb-3">
+                    <div class="col-6 col-md-4 themed-grid-col">
+                        <!--Form to send the selection of skills-->
+                        <form method="get">
+                            <select name="skills" id="skills" multiple style="width:80%;">
+                                {% for skill in all_skills %}
+                                <option value="{{ skill.name }}" {% if skill.name in request.GET.skills %}selected{% endif %}>{{ skill.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <button type="submit">Filter</button>
+                        </form>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <div>
+                            {% if filtered_experts %}
+                            <table class="table table-dark table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Location</th>
+                                        <th>Start Date</th>
+                                        <th>Skills</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for expert in filtered_experts %}
+                                    <tr>
+                                        <td>{{ expert.user.first_name }}</td>
+                                        <td>{{ expert.user.last_name }}</td>
+                                        <td>{{ expert.user.location }}</td>
+                                        <td>{{ expert.start_date }}</td>
+                                        <td>
+                                            {% for skill in expert.skills.all %}
+                                            {{ skill.name }}{% if not forloop.last %}, {% endif %}
+                                            {% endfor %}
+                                        </td>
+                                        <td>
+                                            <a href="{% url 'expert_detail' expert.id %}" class="btn btn-primary">View Details</a>
+                                            <a href="{% url 'booking_form' expert.id %}" class="btn btn-success">Book Now</a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                            {% else %}
+                            <p>No experts found matching the selected skills.</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <div class="pagination">
+                            <span class="step-links">
+                                {% if page_obj.has_previous %}
+                                <a href="?page=1">&laquo; first</a>
+                                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                                {% endif %}
+                                <span class="current">
+                                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                                </span>
+                                {% if page_obj.has_next %}
+                                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                                {% endif %}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!--table to display the selected list of experts by skills-->
+                <div>
+                    <!--pagination -->
+                    <!-- TODO -->
+                </div>
+            </div>
         </div>
-        <div>
-            {% empty %}
-            <ul>No results found</ul>
-            {% endfor %}    
-        </div>    
     </div>
-</div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Include Select2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
