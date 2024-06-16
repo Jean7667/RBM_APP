@@ -24,7 +24,10 @@
                     </div>
                     <div class="col-6 col-md-4">
                         <div>
-                            {% if filtered_experts %}
+                            {% if not filtered_experts %}
+                            <p>No experts found matching the selected skills.</p>
+                            {% endif %}
+                            
                             <table class="table table-dark table-striped">
                                 <thead>
                                     <tr>
@@ -33,7 +36,8 @@
                                         <th>Location</th>
                                         <th>Start Date</th>
                                         <th>Skills</th>
-                                        <th>Actions</th>
+                                        <th>Details</th>
+                                        <th>Book</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -50,15 +54,15 @@
                                         </td>
                                         <td>
                                             <a href="{% url 'expert_detail' expert.id %}" class="btn btn-primary">View Details</a>
-                                            <a href="{% url 'booking_form' expert.id %}" class="btn btn-success">Book Now</a>
+                                            
                                         </td>
+                                        <td>
+                                            <a href="{% url 'booking_form' expert.id %}" class="btn btn-success">Book Now</a>
+                                        </td>    
                                     </tr>
                                     {% endfor %}
                                 </tbody>
                             </table>
-                            {% else %}
-                            <p>No experts found matching the selected skills.</p>
-                            {% endif %}
                         </div>
                     </div>
                     <div class="col-6 col-md-4">
