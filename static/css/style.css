@@ -8,9 +8,9 @@
 body{
   overflow-x: hidden;
   margin-bottom:  50px; /* content not hidden by footer */
+  background:#DEDEDEff
 }
 
-/* body {background:#); */
 
   .nav-link[aria-current="page"]{
     text-decoration: underline rgb(9, 0, 5) 4px;
@@ -33,3 +33,10 @@ body{
 .footer {
       height: 30px;
   }
+/*
+  --battleship-gray: #8D8D8Dff;
+--platinum: #DEDEDEff;
+--cadet-gray: #A0A0A0ff;
+--silver: #B3B3B3ff;
+--raisin-black: #282828ff;
+*/
