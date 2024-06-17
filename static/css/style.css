@@ -10,12 +10,6 @@ body{
   margin-bottom:  50px; /* content not hidden by footer */
 }
 
- .border-cont {
-  border-bottom: solid radial-gradient(circle, rgb(251, 6, 124) 6%, rgb(95, 87, 252) 8%, rgba(171,171,171,1) 100%) 4px;
-  margin-bottom: -8px;
-  z-index: 2;
-}
-
 /* body {background:#); */
 
   .nav-link[aria-current="page"]{
@@ -23,9 +17,6 @@ body{
     text-underline-offset: 18px;
   }
 
-   /* .navbar {
-    border-bottom: 5px solid rgb(84, 84, 134) 3px ;
-  } */
 
 .background-div {
       background-image: url("/static/images/2.jpg");
