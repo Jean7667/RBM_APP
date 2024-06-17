@@ -7,7 +7,7 @@
 
 body{
   overflow-x: hidden;
-  
+  margin-bottom:  50px; /* content not hidden by footer */
 }
 
  .border-cont {
