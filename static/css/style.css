@@ -84,6 +84,15 @@ padding: 0px;
   align-items: center;
   }
 
+  /* Sandwich button menu */
+
+  .navbar-collapse {
+    background-color: #f8f9fa; 
+    margin-top: 0px; 
+    padding: 0px; 
+  }
+  
+
 
 /* Footer section   */
 
