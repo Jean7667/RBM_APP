@@ -53,44 +53,47 @@
                           <button type="submit" class="btn btn-danger">Logout</button>
                           </form>
                       </div>
-                    
-                        </div>
-                      </div> 
                      
+              {% else %}
+              <!--When not logged-->
 
-
-                {% else %}
-                    <h1>RBM.io</h1>
-                    <p>You are not logged in</p>
-                    <p>
-                        Partner with us today and experience the difference of working with a truly global leader in IT services. 
-                        Let us be your strategic ally in navigating the complexities of the digital 
-                        age and unlocking new opportunities for growth and innovation. Together, we can build a brighter, more connected future for your business.
-                    </p>    
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <div class="card">
-                          <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="{% url 'login' %}" class="btn btn-primary">Access your customer profile</a>
-                          </div>
+                <div class="row height5 g-2">
+                  <h1>RBM.io</h1>
+                  <p>You are not logged in</p>
+                  <p>
+                      Partner with us today and experience the difference of working with a truly global leader in IT services. 
+                      Let us be your strategic ally in navigating the complexities of the digital 
+                      age and unlocking new opportunities for growth and innovation. Together, we can build a brighter, more connected future for your business.
+                  </p> 
+                  <h2>Join us</h2> 
+                  <!--Login card-->
+                  <div class="col-md-4">
+                      <div class="card p-3 ">
+                        <div class="card-body">
+                          <h3 class="card-title">Login</h3>
+                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                          <div class="text-end p-2">
+                          <a href="{% url 'login' %}" class="btn btn-primary">Login to Your Account</a>
                         </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="card">
-                          <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="{% url 'signup' %}" class="btn btn-success">Sign UP</a>
-                          </div>
                         </div>
                       </div>
                     </div>
-                                        
-                {% endif %}
-            </div>
+                    <!--Sign up card-->
+                    <div class="col-md-8">
+                      <div class="card p-3">
+                        <div class="card-body">
+                          <h3 class="card-title">New Here?</h3>
+                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                          <div class="text-end p-2">
+                          <a href="{% url 'signup' %}" class="btn btn-success">Sign UP</a>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>           
+              {% endif %}
         </div>
     </div>
 </div>
 {% endblock %}
+
