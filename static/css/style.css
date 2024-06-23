@@ -44,6 +44,7 @@ h6 {
   display: block;
 }
 
+
 /*    */
 
 body {
@@ -70,6 +71,30 @@ position: relative;
 height: 40px;
 padding: 0px;
 }
+
+/* Navigation bar  active page underline with border */
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding: 8px 15px; 
+  }
+  
+  .nav-link[aria-current="page"] {
+  position: relative;
+  }
+  
+  /* underline active menu*/
+  .nav-link[aria-current="page"]::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px; /* position border */
+  height: 4px; /* height of the border */
+  background: rgb(2, 0, 0); /* Border color */
+  } 
+  
 
 /* Section Sandwich button */
 
