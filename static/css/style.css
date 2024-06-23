@@ -62,11 +62,20 @@ background-attachment: fixed;
 height: 100%; /* Set the height of the background to fill the viewport */
 }
 
+/* ---Section Navigation bar   */
+
+/*  navbar height   */
+.navbar {
+position: relative;
+height: 40px;
+padding: 0px;
+}
+
 
 /* Footer section   */
 
 .footer {
-height: 75px; /* Adjust this according to your footer height */
+height: 75px; /* footer height */
 text-align: center;
 padding: 20px;
 box-sizing: border-box;
