@@ -53,7 +53,31 @@ padding: 0px; /* content not hidden by footer */
 }
 
 /*Background for div inside Main Content    */
+.main-content {
+flex: 1;
+height: calc(99dvh - 100px); /* 100px equal footer height plus navbar height */
+overflow: auto;
+margin-top: 0px;
+padding: 0px;
+border: solid red 0px; /*  visual guide  */
+}
 
+/*  visual guide class  */
+.guide {
+border: solid red 1px; 
+}
+
+/*  Section set div height  */
+.height9 {
+height: 95dvh;
+}
+
+.height5 {
+  height: 50dvh;
+}
+.height6 {
+  height: 60dvh;
+}
 .background-div {
 background-image: url("/static/images/2.jpg");
 background-size: cover;
