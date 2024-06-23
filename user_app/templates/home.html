@@ -27,28 +27,32 @@
                               <p class="blockquote-footer">User123: "I just stumbled upon Dr. Johnson's article on coping with anxiety, and it was incredibly helpful! Thank you for bringing such valuable expertise to the platform."</p>
                             </div>
                           </div>
-                    
-                          <!-- Card 2: Meet Our Newest Addition -->
-                          <div class="col-md-4">
-                            <div class="card bg-light">
-                              <div class="card-body">
-                                <h5 class="card-title">Meet Our Newest Addition</h5>
-                                <p class="card-text">We're thrilled to introduce our newest addition to the team, Chef Miguel Sanchez, a culinary maestro renowned for his innovative recipes and culinary expertise. Chef Sanchez's culinary creations will tantalize your taste buds and inspire you to experiment in the kitchen like never before.</p>
-                                <p class="blockquote-footer">User456: "I tried Chef Sanchez's recipe for a twist on classic lasagna, and it was a hit with my family! Can't wait to explore more of his culinary delights."</p>
-                              </div>
+                        </div>
+                        <!-- Card 2: Meet Our Newest Addition -->
+                        <div class="col-md-4">
+                          <div class="card bg-light">
+                            <div class="card-body">
+                              <h5 class="card-title">Meet Our Newest Addition</h5>
+                              <p class="card-text">We're thrilled to introduce our newest addition to the team, Chef Miguel Sanchez, a culinary maestro renowned for his innovative recipes and culinary expertise. Chef Sanchez's culinary creations will tantalize your taste buds and inspire you to experiment in the kitchen like never before.</p>
+                              <p class="blockquote-footer">User456: "I tried Chef Sanchez's recipe for a twist on classic lasagna, and it was a hit with my family! Can't wait to explore more of his culinary delights."</p>
                             </div>
                           </div>
-                    
-                          <!-- Card 3: Fresh Insights Await! -->
-                          <div class="col-md-4">
-                            <div class="card bg-light">
-                              <div class="card-body">
-                                <h5 class="card-title">Fresh Insights Await!</h5>
-                                <p class="card-text">Get ready to dive into the latest insights from our newest expert, Dr. Sarah Patel, a leading environmental scientist passionate about sustainable living. Dr. Patel's expertise will empower you to make environmentally conscious choices and lead a greener lifestyle for a brighter future.</p>
-                                <p class="blockquote-footer">User789: "Dr. Patel's article on simple ways to reduce plastic waste in daily life was eye-opening! Excited to implement these changes and do my part for the planet."</p>
-                              </div>
+                        </div>
+                        <!-- Card 3: Fresh Insights Await! -->
+                        <div class="col-md-4">
+                          <div class="card bg-light">
+                            <div class="card-body">
+                              <h5 class="card-title">Fresh Insights Await!</h5>
+                              <p class="card-text">Get ready to dive into the latest insights from our newest expert, Dr. Sarah Patel, a leading environmental scientist passionate about sustainable living. Dr. Patel's expertise will empower you to make environmentally conscious choices and lead a greener lifestyle for a brighter future.</p>
+                              <p class="blockquote-footer">User789: "Dr. Patel's article on simple ways to reduce plastic waste in daily life was eye-opening! Excited to implement these changes and do my part for the planet."</p>
                             </div>
                           </div>
+                        </div>
+                        <form method="post" action="{% url 'logout' %}">
+                          {% csrf_token %}
+                          <button type="submit" class="btn btn-danger">Logout</button>
+                          </form>
+                      </div>
                     
                         </div>
                       </div> 
