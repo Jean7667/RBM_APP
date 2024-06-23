@@ -8,24 +8,23 @@
   <div class="row p-2 d-flex justify-content-center">
     
       <div class="col-lg-9 p-3 d-flex justify-content-center align-items-center bg-light text-black shadow rounded-2">
-                {% if user.is_authenticated %}
-                    <h1>Join us</h1>
-                    <form method="post" action="{% url 'logout' %}">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-danger">Logout</button>
-                    </form>
-                    <h1>Welcome {{ user.username }}, you logged in successfully.</h1>
-                    <div class="container mt-5">
-                        <div class="row">
-                          
-                          <!-- Card 1: Welcome New Experts! -->
-                          <div class="col-md-4">
-                            <div class="card bg-light">
-                              <div class="card-body">
-                                <h5 class="card-title">Welcome New Experts!</h5>
-                                <p class="card-text">Welcome aboard to our latest expert, Dr. Emily Johnson, a seasoned psychologist specializing in stress management. Dr. Johnson brings over a decade of experience in helping individuals overcome their mental health challenges. Her insightful articles and practical tips are now available on our website to assist you in navigating life's hurdles with ease.</p>
-                                <p class="blockquote-footer">User123: "I just stumbled upon Dr. Johnson's article on coping with anxiety, and it was incredibly helpful! Thank you for bringing such valuable expertise to the platform."</p>
-                              </div>
+              {% if user.is_authenticated %}
+
+              <!--Section when logged in-->
+                  
+                  
+                  <div class="row height5 g-2">
+                      <h1>Welcome {{ user.username }}, you logged in successfully.</h1>
+                      <p>theeheheheheheh</p>
+                        <!-- Card 1: Welcome New Experts! -->
+                        <div class="col-md-4">
+                          <div class="card">
+                            <div class="card-body">
+                              <h3 class="card-title">Welcome New Experts!</h3>
+                              <p class="card-text">Welcome aboard to our latest expert, Dr. Em
+                               
+                                ily Johnson, a seasoned psychologist specializing in stress management. Dr. Johnson brings over a decade of experience in helping individuals overcome their mental health challenges. Her insightful articles and practical tips are now available on our website to assist you in navigating life's hurdles with ease.</p>
+                              <p class="blockquote-footer">User123: "I just stumbled upon Dr. Johnson's article on coping with anxiety, and it was incredibly helpful! Thank you for bringing such valuable expertise to the platform."</p>
                             </div>
                           </div>
                     
