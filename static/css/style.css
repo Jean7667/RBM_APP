@@ -38,37 +38,48 @@ h6 {
 /* Menu JS animation   */
 
 .tab {
-    display: none;
+  display: none;
 }
 .tab.active {
-    display: block;
+  display: block;
 }
 
-body{
-  overflow-x: hidden;
-  margin-bottom:  50px; /* content not hidden by footer */
-  background:#DEDEDEff
+/*    */
+
+body {
+overflow: hidden;
+padding: 0px; /* content not hidden by footer */
 }
 
-
-  .nav-link[aria-current="page"]{
-    text-decoration: underline rgb(9, 0, 5) 4px;
-    text-underline-offset: 18px;
-  }
-
+/*Background for div inside Main Content    */
 
 .background-div {
-      background-image: url("/static/images/2.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 100vh; /* Set the height of the background to fill the viewport */
+background-image: url("/static/images/2.jpg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+height: 100%; /* Set the height of the background to fill the viewport */
 }
 
-.padtop {
-      padding-top: 4.5rem !important;
-}
+
+/* Footer section   */
 
 .footer {
-      height: 30px;
-  }
+height: 75px; /* Adjust this according to your footer height */
+text-align: center;
+padding: 20px;
+box-sizing: border-box;
+}
+
+.btn-social { 
+font-size: 0.8rem;
+}
+
+/*
+  --battleship-gray: #8D8D8Dff;
+--platinum: #DEDEDEff;
+--cadet-gray: #A0A0A0ff;
+--silver: #B3B3B3ff;
+--raisin-black: #282828ff;
+*/
