@@ -2,13 +2,12 @@
 {% load static %}
 {% block title %}Home{% endblock title %}
 {% block content %}
+<!--inside Main content section-->
 
-
-
-<div class="container-auto " >
-    <div class="row justify-content-center align-items-center background-div" style="min-height: auto;">
-        <div class="col-md-8">
-            <div class="card p-3 bg-secondary bg-light text-black shadow rounded-5">
+<div class="container-xl d-flex justify-content-center align-items-center background-div height9">
+  <div class="row p-2 d-flex justify-content-center">
+    
+      <div class="col-lg-9 p-3 d-flex justify-content-center align-items-center bg-light text-black shadow rounded-2">
                 {% if user.is_authenticated %}
                     <h1>Join us</h1>
                     <form method="post" action="{% url 'logout' %}">
