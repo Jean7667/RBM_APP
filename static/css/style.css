@@ -8,7 +8,9 @@
 /* Adjusting font size   */
 
 html {
+  height: -webkit-fill-available;
   font-size: 85%; /* Reduces text size to 80% of the original size */
+
 }
 
 h1 {
@@ -49,27 +51,70 @@ h6 {
 
 body {
 overflow: hidden;
+height: -webkit-fill-available;
+height:100%;
+margin-bottom: 55px;
+display: flex;
+flex-direction: column;
 padding: 0px; /* content not hidden by footer */
+border: solid rgb(128, 0, 0) 2px; 
 }
+
+
 
 /*Background for div inside Main Content    */
 .main-content {
-flex: 1;
-height: calc(99dvh - 100px); /* 100px equal footer height plus navbar height */
-overflow: auto;
+ /* Tested for all type of device */
+overflow:none;
 margin-top: 0px;
+margin-bottom:75px ; 
 padding: 0px;
-border: solid red 0px; /*  visual guide  */
+border: solid rgb(255, 196, 0) 2px; /*  visual guide  */
+flex: 1;
+display: flex;
+flex-direction: column;
 }
 
+.background-div {
+  background-image: url("/static/images/2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 80dvh; /* Set the height of the background to fill the viewport */
+  }
+  
 /*  visual guide class  */
-.guide {
+.guider {
 border: solid red 1px; 
 }
 
+/*  visual guide class  */
+.guidey {
+  border: solid rgb(237, 222, 7) 1px; 
+  }
+
+/*  visual guide class  */
+.guidemain {
+  border: #ff00b3 3px;
+  border-style: dotted; 
+  }
+  
+  /*  visual guide class  */
+  .guidev {
+    border: solid green 3px; 
+    }
+  
+    /*  visual guide class  */
+  .guideb {
+    border: solid blue 1px; 
+    }
+  
+
+
 /*  Section set div height  */
 .height9 {
-height: 95dvh;
+height:100%;
 }
 
 .height5 {
@@ -80,14 +125,6 @@ height: 95dvh;
 }
 
 
-.background-div {
-background-image: url("/static/images/2.jpg");
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-background-attachment: fixed;
-height: 100%; /* Set the height of the background to fill the viewport */
-}
 
 /* ---Section Navigation bar   */
 
@@ -96,6 +133,7 @@ height: 100%; /* Set the height of the background to fill the viewport */
 position: relative;
 height: 40px;
 padding: 0px;
+
 }
 
 /* Navigation bar  active page underline with border */
@@ -122,30 +160,6 @@ padding: 0px;
   } 
   
 
-/* Section Sandwich button */
-
-.navbar-toggler {
-  position: relative;
-  border: 2px solid black;
-  width: 28px; 
-  height: 28px; 
-  margin-right:5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  }
-
-  /* Sandwich button menu */
-  .navbar-collapse {
-    background-color: #f8f9fa; 
-    margin-top: 0px; 
-    padding: 0px; 
-  }
-  
-  /* Sandwich button Icon - red color */
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 0, 0, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-  }
 
 
 /*  Section card  */
@@ -185,3 +199,53 @@ font-size: 0.8rem;
 --silver: #B3B3B3ff;
 --raisin-black: #282828ff;
 */
+/*  TOBE DONE  */
+@media (max-width: 540px) {
+  
+  html {
+    height: -webkit-fill-available;
+    font-size: 60%; /* Reduces text size to 80% of the original size */
+  
+  }
+
+  .auto-size {
+    width: 100%;
+    height: auto;
+  }
+ 
+.small-device{
+  margin-top: 0.5rem;
+}
+
+  .main-content {
+    overflow: auto; /* Change overflow to auto on small screens */
+    padding-top:0px;
+    }
+  
+  }
+
+.col {
+  width: 50%;
+}
+
+.card {
+  .card {
+  transform: scale(0.9); /* Reduce size by 20% */
+  padding-top: 25px;
+  margin-top: 15px;
+  margin-bottom 15px;
+ }
+}
+
+@media (max-width: 320px) 
+ {
+  .small-device{
+    margin-top: 2.5rem;
+  }
+  .card {
+    .card {
+    transform: scale(0.); /* Reduce size by 20% */
+    
+   }
+  }
+}
