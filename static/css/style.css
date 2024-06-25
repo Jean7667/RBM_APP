@@ -67,7 +67,7 @@ border: solid rgb(128, 0, 0) 2px;
  /* Tested for all type of device */
 overflow:none;
 margin-top: 0px;
-margin-bottom:75px ; 
+margin-bottom:50px ; 
 padding: 0px;
 border: solid rgb(255, 196, 0) 2px; /*  visual guide  */
 flex: 1;
@@ -224,7 +224,7 @@ font-size: 0.8rem;
 --silver: #B3B3B3ff;
 --raisin-black: #282828ff;
 */
-/*=========== Media Query ===============*/
+/*=========== Media Query 540  ===============*/
 
 @media (max-width: 540px) {
   
@@ -234,6 +234,16 @@ font-size: 0.8rem;
   
   }
 
+  /*Background for div inside Main Content    */
+.background-div {
+  background-image: url("/static/images/2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 90dvh; /* Set the height of the background to fill the viewport */
+  }
+
   .auto-size {
     width: 100%;
     height: auto;
@@ -241,6 +251,7 @@ font-size: 0.8rem;
  
 .small-device{
   margin-top: 0.5rem;
+  padding-top: 25px;
 }
 
   .main-content {
@@ -258,21 +269,38 @@ font-size: 0.8rem;
   .card {
   transform: scale(0.9); /* Reduce size by 20% */
   padding-top: 25px;
-  margin-top: 15px;
+  margin-top: 13px;
   margin-bottom 15px;
  }
 }
-/*=========== Media Query ===============*/
+/*=========== Media Query 320 ===============*/
 
-@media (max-width: 320px) 
- {
-  .small-device{
-    margin-top: 2.5rem;
+@media (max-width: 320px) {
+
+
+.main-content { /* view between navbar and footer */
+
+ overflow:none;
+ margin-top: 10px;
+ margin-bottom:50px ; 
+ padding: 0px;
+ border: solid rgb(255, 196, 0) 0px; /*  visual guide  */
+ flex: 1;
+ display: flex;
+ flex-direction: column;
+}
+
+/*Background for div inside Main Content    */
+.background-div {
+  background-image: url("/static/images/2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 125%; /* Set the height of the background to fill the viewport */
   }
-  .card {
-    .card {
+
+.card {
     transform: scale(0.); /* Reduce size by 20% */
-    
    }
   }
-}
