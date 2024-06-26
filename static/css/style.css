@@ -276,7 +276,7 @@ font-size: 0.8rem;
 /*=========== Media Query 320 ===============*/
 
 @media (max-width: 320px) {
-
+ 
   html {
     height: -webkit-fill-available;
     font-size: 60%; /* Reduces text size to 60% of the original size */
@@ -307,7 +307,7 @@ font-size: 0.8rem;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height: 125%; /* Set the height of the background to fill the viewport */
+  height: 100%; /* Set the height of the background to fill the viewport */
   }
 
 .card {
