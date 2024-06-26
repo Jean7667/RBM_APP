@@ -4,22 +4,33 @@
 
 {% block content %}
 
-<div class="container-auto">
-    <div class="row align-items-center justify-content-center background-div" style="min-height: 550px;">
-        <div class="col-md-6 p-5 m-5 bg-secondary bg-light text-black shadow rounded-5">
-            <div class="main">
-                <h2>Log In</h2>
-                
-                <form method="post">
+<div class="container-xl d-flex flex-column justify-content-center align-items-center background-div height9">
+    <div class="row p-2 d-flex justify-content-center w-100">
+    <div class="col-lg-9 p-3 d-flex flex-column justify-content-center align-items-center bg-light opacity-85 text-black shadow rounded-2">
+            <div class="row g-2 w-60">
+                <div class="col-12 text-center">
+                    <h1>RBM Company</h1>
+                    <p>A dynamic booking consultancy firm connecting clients with experts across various fields.</p>
+                    
+                </div>
+            </div>
+            <div class="row g-3 w-50">
+                <div class="col-12 mb-3">
+                    <h1>Login</h1>
+                    <p></p>
+                </div>
+                <div class="col-md-4">
+                    <form method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
                     
                     <button type="submit" class="btn btn-primary">Log In</button>
                 </form>
+                    </div>
+                </div>              
             </div>
         </div>
     </div>
 </div>
-
 
 {% endblock %}
