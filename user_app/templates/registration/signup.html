@@ -1,14 +1,20 @@
 {% extends 'base.html' %}
-
-{% block title %}
-    Sign Up
-{% endblock %}
-
+{% block title %}Signup{% endblock title %}
 {% block content %}
-    <div class="container-auto">
-        <div class="row align-items-center justify-content-center background-div" style="min-height: 550px;">
-            <div class="col-md-6 p-5 m-5 bg-secondary bg-light text-black shadow rounded-5">
-                <div class="main">
+
+<div class="container-xl d-flex flex-column justify-content-center align-items-center background-div height9">
+    <div class="row p-2 d-flex justify-content-center w-100">
+    <div class="col-lg-9 p-3 d-flex flex-column justify-content-center align-items-center bg-light opacity-85 text-black shadow rounded-2">
+            <div class="row g-2 w-100">
+                <div class="col-12 text-center">
+                    <h1>RBM Company</h1>
+                    <p>A dynamic booking consultancy firm connecting clients with experts across various fields.</p>
+                    
+                </div>
+            </div>
+
+            <div class="row g-3 w-100">
+                <div class="col-12 mb-3">
                     <h2>Sign Up</h2>
                     
                     <form method="post">
@@ -17,9 +23,11 @@
                         
                         <button type="submit" class="btn btn-primary">Sign Up</button>
                     </form>
-                </div>
+                    </div>
+                </div>              
             </div>
         </div>
     </div>
-    
+</div>
+
 {% endblock %}
