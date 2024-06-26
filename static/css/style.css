@@ -277,6 +277,16 @@ font-size: 0.8rem;
 
 @media (max-width: 320px) {
 
+  html {
+    height: -webkit-fill-available;
+    font-size: 60%; /* Reduces text size to 60% of the original size */
+  
+  }
+  
+  .small-device{
+    margin-top: 100px;
+    padding-top: 50px;
+  }
 
 .main-content { /* view between navbar and footer */
 
