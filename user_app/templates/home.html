@@ -4,20 +4,24 @@
 {% block content %}
 <!--inside Main content section-->
 
-<div class="container-xl d-flex justify-content-center align-items-center background-div height9">
-  <div class="row p-2 d-flex justify-content-center">
+<div class="container-xl d-flex justify-content-center align-items-center guideb background-div h-100 small-device">
+  
+  <div class="row p-2 d-flex justify-content-center h-auto">
     
-      <div class="col-lg-9 p-3 d-flex justify-content-center align-items-center bg-light text-black shadow rounded-2">
+      <div class="col-lg-9 p-2 mb-3 d-flex justify-content-center align-items-center bg-light text-black shadow rounded-2 small-device">
               {% if user.is_authenticated %}
 
               <!--Section when logged in-->
                   
                   
-                  <div class="row height5 g-2">
-                      <h1>Welcome {{ user.username }}, you logged in successfully.</h1>
-                      <p>theeheheheheheh</p>
+                  <div class="row w-100 h-100 g-3 guidev">
+                    <div class="col-12 h-auto mb-3 sm-2 pt-5">  
+                    <h1>Welcome {{ user.username }}, you logged in successfully.</h1>
+                      <p>dddddddddddddddddd<p/>
+                        <p>dddddddddddddddddd<p/>
+                        </div>
                         <!-- Card 1: Welcome New Experts! -->
-                        <div class="col-md-4">
+                        <div class="col-sm-4">
                           <div class="card">
                             <div class="card-body">
                               <h3 class="card-title">Welcome New Experts!</h3>
@@ -29,20 +33,20 @@
                           </div>
                         </div>
                         <!-- Card 2: Meet Our Newest Addition -->
-                        <div class="col-md-4">
+                        <div class="col-sm-4">
                           <div class="card bg-light">
                             <div class="card-body">
-                              <h5 class="card-title">Meet Our Newest Addition</h5>
+                              <h3 class="card-title">Meet Our Newest Addition</h3>
                               <p class="card-text">We're thrilled to introduce our newest addition to the team, Chef Miguel Sanchez, a culinary maestro renowned for his innovative recipes and culinary expertise. Chef Sanchez's culinary creations will tantalize your taste buds and inspire you to experiment in the kitchen like never before.</p>
                               <p class="blockquote-footer">User456: "I tried Chef Sanchez's recipe for a twist on classic lasagna, and it was a hit with my family! Can't wait to explore more of his culinary delights."</p>
                             </div>
                           </div>
                         </div>
                         <!-- Card 3: Fresh Insights Await! -->
-                        <div class="col-md-4">
+                        <div class="col-sm-4">
                           <div class="card bg-light">
                             <div class="card-body">
-                              <h5 class="card-title">Fresh Insights Await!</h5>
+                              <h3 class="card-title">Fresh Insights Await!</h3>
                               <p class="card-text">Get ready to dive into the latest insights from our newest expert, Dr. Sarah Patel, a leading environmental scientist passionate about sustainable living. Dr. Patel's expertise will empower you to make environmentally conscious choices and lead a greener lifestyle for a brighter future.</p>
                               <p class="blockquote-footer">User789: "Dr. Patel's article on simple ways to reduce plastic waste in daily life was eye-opening! Excited to implement these changes and do my part for the planet."</p>
                             </div>
@@ -58,6 +62,7 @@
               <!--When not logged-->
               <!--adjust -->          
                 <div class="row g-2 w-100">
+                  <div class="col-12 mb-3"> 
                   <h1>RBM.io</h1>
                   <p>You are not logged in</p>
                   <p>
@@ -65,9 +70,10 @@
                       Let us be your strategic ally in navigating the complexities of the digital 
                       age and unlocking new opportunities for growth and innovation. Together, we can build a brighter, more connected future for your business.
                   </p> 
+                </div>
                   <h2>Join us</h2> 
                   <!--Login card-->
-                  <div class="col-md-4">
+                  <div class="col-sm-4">
                       <div class="card p-3 ">
                         <div class="card-body">
                           <h3 class="card-title">Login</h3>
@@ -79,7 +85,7 @@
                       </div>
                     </div>
                     <!--Sign up card-->
-                    <div class="col-md-8">
+                    <div class="col-sm-8">
                       <div class="card p-3">
                         <div class="card-body">
                           <h3 class="card-title">New Here?</h3>
