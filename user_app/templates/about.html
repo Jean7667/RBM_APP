@@ -1,42 +1,66 @@
 {% extends 'base.html'%}
 
-{% block title %}About page{% endblock %}
+{% block title %}About us{% endblock %}
 
 {% block content %}
 
-
-<div class="container-auto">
-    <div class="row justify-content-center background-div">
-        <div class="row align-items-center justify-content-center background-div" style="min-height: 550px;">
-            <div class="col-md-6 p-5 m-5 bg-secondary bg-light text-black shadow rounded-5">
-                <div class="container">
+<div class="container-xl d-flex flex-column justify-content-center align-items-center background-div height9">
+    <div class="row p-2 d-flex justify-content-center w-100">
+        <div class="col-lg-12 p-3 d-flex flex-column justify-content-center align-items-center bg-light opacity-85 text-black shadow rounded-2">
+            <div class="row g-2 w-100">
+                <div class="col-12 text-center">
                     <h1>RBM Company</h1>
-                    <p class="lead">A dynamic booking consultancy firm connecting clients with experts across various fields.</p>
-            
-                    <div class="card">
-                        <div class="card-body">
-                            <h2>How it Works</h2>
-                            <ol>
-                                <li>
-                                    <strong>Booking Consultant:</strong> The website acts as a booking consultant, guiding clients through the process of finding the right expert for their requirements. Clients can input their needs, preferences, and desired skill sets into the platform, which then generates a curated list of experts who match those criteria.
-                                </li>
-                                <li>
-                                    <strong>Check the List of Experts:</strong> Once the client has specified their requirements, they can browse through the list of experts provided by the website. Each expert is accompanied by a detailed profile outlining their skills, experience, and areas of expertise.
-                                </li>
-                                <li>
-                                    <strong>Find the Skillset You Need:</strong> Clients can easily filter and search through the list of experts to find the specific skillset they require. Whether it's for IT consulting, marketing strategies, legal advice, or any other expertise, clients can quickly identify the experts who possess the skills necessary to meet their needs.
-                                </li>
-                                <li>
-                                    <strong>Get the Expert Right to Your Door:</strong> After selecting the desired expert, clients can proceed to book their services directly through the website. RBM ensures a seamless experience by handling all the logistics, including scheduling and coordination, to ensure that the expert arrives at the client's location promptly.
-                                </li>
-                                <li>
-                                    <strong>Next Morning Service:</strong> RBM prides itself on its swift service, offering clients the convenience of having the expert at their doorsteps as soon as the next morning after booking. This ensures that clients can receive timely assistance and support for their projects or tasks without any delays.
-                                </li>
-                            </ol>
+                    <p>A dynamic booking consultancy firm connecting clients with experts across various fields.</p>
+                    
+                </div>
+            </div>
+
+            <div class="row g-3 w-100">
+                <div class="col-12 mb-3">
+                    <h2>How it Works</h2>
+                    <p></p>
+                </div>
+
+                <!-- Card 1 -->
+                <div class="col-md-4">
+                    <div class="card bg-light shadow-sm h-100">
+                        <div class="card-body"><h3>1. Booking Consultant:</h3> 
+                            The website serves as a booking consultant, helping clients find the perfect expert by allowing them to input their requirements, preferences, and desired skill sets, generating a curated list of matching experts.
                         </div>
                     </div>
                 </div>
-
+                <!-- Card 2 -->
+                <div class="col-md-4">
+                    <div class="card bg-light shadow-sm h-100">
+                        <div class="card-body"><h3>2. Check the List of Experts:</h3> 
+                            After specifying their requirements, clients can browse through detailed expert profiles showcasing skills, experience, and expertise.
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-md-4">
+                    <div class="card bg-light shadow-sm h-100">
+                        <div class="card-body"><h3>3. Find the Skillset You Need:</h3> 
+                            Clients can efficiently filter experts by specific skills needed, such as IT consulting, marketing, or legal advice, ensuring they find the right match.
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="col-md-4">
+                    <div class="card bg-light shadow-sm h-100">
+                        <div class="card-body"><h3>4. Get the Expert Right to Your Door:</h3> 
+                            After selecting an expert, clients can book their services directly through the website. RBM handles all logistics, from scheduling to coordination, ensuring prompt arrival at the client's location.
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="col-md-4">
+                    <div class="card bg-light shadow-sm h-100">
+                        <div class="card-body"><h3>5. Next Morning Service:</h3> 
+                            RBM's swift service ensures that clients can have the expert at their doorsteps as soon as the next morning after booking, providing timely assistance and support for their projects or tasks without delays.
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
