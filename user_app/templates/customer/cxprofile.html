@@ -5,11 +5,27 @@
 {% block content %}
 <script src="{% static 'js/tab.js' %}" defer></script>
 
-<div class="container-fluid">
-    <div class="row justify-content-center align-items-center" style="height: 550px;">
-        <div class="col-lg-6 col-md-8 col-sm-10 col-12 p-5 m-5 bg-light text-black shadow rounded-5">
-            <h1 class="text-center">Customer Profile</h1>
+
+<div class="container-xl mt-4 d-flex flex-column align-items-center height9">
+    <div class="row p-0 d-flex justify-content-center w-100">
+    <div class="col-lg-12 p-3 d-flex flex-column justify-content-center bg-light opacity-85 text-black rounded-2">
+            <div class="row g-2 w-100">
+                <div class="col-12 text-center">
+                    <br>
+                    <h1>RBM</h1>
+                    <br>
+                    <p>A dynamic booking consultancy firm connecting clients with experts across various fields.</p>
+                    
+                </div>
+                <hr>
+            </div>
+            <div class="row m-2 g-3 w-100">
+            <div class="col-lg-12">
+
+            <h1 class="text-center">{{ user.first_name }} {{ user.last_name }}'s Profile</h1>
+            <br>
             <p class="text-center">Welcome {{ user.first_name }} {{ user.last_name }}, you logged in successfully.</p>
+            <br>
             <p class="text-center">Your username is {{ user.username }}. Your last connection was on {{ user.last_login }}.</p>
 
             <div class="text-center">
