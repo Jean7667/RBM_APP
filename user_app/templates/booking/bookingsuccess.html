@@ -2,11 +2,25 @@
 {% load static %}
 
 {% block content %}
-<section class="container-fluid">
-    <div class="container-auto">
-        <div class="row justify-content-center">
-                <h1 class="text-center mb-4">Your booking with our Experts</h1>
+
+<div class="container-xl mt-4 d-flex flex-column align-items-center height9">
+    <div class="row p-0 d-flex justify-content-center w-100">
+    <div class="col-lg-12 p-3 d-flex flex-column justify-content-center bg-light opacity-85 text-black rounded-2">
+            <div class="row g-2 w-100">
+                <div class="col-12 text-center">
+                    <br>
+                    <h1>RBM</h1>
+                    <hr>   
+                    <h2>Technical Experts booked by {{ user.first_name }} {{ user.last_name }} today</h2>
+                    <br>
+                    <p>A dynamic booking consultancy firm connecting clients with experts across various fields.</p>
+                    
+                </div>
+            </div>
+            <div class="row m-2 g-3 w-100">
+                
                         <div class="table-responsive">
+                            <hr>
                             <table class="table table-dark table-striped">
                                 <thead>
                                     <tr>
@@ -40,10 +54,11 @@
                                     {% endfor %}
                                 </tbody>
                             </table>
+                            <hr>
                         </div>
                     </div>
               </div>
         </div>
+        
     </div>
-</section>
 {% endblock %}
