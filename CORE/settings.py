@@ -1,6 +1,8 @@
 
 import os
 from pathlib import Path
+from decouple import config
+import dj_database_url
 import django_on_heroku
 
 #https://pypi.org/project/django-on-heroku/
@@ -16,10 +18,10 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-91(qd#ylm0w0q+c$!&w%q)k*f0jrf5d9xt=0qm%oi^srp0l$bh'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1','.herokuapp.com']
 
@@ -95,17 +97,11 @@ WSGI_APPLICATION = 'CORE.wsgi.application'
 }
  """
 
-    # Use the local database settings
+# Use dj_database_url to configure the database
 DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'nimjptlv',
-            'USER': 'nimjptlv',
-            'PASSWORD': 'VQepEI9ADtLXwR1ZXt7uxia7WXFtgwYM',
-            'HOST': 'flora.db.elephantsql.com',
-            'PORT': '5432',
-        }
-    }
+    'default': dj_database_url.config(default=config('DATABASE_URL'))
+}
+
 
 
 
