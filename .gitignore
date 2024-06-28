@@ -1,3 +1,4 @@
+.env
 /notes
 /scripts
 django.dot
@@ -18,4 +19,5 @@ Tools
 blueprint
 user_app/templates/pinegrow.json
 .vscode/tasks.json
-.env
+CORE/.env
+env.py
