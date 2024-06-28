@@ -37,12 +37,12 @@
                                 <tbody>
                                     {% for booking in bookings %}
                                     <tr>
-                                        <td>{{ booking.BookingExpert }}</td>
-                                        <td>{{ booking.CustomerUser }}</td>
-                                        <td>{{ booking.checkin }}</td>
-                                        <td>{{ booking.checkout }}</td>
-                                        <td>{{ booking.location }}</td>
-                                        <td>{{ booking.notes }}</td>
+                                        <td data-label="Expert Name">  {{ booking.BookingExpert }}</td>
+                                        <td data-label="Customer Name">{{ booking.CustomerUser }}</td>
+                                        <td data-label="Check-in date">{{ booking.checkin }}</td>
+                                        <td data-label="Check-out date">{{ booking.checkout }}</td>
+                                        <td data-label="Location">{{ booking.location }}</td>
+                                        <td data-label="Notes">{{ booking.notes }}</td>
                                         <td>
                                             <button class="btn btn-primary"><a href="{% url 'edit_booking' booking.id %}" class="text-white">Edit</a></button>   
                                         </td>
