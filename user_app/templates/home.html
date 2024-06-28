@@ -4,20 +4,30 @@
 {% block content %}
 <!--inside Main content section-->
 
-<div class="container-xl d-flex justify-content-center align-items-center guideb background-div h-100 small-device">
-  
-  <div class="row p-2 d-flex justify-content-center h-auto">
-    
-      <div class="col-lg-9 p-2 mb-3 d-flex justify-content-center align-items-center bg-light text-black shadow rounded-2 small-device">
-              {% if user.is_authenticated %}
+<div class="container-xl mt-4 d-flex flex-column align-items-center height9">
+  <div class="row p-0 d-flex justify-content-center w-100">
+  <div class="col-lg-12 p-3 d-flex flex-column justify-content-center bg-light opacity-85 text-black rounded-2">
+          <div class="row g-2 w-100">
+              <div class="col-12 text-center">
+                  <br>
+                  <h1>RBM</h1>
+                  <br>
+                  <p>A dynamic booking consultancy firm connecting clients with experts across various fields.</p>
+                  
+              </div>
+              <hr>
+          </div>
+          
+                       {% if user.is_authenticated %}
 
               <!--Section when logged in-->
                   
                   
-                  <div class="row w-100 h-100 g-3 guidev">
-                    <div class="col-12 h-auto mb-3 sm-2 pt-5">  
+                  <div class="row g-3 w-100  guidev">
+                    <div class="col-lg-12 h-auto mb-3 sm-2 pt-5">  
                     <h1>Welcome {{ user.username }}, you logged in successfully.</h1>
                       <p>News and activities</p>
+                      <div class="row g-3 w-100  guidev">
                         <!-- Card 1: Welcome New Experts! -->
                         <div class="col-sm-4">
                           <div class="card">
@@ -48,6 +58,7 @@
                             </div>
                           </div>
                         </div>
+                      </div>  
                         <form method="post" action="{% url 'logout' %}">
                           {% csrf_token %}
                           <button type="submit" class="btn btn-danger">Logout</button>
