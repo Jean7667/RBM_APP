@@ -224,6 +224,83 @@ font-size: 0.8rem;
 --silver: #B3B3B3ff;
 --raisin-black: #282828ff;
 */
+
+/*=========== TABLE EXPERT ===============*/
+
+/* table card */
+
+
+@media (max-width: 768px) {
+  .table-container table,
+  .table-container thead,
+  .table-container tbody,
+  .table-container th,
+  .table-container td,
+  .table-container tr {
+    display: block;
+  }
+
+  .table-container thead tr {
+    display: none;
+  }
+
+  .table-container tr {
+    margin-bottom: 1.5rem; /* Add space between cards */
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    padding:  0.5rem;
+    background-color: #f8f9fa; /* White background for cards */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #000; /* Dark text color */
+  }
+
+  .table-container td {
+    position: relative;
+    padding-left:50%;
+    text-align: right;
+    border: none; /* Remove table borders for card view */
+    border-bottom: 1px solid #dee2e6; /* Add border to separate items */
+    color: #000; /* Dark text color */
+  }
+
+  .table-container td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 10px;
+      font-weight: bold;
+    text-align: left;
+    white-space: nowrap; 
+    color: #6c757d; 
+  }
+
+  .table-container td:last-child {
+    border-bottom: none; /* Remove border from last item */
+  }
+
+  /* Additional styles to ensure no fine lines between cards */
+  .table-container {
+    border: none;
+    padding: 0;
+  }
+
+  .table-container table {
+    border-spacing: 0;
+    border-collapse: separate;
+  }
+
+  /* Adjusting the margin between the word and the remove button */
+.select2-selection__choice {
+  padding-right: 20px; /* Adjust padding to increase/decrease space */
+}
+
+.select2-selection__choice__remove {
+  margin-left: 5px; /* Adjust margin to increase/decrease space */
+}
+
+}
+
 /*=========== Media Query 540  ===============*/
 
 @media (max-width: 540px) {
@@ -314,3 +391,8 @@ font-size: 0.8rem;
     transform: scale(0.); /* Reduce size by 20% */
    }
   }
+
+
+
+
+
