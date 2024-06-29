@@ -1,63 +1,73 @@
 {% extends 'base.html'%}
-
+{% load static %}
 {% block title %}About us{% endblock %}
-
 {% block content %}
+<!--inside Main content section-->
 
-<div class="container-xl d-flex flex-column justify-content-center align-items-center height9">
-    <div class="row p-2 d-flex justify-content-center align-items-center w-100">
-        <div class="col-md-12 p-3 d-flex flex-column justify-content-center align-items-center .bg-secondary.bg-gradient text-black shadow rounded-2">
-            
-                   
-               
-                <div class="card bg-light shadow rounded-2">
-                <div class="card-body">
-                    <h1 class="card-title">RBM Company</h1>
-                    <p class="card-text">A dynamic booking consultancy firm connecting clients with experts across various fields.</p>
-                    <h2 class="card-subtitle mb-3">How it Works</h2>
-                </div>    
-                <!-- Card 1 -->
-                <div class="col-md-12">
-                    <div class="card bg-light shadow-sm h-100">
-                        <div class="card-body"><h3>1. Booking Consultant:</h3> 
-                            The website serves as a booking consultant, helping clients find the perfect expert by allowing them to input their requirements, preferences, and desired skill sets, generating a curated list of matching experts.
+<div class="container-xl d-flex flex-column m-0 guidemain  bg-info w-100 h-100">
+    <div class="row p-0 gx-0 d-flex justify-content-center w-100 h-100">
+      <!--Force div to be centered with content-div class-->
+      <div class="col-12 p-0 m-0 d-flex flex-column bg-warning content-div text-black rounded-2 align-items-center">
+        <div class="row g-0 m-0 justify-content-center">
+          <div class="col-12 text-center">
+            <br>
+            <h1>RBM</h1>
+            <br>
+            <p>A dynamic booking consultancy firm connecting clients with experts across various fields.</p>
+          </div>
+          <hr>
+        </div>
+        <!--Section when logged in-->
+        <div class="row m-0 w-100 justify-content-center">
+                        <!-- Card 1 -->
+                        <div class="col-md-12">
+                            <div class="card bg-light shadow-sm h-100">
+                                <div class="card-body">
+                                    <h3>1. Booking Consultant:</h3> 
+                                    The website serves as a booking consultant, helping clients find the perfect expert by allowing them to input their requirements, preferences, and desired skill sets, generating a curated list of matching experts.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="col-md-12">
+                            <div class="card bg-light shadow-sm h-100">
+                                <div class="card-body">
+                                    <h3>2. Check the List of Experts:</h3> 
+                                    After specifying their requirements, clients can browse through detailed expert profiles showcasing skills, experience, and expertise.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="col-md-12">
+                            <div class="card bg-light shadow-sm h-100">
+                                <div class="card-body">
+                                    <h3>3. Find the Skillset You Need:</h3> 
+                                    Clients can efficiently filter experts by specific skills needed, such as IT consulting, marketing, or legal advice, ensuring they find the right match.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="col-md-12">
+                            <div class="card bg-light shadow-sm h-100">
+                                <div class="card-body">
+                                    <h3>4. Get the Expert Right to Your Door:</h3> 
+                                    After selecting an expert, clients can book their services directly through the website. RBM handles all logistics, from scheduling to coordination, ensuring prompt arrival at the client's location.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 5 -->
+                        <div class="col-md-12">
+                            <div class="card bg-light shadow-sm h-100">
+                                <div class="card-body">
+                                    <h3>5. Next Morning Service:</h3> 
+                                    RBM's swift service ensures that clients can have the expert at their doorsteps as soon as the next morning after booking, providing timely assistance and support for their projects or tasks without delays.
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Card 2 -->
-                <div class="col-md-12">
-                    <div class="card bg-light shadow-sm h-100">
-                        <div class="card-body"><h3>2. Check the List of Experts:</h3> 
-                            After specifying their requirements, clients can browse through detailed expert profiles showcasing skills, experience, and expertise.
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="col-md-12">
-                    <div class="card bg-light shadow-sm h-100">
-                        <div class="card-body"><h3>3. Find the Skillset You Need:</h3> 
-                            Clients can efficiently filter experts by specific skills needed, such as IT consulting, marketing, or legal advice, ensuring they find the right match.
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 4 -->
-                <div class="col-md-12">
-                    <div class="card bg-light shadow-sm h-100">
-                        <div class="card-body"><h3>4. Get the Expert Right to Your Door:</h3> 
-                            After selecting an expert, clients can book their services directly through the website. RBM handles all logistics, from scheduling to coordination, ensuring prompt arrival at the client's location.
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 5 -->
-                <div class="col-md-12">
-                    <div class="card bg-light shadow-sm h-100">
-                        <div class="card-body"><h3>5. Next Morning Service:</h3> 
-                            RBM's swift service ensures that clients can have the expert at their doorsteps as soon as the next morning after booking, providing timely assistance and support for their projects or tasks without delays.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
+            </div> <!-- Add this closing div -->
+        </div> <!-- content-div closing div -->
     </div>
 </div>
 
