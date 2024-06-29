@@ -57,7 +57,7 @@ margin-bottom: 55px;
 display: flex;
 flex-direction: column;
 padding: 0px; /* content not hidden by footer */
-border: solid rgb(128, 0, 0) 2px; 
+border: solid rgb(128, 0, 0) 1px; 
 }
 
 
@@ -69,11 +69,26 @@ overflow:none;
 margin-top: 0px;
 margin-bottom:50px ; 
 padding: 0px;
-border: solid rgb(255, 196, 0) 2px; /*  visual guide  */
+border: solid rgb(255, 196, 0) 1px; /*  visual guide  */
 flex: 1;
 display: flex;
 flex-direction: column;
 }
+
+.content-div {
+  width: calc(99% - 2rem); /* Force to be center */
+  max-width: 1000px; /* allow small margin and to center the div */
+  margin-left: auto;
+  margin-right: auto;
+  flex: 1; /* div to expand and fill the available vertical space within its flex container*/
+}
+
+.container-xl {
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+}
+
 
 /*Background for div inside Main Content    */
 .background-div {
@@ -97,13 +112,13 @@ border: solid red 1px;
 
 /*  visual guide class  */
 .guidemain {
-  border: #ff00b3 3px;
+  border: #ff00b3 1px;
   border-style: dotted; 
   }
   
   /*  visual guide class  */
   .guidev {
-    border: solid green 3px; 
+    border: solid green 1px; 
     }
   
     /*  visual guide class  */
@@ -368,10 +383,10 @@ font-size: 0.8rem;
 .main-content { /* view between navbar and footer */
 
  overflow:none;
- margin-top: 10px;
+ margin-top: 0px;
  margin-bottom:50px ; 
  padding: 0px;
- border: solid rgb(255, 196, 0) 0px; /*  visual guide  */
+ border: solid rgb(0, 255, 234) 3px; /*  visual guide  */
  flex: 1;
  display: flex;
  flex-direction: column;
