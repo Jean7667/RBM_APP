@@ -4,108 +4,106 @@
 {% block content %}
 <!--inside Main content section-->
 
-<div class="container-xl mt-4 d-flex flex-column align-items-center height9">
-  <div class="row p-0 d-flex justify-content-center w-100">
-  <div class="col-lg-12 p-3 d-flex flex-column justify-content-center bg-light opacity-85 text-black rounded-2">
-          <div class="row g-2 w-100">
-              <div class="col-12 text-center">
-                  <br>
-                  <h1>RBM</h1>
-                  <br>
-                  <p>A dynamic booking consultancy firm connecting clients with experts across various fields.</p>
-                  
-              </div>
-              <hr>
-          </div>
-          
-                       {% if user.is_authenticated %}
-
-              <!--Section when logged in-->
-                  
-                  
-                  <div class="row g-3 w-100  guidev">
-                    <div class="col-lg-12 h-auto mb-3 sm-2 pt-5">  
-                    <h1>Welcome {{ user.username }}, you logged in successfully.</h1>
-                      <p>News and activities</p>
-                      <div class="row g-3 w-100  guidev">
-                        <!-- Card 1: Welcome New Experts! -->
-                        <div class="col-sm-4">
-                          <div class="card">
-                            <div class="card-body">
-                              <h3 class="card-title">Welcome New Experts!</h3>
-                              <p class="card-text">Welcome aboard to our latest expert, Dr. Emily Johnson, a seasoned psychologist specializing in stress management. Dr. Johnson brings over a decade of experience in helping individuals overcome their mental health challenges. Her insightful articles and practical tips are now available on our website to assist you in navigating life's hurdles with ease.</p>
-                              <p class="blockquote-footer">User123: "I just stumbled upon Dr. Johnson's article on coping with anxiety, and it was incredibly helpful! Thank you for bringing such valuable expertise to the platform."</p>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- Card 2: Meet Our Newest Addition -->
-                        <div class="col-sm-4">
-                          <div class="card bg-light">
-                            <div class="card-body">
-                              <h3 class="card-title">Meet Our Newest Addition</h3>
-                              <p class="card-text">We're thrilled to introduce our newest addition to the team, Chef Miguel Sanchez, a culinary maestro renowned for his innovative recipes and culinary expertise. Chef Sanchez's culinary creations will tantalize your taste buds and inspire you to experiment in the kitchen like never before.</p>
-                              <p class="blockquote-footer">User456: "I tried Chef Sanchez's recipe for a twist on classic lasagna, and it was a hit with my family! Can't wait to explore more of his culinary delights."</p>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- Card 3: Fresh Insights Await! -->
-                        <div class="col-sm-4">
-                          <div class="card bg-light">
-                            <div class="card-body">
-                              <h3 class="card-title">Fresh Insights Await!</h3>
-                              <p class="card-text">Get ready to dive into the latest insights from our newest expert, Dr. Sarah Patel, a leading environmental scientist passionate about sustainable living. Dr. Patel's expertise will empower you to make environmentally conscious choices and lead a greener lifestyle for a brighter future.</p>
-                              <p class="blockquote-footer">User789: "Dr. Patel's article on simple ways to reduce plastic waste in daily life was eye-opening! Excited to implement these changes and do my part for the planet."</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>  
-                        <form method="post" action="{% url 'logout' %}">
-                          {% csrf_token %}
-                          <button type="submit" class="btn btn-danger">Logout</button>
-                          </form>
-                      </div>              
-              {% else %}
-              <!--When not logged-->
-              <!--adjust -->          
-                <div class="row g-2 w-100">
-                  <div class="col-12 mb-3"> 
-                  <h1>RBM.io</h1>
-                  <p>You are not logged in</p>
-                  <p>
-                      Partner with us today and experience the difference of working with a truly global leader in IT services. 
-                      Let us be your strategic ally in navigating the complexities of the digital 
-                      age and unlocking new opportunities for growth and innovation. Together, we can build a brighter, more connected future for your business.
-                  </p> 
-                </div>
-                  <h2>Join us</h2> 
-                  <!--Login card-->
-                  <div class="col-sm-4">
-                      <div class="card p-3 ">
-                        <div class="card-body">
-                          <h3 class="card-title">Login</h3>
-                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                          <div class="text-end p-2">
-                          <a href="{% url 'login' %}" class="btn btn-primary">Login to Your Account</a>
-                        </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!--Sign up card-->
-                    <div class="col-sm-8">
-                      <div class="card p-3">
-                        <div class="card-body">
-                          <h3 class="card-title">New Here?</h3>
-                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                          <div class="text-end p-2">
-                          <a href="{% url 'signup' %}" class="btn btn-success">Sign UP</a>
-                        </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>           
-              {% endif %}
+<div class="container-xl d-flex flex-column m-0 guidemain  bg-info w-100 h-100">
+  <div class="row p-0 gx-0 d-flex justify-content-center w-100 h-100">
+    <!--Force div to be centered with content-div class-->
+    <div class="col p-0 m-0 d-flex flex-column bg-warning content-div text-black rounded-2 align-items-center">
+      <div class="row g-0 m-0 justify-content-center">
+        <div class="col-12 text-center">
+          <br>
+          <h1>RBM</h1>
+          <br>
+          <p>A dynamic booking consultancy firm connecting clients with experts across various fields.</p>
         </div>
+        <hr>
+      </div>
+      
+      {% if user.is_authenticated %}
+      <!--Section when logged in-->
+      <div class="row m-0 w-100 justify-content-center">
+        
+        <div class="col-lg-12 p-2 mb-3 sm-2">  
+          <h1>Welcome {{ user.username }}, you logged in successfully.</h1>
+          <p>News and activities</p>
+          <hr>
+          <div class="row m-0 w-100 justify-content-center">
+            <!-- Card 1: Welcome New Experts! -->
+            <div class="col-sm-4">
+              <div class="card">
+                <div class="card-body">
+                  <h3 class="card-title">Welcome New Experts!</h3>
+                  <p class="card-text">Welcome aboard to our latest expert, Dr. Emily Johnson, a seasoned psychologist specializing in stress management. Dr. Johnson brings over a decade of experience in helping individuals overcome their mental health challenges. Her insightful articles and practical tips are now available on our website to assist you in navigating life's hurdles with ease.</p>
+                  <p class="blockquote-footer">User123: "I just stumbled upon Dr. Johnson's article on coping with anxiety, and it was incredibly helpful! Thank you for bringing such valuable expertise to the platform."</p>
+                </div>
+              </div>
+            </div>
+            <!-- Card 2: Meet Our Newest Addition -->
+            <div class="col-sm-4">
+              <div class="card bg-light">
+                <div class="card-body">
+                  <h3 class="card-title">Meet Our Newest Addition</h3>
+                  <p class="card-text">We're thrilled to introduce our newest addition to the team, Chef Miguel Sanchez, a culinary maestro renowned for his innovative recipes and culinary expertise. Chef Sanchez's culinary creations will tantalize your taste buds and inspire you to experiment in the kitchen like never before.</p>
+                  <p class="blockquote-footer">User456: "I tried Chef Sanchez's recipe for a twist on classic lasagna, and it was a hit with my family! Can't wait to explore more of his culinary delights."</p>
+                </div>
+              </div>
+            </div>
+            <!-- Card 3: Fresh Insights Await! -->
+            <div class="col-sm-4">
+              <div class="card bg-light">
+                <div class="card-body">
+                  <h3 class="card-title">Fresh Insights Await!</h3>
+                  <p class="card-text">Get ready to dive into the latest insights from our newest expert, Dr. Sarah Patel, a leading environmental scientist passionate about sustainable living. Dr. Patel's expertise will empower you to make environmentally conscious choices and lead a greener lifestyle for a brighter future.</p>
+                  <p class="blockquote-footer">User789: "Dr. Patel's article on simple ways to reduce plastic waste in daily life was eye-opening! Excited to implement these changes and do my part for the planet."</p>
+                </div>
+              </div>
+            </div>
+          </div>  
+          <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger m-3">Logout</button>
+          </form>
+        </div>
+      </div>              
+      {% else %}
+      <!--When not logged-->
+      <div class="row g-2 w-100">
+        <div class="col-12 mb-3"> 
+          <h1>RBM.io</h1>
+          <p>You are not logged in</p>
+          <p>
+            Partner with us today and experience the difference of working with a truly global leader in IT services. 
+            Let us be your strategic ally in navigating the complexities of the digital 
+            age and unlocking new opportunities for growth and innovation. Together, we can build a brighter, more connected future for your business.
+          </p> 
+        </div>
+        <h2>Join us</h2> 
+        <!--Login card-->
+        <div class="col-sm-4">
+          <div class="card p-3">
+            <div class="card-body">
+              <h3 class="card-title">Login</h3>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <div class="text-end p-2">
+                <a href="{% url 'login' %}" class="btn btn-primary">Login to Your Account</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Sign up card-->
+        <div class="col-sm-8">
+          <div class="card p-3">
+            <div class="card-body">
+              <h3 class="card-title">New Here?</h3>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <div class="text-end p-2">
+                <a href="{% url 'signup' %}" class="btn btn-success">Sign UP</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>           
+      {% endif %}
     </div>
+  </div>
 </div>
 {% endblock %}
-
