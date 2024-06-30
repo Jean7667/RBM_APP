@@ -2,7 +2,6 @@
 {% load static %}
 
 {% load crispy_forms_filters %} 
-
 {% load crispy_forms_tags %}
 
 {% block extrahead %}
@@ -10,28 +9,44 @@
 {% endblock %}
 
 {% block content %}
-<section class="container-fluid">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                {% if request.user.is_authenticated and request.user.is_customer %}
-                    <h3>Booking Form</h3>
-                    <form method="post" action="{% url 'handle_booking_submission' expert.id %}" enctype="multipart/form-data">     
-                      {{ debug }}       
-                        {% csrf_token %}
-                        {% crispy form %}
-                    </form>
-                {% else %}
-                    <div class="alert alert-danger" role="alert">
-                        You can't accessthis booking.
-                    </div>
-                    {% if is_customer %}
-                        <a href="{% url 'edit_booking' expert.id %}" class="btn btn-secondary">Edit</a>
-                    {% endif %}
-                {% endif %}
+<div class="container-xl d-flex flex-column m-0 guidemain bg-info w-100 h-100">
+    <div class="row p-0 gx-0 d-flex justify-content-center w-100 h-100">
+        <!--Force div to be centered with content-div class-->
+        <div class="col-12 p-0 m-0 d-flex flex-column bg-warning content-div text-black rounded-2 align-items-center">
+            <div class="row g-0 m-0 justify-content-center">
+                <div class="col-12 text-center">
+                    <br>
+                    <h1>RBM</h1>
+                    <br>
+                    <p>A dynamic booking consultancy firm connecting clients with experts across various fields.</p>
+                </div>
+                <hr>
             </div>
-        </div>
-    </div>
-</section>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    {% if request.user.is_authenticated and request.user.is_customer %}
+                        <h3>Booking Form</h3>
+                        <form method="post" action="{% url 'handle_booking_submission' expert.id %}" enctype="multipart/form-data">     
+                            {{ debug }}       
+                            {% csrf_token %}
+                            {% crispy form %}
+                            <!-- Back and Cancel Buttons -->
+                            <div class="d-flex justify-content-between mt-3">
+                                <button type="button" class="btn btn-secondary" onclick="window.history.back();">Back</button>
+                                <a href="{% url 'home' %}" class="btn btn-danger">Cancel</a>
+                            </div>
+                        </form>
+                    {% else %}
+                        <div class="alert alert-danger" role="alert">
+                            You can't access this booking.
+                        </div>
+                        {% if is_customer %}
+                            <a href="{% url 'edit_booking' expert.id %}" class="btn btn-secondary">Edit</a>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        </div> <!-- Closing content-div -->
+    </div> <!-- Closing row -->
+</div> <!-- Closing container-xl -->
 {% endblock %}
-
