@@ -43,12 +43,13 @@
                                         <td data-label="Location">{{ booking.location }}</td>
                                         <td data-label="Notes">{{ booking.notes }}</td>
                                         <td>
-                                            <button class="btn btn-primary"><a href="{% url 'edit_booking' booking.id %}" class="text-white">Edit</a></button>   
+                                            <a href="{% url 'edit_booking' booking.id %}" class="btn btn-primary text-white">Edit</a>
                                         </td>
-
+                                        
                                         <td>
-                                            <button class="btn btn-danger"><a href="{% url 'delete_booking' booking.id %}" class="text-white">Delete</a></button>        
-                                        </td>    
+                                            <a href="{% url 'delete_booking' booking.id %}" class="btn btn-danger text-white">Delete</a>
+                                        </td>
+                                        
                                     </tr>
                                     {% endfor %}
                                 </tbody>
