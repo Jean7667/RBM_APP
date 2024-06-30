@@ -21,3 +21,4 @@ user_app/templates/pinegrow.json
 .vscode/tasks.json
 CORE/.env
 env.py
+.htmlhintrc
