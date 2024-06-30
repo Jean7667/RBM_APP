@@ -9,8 +9,19 @@
 {% endblock %}
 
 {% block content %}
-<section class="container-fluid">
-    <div class="container">
+<div class="container-xl d-flex flex-column m-0 guidemain  bg-info w-100 h-100">
+    <div class="row p-0 gx-0 d-flex justify-content-center w-100 h-100">
+      <!--Force div to be centered with content-div class-->
+      <div class="col-12 p-0 m-0 d-flex flex-column bg-warning content-div text-black rounded-2 align-items-center">
+        <div class="row g-0 m-0 justify-content-center">
+          <div class="col-12 text-center">
+            <br>
+            <h1>RBM</h1>
+            <br>
+            <p>A dynamic booking consultancy firm connecting clients with experts across various fields.</p>
+          </div>
+          <hr>
+        </div>
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 {% if request.user.is_authenticated and request.user.is_customer%}   
