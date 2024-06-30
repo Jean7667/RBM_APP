@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 
+/* #region Typography Styles */
 /* Adjusting font size   */
 
 html {
@@ -36,8 +37,10 @@ h5 {
 h6 {
   font-size: 0.8rem; /* Reduced from 1rem */
 }
+/* #endregion */
 
-/* Menu JS animation   */
+
+/* Menu JS animation cx profile   */
 
 .tab {
   display: none;
@@ -47,7 +50,7 @@ h6 {
 }
 
 
-/*    */
+/* #region Body Main content and sub-div */
 
 body {
 overflow: hidden;
@@ -99,7 +102,11 @@ flex-direction: column;
   background-attachment: fixed;
   height: 80dvh; /* Set the height of the background to fill the viewport */
   }
-  
+
+/* #endregion */
+
+/* #region Visual Guide Styles */
+
 /*  visual guide class  */
 .guider {
 border: solid red 1px; 
@@ -125,10 +132,11 @@ border: solid red 1px;
   .guideb {
     border: solid blue 1px; 
     }
-  
+
+/* #endregion */
 
 
-/*  Section set div height  */
+/* #Region set div height  */
 .height9 {
 height:100%;
 }
@@ -139,9 +147,9 @@ height:100%;
 .height6 {
   height: 60dvh;
 }
+/* #endregion */
 
-
-/* ---Section Navigation bar   */
+/* ---#Region Navigation bar   */
 
 /*  navbar height   */
 .navbar {
@@ -151,7 +159,7 @@ padding: 0px;
 
 }
 
-/* Navigation bar  active page underline with border */
+/* #region Navigation bar  active page underline with border */
 
 .nav-link {
   position: relative;
@@ -175,7 +183,7 @@ padding: 0px;
   background: rgb(2, 0, 0); /* Border color */
   } 
   
-/* ==============Section Sandwich button ===================== */
+/* ==============#Region Sandwich button ===================== */
 
 .navbar-toggler {
   position: relative;
@@ -201,8 +209,9 @@ padding: 0px;
   width: 35px; 
   height:35px;   
 }
+/* #endregion */
 
-/*  Section card  */
+/*  #Region card  */
 
 .card {
  min-height: 100%;
@@ -219,7 +228,7 @@ padding: 0px;
 }
 
   
-/* Footer section   */
+/* Footer #Region   */
 
 .footer {
 height: 75px; /* footer height */
@@ -232,6 +241,8 @@ box-sizing: border-box;
 font-size: 0.8rem;
 }
 
+/* #endregion */
+
 /*
   --battleship-gray: #8D8D8Dff;
 --platinum: #DEDEDEff;
@@ -240,10 +251,10 @@ font-size: 0.8rem;
 --raisin-black: #282828ff;
 */
 
-/*=========== TABLE EXPERT ===============*/
+/* #region =========== TABLE EXPERT ===============*/
+
 
 /* table card */
-
 
 @media (max-width: 768px) {
   .table-container table,
@@ -305,7 +316,7 @@ font-size: 0.8rem;
     border-collapse: separate;
   }
 
-  /* Adjusting the margin between the word and the remove button */
+  /*Margin between the word and the remove button */
 .select2-selection__choice {
   padding-right: 20px; /* Adjust padding to increase/decrease space */
 }
@@ -316,7 +327,10 @@ font-size: 0.8rem;
 
 }
 
-/*=========== Media Query 540  ===============*/
+/* #endregion */
+
+
+/*#region =========== Media Query 540  ===============*/
 
 @media (max-width: 540px) {
   
@@ -362,10 +376,12 @@ font-size: 0.8rem;
   transform: scale(0.9); /* Reduce size by 20% */
   padding-top: 25px;
   margin-top: 13px;
-  margin-bottom 15px;
+  margin-bottom :15px;
  }
 }
-/*=========== Media Query 320 ===============*/
+/* #endregion */
+
+/* #region=========== Media Query 320 ===============*/
 
 @media (max-width: 320px) {
  
@@ -406,7 +422,7 @@ font-size: 0.8rem;
     transform: scale(0.); /* Reduce size by 20% */
    }
   }
-
+/* #endregion */
 
 
 
