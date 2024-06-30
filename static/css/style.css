@@ -1,9 +1,12 @@
-/* css reset */
+
+/* #region ================== CSS RESET =============== */
 *{
   margin: 0px;
   padding-top: 0px;
   box-sizing: border-box;
 }
+/* #endregion */
+
 
 /* #region Typography Styles */
 /* Adjusting font size   */
@@ -38,7 +41,6 @@ h6 {
   font-size: 0.8rem; /* Reduced from 1rem */
 }
 /* #endregion */
-
 
 /* Menu JS animation cx profile   */
 
@@ -109,34 +111,33 @@ flex-direction: column;
 
 /*  visual guide class  */
 .guider {
-border: solid red 1px; 
+border: solid red 0px; 
 }
 
 /*  visual guide class  */
 .guidey {
-  border: solid rgb(237, 222, 7) 1px; 
+  border: solid rgb(237, 222, 7) 0px; 
   }
 
 /*  visual guide class  */
 .guidemain {
-  border: #ff00b3 1px;
+  border: #ff00b3 0px;
   border-style: dotted; 
   }
   
   /*  visual guide class  */
   .guidev {
-    border: solid green 1px; 
+    border: solid green 0px; 
     }
   
     /*  visual guide class  */
   .guideb {
-    border: solid blue 1px; 
+    border: solid blue 0px; 
     }
 
 /* #endregion */
 
-
-/* #Region set div height  */
+/* #region set div height  */
 .height9 {
 height:100%;
 }
@@ -149,17 +150,14 @@ height:100%;
 }
 /* #endregion */
 
-/* ---#Region Navigation bar   */
-
+/* #region Navigation bar  active page underline with border */
 /*  navbar height   */
 .navbar {
-position: relative;
-height: 40px;
-padding: 0px;
-
-}
-
-/* #region Navigation bar  active page underline with border */
+  position: relative;
+  height: 40px;
+  padding: 0px;
+  
+  }
 
 .nav-link {
   position: relative;
@@ -211,7 +209,7 @@ padding: 0px;
 }
 /* #endregion */
 
-/*  #Region card  */
+/* #region =========== CARDS ======================*/
 
 .card {
  min-height: 100%;
@@ -242,14 +240,6 @@ font-size: 0.8rem;
 }
 
 /* #endregion */
-
-/*
-  --battleship-gray: #8D8D8Dff;
---platinum: #DEDEDEff;
---cadet-gray: #A0A0A0ff;
---silver: #B3B3B3ff;
---raisin-black: #282828ff;
-*/
 
 /* #region =========== TABLE EXPERT ===============*/
 
@@ -329,8 +319,7 @@ font-size: 0.8rem;
 
 /* #endregion */
 
-
-/*#region =========== Media Query 540  ===============*/
+/*#region =========== Media Query 540  =============*/
 
 @media (max-width: 540px) {
   
@@ -381,7 +370,7 @@ font-size: 0.8rem;
 }
 /* #endregion */
 
-/* #region=========== Media Query 320 ===============*/
+/* #region=========== Media Query 320 ==============*/
 
 @media (max-width: 320px) {
  
@@ -424,6 +413,12 @@ font-size: 0.8rem;
   }
 /* #endregion */
 
-
-
-
+/* #region=========== COLORS ========================*/
+/*
+  --battleship-gray: #8D8D8Dff;
+--platinum: #DEDEDEff;
+--cadet-gray: #A0A0A0ff;
+--silver: #B3B3B3ff;
+--raisin-black: #282828ff;
+*/
+/* #endregion */
