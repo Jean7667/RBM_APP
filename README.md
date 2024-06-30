@@ -1,5 +1,7 @@
 # Python compatibility
-Django 5.03 and Python 3.12.0 October 2023
+
+Django 5.03 and Python 3.12.4 October 2023
+Upgraded heroku stack and added a new buildpack
 
 # Tools and settings
 Pyenv to manage different versions of python on the machine
@@ -243,6 +245,7 @@ https://learndjango.com/tutorials/django-custom-user-model
 
 - Website is responsive thanks to Bootstrap and media queries applied.
 - There's a hamburger navbar on small devices.
+- Website is tested on iPhone 5s media query 320 and 540
 
 ##### [ Back to Top ](#table-of-contents)
 
@@ -264,6 +267,7 @@ No feature left for implaementation
 - CSS - for custom styling
 - Python - for the backend
 - Javascript - for expert view, customer profile CRUD, menu navbar
+- JS Select2 Library
 - Django - framework used to build this project
 - Bootstrap 5 - front end framework used by me alongside Django, helps with fast and efficient styling
 - PostgreSQL - used as the database
@@ -277,6 +281,7 @@ No feature left for implaementation
 ---
 
 # Testing
+
 
 ### Responsiveness
 
