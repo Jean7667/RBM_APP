@@ -1,10 +1,8 @@
 {% extends 'base.html' %}
-
-{% block title %}
-    Expert Detail
-{% endblock %}
-
+{% load static %}
+{% block title %}Expert view{% endblock title %}
 {% block content %}
+
 <div class="container-xl d-flex flex-column m-0 guidemain  bg-info w-100 h-100">
     <div class="row p-0 gx-0 d-flex justify-content-center w-100 h-100">
       <!--Force div to be centered with content-div class-->
@@ -14,14 +12,21 @@
             <br>
             <h1>RBM</h1>
             <br>
-            <p>A dynamic booking consultancy firm connecting clients with experts across various fields.</p>
+           <p>A dynamic booking consultancy firm connecting clients with experts across various fields.</p>
+        </div>
+        <hr>
+      </div>
+          <div class="row m-2 g-0 w-100">
+  <!--table to display the selected list of experts by skills-->
+      <div class="container mt-5">
+                      <div class="table-container">
           </div>
           <hr>
         </div>
-                    <div class="col-lg-8">
+                    <div class="col-lg-12 g-2">
                         <h3 class="text-center">Expert Details</h3>
-                        <div class="table-responsive">
-                            <table class="table table-dark table-striped">
+                        <div class="table-container">
+                            <table class="table">
                                 <tbody>
                                     <tr>
                                         <th scope="row">Username:</th>
@@ -42,9 +47,9 @@
                                     <tr>
                                         <th scope="row">Skills:</th>
                                         <td>
-                                            <ul>
+                                            <ul class="list-group">
                                                 {% for skill in expert.skills.all %}
-                                                    <li>{{ skill.category }}: {{ skill.name }}</li>
+                                                    <li class="list-group-item">{{ skill.category }}: {{ skill.name }}</li>
                                                 {% endfor %}
                                             </ul>
                                         </td>
@@ -54,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
         </div>
     </div>
+</div>
 {% endblock %}
