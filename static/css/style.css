@@ -52,7 +52,7 @@ h6 {
 }
 
 
-/* #region Body Main content and sub-div */
+/*#region Body Main content and sub-div */
 
 body {
 overflow: hidden;
@@ -62,7 +62,8 @@ margin-bottom: 50px;
 display: flex;
 flex-direction: column;
 padding: 0px; /* content not hidden by footer */
-border: solid rgb(128, 0, 0) 1px; 
+border: solid rgb(128, 0, 0) 0px; 
+background-color: #282828ff;
 }
 
 
@@ -70,12 +71,14 @@ border: solid rgb(128, 0, 0) 1px;
 
 .main-content {
  /* Tested for all type of device */
-overflow:hidden;
+height: 100vh;
+overflow-y: auto; /* Enable vertical scrolling */
+max-width: 1280px; 
 margin-top: 0px;
 margin-bottom:50px ; 
 padding: 0px;
-border-top: solid rgb(255, 0, 0) 3px; /*  visual guide  */
-border-bottom: solid rgb(255, 0, 0) 3px; /*  visual guide  */
+border-top: solid rgb(23, 6, 6) 0px; /*  visual guide  */
+border-bottom: solid rgb(255, 0, 0) 0px; /*  visual guide  */
 flex: 1;
 display: flex;
 flex-direction: column;
@@ -86,8 +89,8 @@ flex-direction: column;
   max-width: 1000px; /* allow small margin and to center the div */
   margin: 0 auto;
   flex: 1; /* div to expand and fill the available vertical space within its flex container*/
-  border: solid #ff00b3 4px;
-  overflow-y: auto;
+  border: solid #ff00b3 0px;
+  overflow-y: visible !important;
   overflow-x: hidden;
   
 }
@@ -101,7 +104,7 @@ flex-direction: column;
 
 /*Background for div inside Main Content    */
 .background-div {
-  background-image: url("/static/images/2.jpg");
+  background-image: url("/static/images/background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -111,7 +114,24 @@ flex-direction: column;
 
 /* #endregion */
 
-/* #region Visual Guide Styles */
+/*#region =========== Footer  ===============*/
+
+.footer {
+  height: 60px; /* footer height */
+  text-align: center;
+  padding: 2px;
+  box-sizing: border-box;
+  background-color:#8D8D8Dff;
+  
+  }
+  
+  .btn-social { 
+  font-size: 0.8rem;
+  }
+  
+  /* #endregion */
+
+/*#region ========Visual Guide Styles */
 
 /*  visual guide class  */
 .guider {
@@ -141,7 +161,8 @@ border: solid red 0px;
 
 /* #endregion */
 
-/* #region set div height  */
+/*#region=========== set div height===========================  */
+
 .height9 {
 height:100%;
 }
@@ -154,8 +175,7 @@ height:100%;
 }
 /* #endregion */
 
-/* #region Navigation bar  active page underline with border */
-/*  navbar height   */
+/*#region===== Navigation bar active page underline with border */
 
 
 .nav-link {
@@ -176,11 +196,13 @@ height:100%;
   left: 0;
   right: 0;
   bottom: 0px; /* position border */
-  height: 4px; /* height of the border */
-  background: rgb(2, 0, 0); /* Border color */
+  height: 2px; /* height of the border */
+  background: rgb(245, 245, 245); /* Border color */
   } 
   
-/* #region============== Sandwich button ===================== */
+  /* #endregion */
+
+/*#region============== Sandwich button ===================== */
 
 
 
@@ -221,7 +243,7 @@ height:100%;
 
 /* #endregion */
 
-/* #region =========== CARDS ======================*/
+/*#region =========== CARDS ======================*/
 
 .card {
  min-height: 100%;
@@ -236,24 +258,9 @@ height:100%;
 .card-text {
   flex-grow: 1;
 }
-
-  
-/* Footer #Region   */
-
-.footer {
-height: 55px; /* footer height */
-text-align: center;
-padding: 2px;
-box-sizing: border-box;
-}
-
-.btn-social { 
-font-size: 0.8rem;
-}
-
 /* #endregion */
 
-/* #region =========== Medi query TABLE EXPERT ===============*/
+/*#region =========== Medi Query TABLE EXPERT ===============*/
 
 
 /* table card */
@@ -331,8 +338,6 @@ font-size: 0.8rem;
 
 /* #endregion */
 
-
-
 /*#region =========== Media Query 992  =============*/
 
 @media screen and (aspect-ratio: 16/9) {
@@ -350,6 +355,7 @@ font-size: 0.8rem;
     }
   }
 
+/* #endregion */
 
 /*#region =========== Media Query 540  =============*/
 
