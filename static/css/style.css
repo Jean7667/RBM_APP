@@ -2,7 +2,7 @@
 /* #region ================== CSS RESET =============== */
 *{
   margin: 0px;
-  padding-top: 0px;
+  padding: 0px;
   box-sizing: border-box;
 }
 /* #endregion */
@@ -13,7 +13,7 @@
 
 html {
   height: -webkit-fill-available;
-  font-size: 85%; /* Reduces text size to 80% of the original size */
+  font-size: 85%; /* Reduces text size to 85% of the original size */
 
 }
 
@@ -70,7 +70,7 @@ border: solid rgb(128, 0, 0) 1px;
 
 .main-content {
  /* Tested for all type of device */
-overflow:none;
+overflow:hidden;
 margin-top: 0px;
 margin-bottom:50px ; 
 padding: 0px;
@@ -84,8 +84,7 @@ flex-direction: column;
 .content-div {
   width: calc(99% - 2rem); /* Force to be center */
   max-width: 1000px; /* allow small margin and to center the div */
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   flex: 1; /* div to expand and fill the available vertical space within its flex container*/
   border: solid #ff00b3 4px;
   overflow-y: auto;
@@ -107,7 +106,7 @@ flex-direction: column;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height: 80dvh; /* Set the height of the background to fill the viewport */
+  height: 80vh; /* Set the height of the background to fill the viewport */
   }
 
 /* #endregion */
@@ -254,7 +253,7 @@ font-size: 0.8rem;
 
 /* #endregion */
 
-/* #region =========== TABLE EXPERT ===============*/
+/* #region =========== Medi query TABLE EXPERT ===============*/
 
 
 /* table card */
@@ -332,14 +331,25 @@ font-size: 0.8rem;
 
 /* #endregion */
 
+
+
 /*#region =========== Media Query 992  =============*/
 
-@media (max-width: 992px) {
+@media screen and (aspect-ratio: 16/9) {
+  .main-content {
+    overflow: auto; /* overflow auto on small screens */
+    padding-top:0px;
+    }
+}
+
+@media (max-width: 1280px) {
 
   .main-content {
     overflow: auto; /* overflow auto on small screens */
     padding-top:0px;
     }
+  }
+
 
 /*#region =========== Media Query 540  =============*/
 
@@ -384,7 +394,7 @@ font-size: 0.8rem;
 
 .card {
   .card {
-  transform: scale(0.9); /* Reduce size by 20% */
+  transform: scale(0.8); /* Reduce size by 20% */
   padding-top: 25px;
   margin-top: 13px;
   margin-bottom :15px;
@@ -397,7 +407,7 @@ font-size: 0.8rem;
 @media (max-width: 320px) {
  
   html {
-    height: -webkit-fill-available;
+    height: 100vh;
     font-size: 60%; /* Reduces text size to 60% of the original size */
   
   }
@@ -409,11 +419,11 @@ font-size: 0.8rem;
 
 .main-content {                     /* view between navbar and footer */
 
- overflow:none;
+ overflow:hidden;
  margin-top: 0px;
  margin-bottom:50px ; 
  padding: 0px;
- border: solid rgb(0, 255, 234) 4px; /*  visual guide  */
+ border: solid rgb(0, 255, 234) 0px; /*  visual guide  */
  flex: 1;
  display: flex;
  flex-direction: column;
@@ -429,11 +439,17 @@ font-size: 0.8rem;
   height: 100%; /* Set the height of the background to fill the viewport */
   }
 
-.card {
-    transform: scale(0.); /* Reduce size by 20% */
-   }
+  .card {
+    transform: scale(0.8); /* Reduce size by 20% */
+    padding-top: 25px;
+    margin-top: 13px;
+    margin-bottom: 15px;
   }
-}
+
+  }
+
+
+
 /* #endregion */
 
 /* #region=========== COLORS ========================*/
