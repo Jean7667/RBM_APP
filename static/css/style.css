@@ -58,7 +58,7 @@ body {
 overflow: hidden;
 height: -webkit-fill-available;
 height:100%;
-margin-bottom: 55px;
+margin-bottom: 50px;
 display: flex;
 flex-direction: column;
 padding: 0px; /* content not hidden by footer */
@@ -96,7 +96,7 @@ flex-direction: column;
 .container-xl {
   display: flex;
   flex-direction: column;
-  min-height: 90vh;
+  min-height: 80vh;
 }
 
 
@@ -181,7 +181,7 @@ height:100%;
   background: rgb(2, 0, 0); /* Border color */
   } 
   
-/* ==============#Region Sandwich button ===================== */
+/* #region============== Sandwich button ===================== */
 
 
 
@@ -242,9 +242,9 @@ height:100%;
 /* Footer #Region   */
 
 .footer {
-height: 75px; /* footer height */
+height: 55px; /* footer height */
 text-align: center;
-padding: 20px;
+padding: 2px;
 box-sizing: border-box;
 }
 
@@ -407,13 +407,13 @@ font-size: 0.8rem;
     padding-top: 50px;
   }
 
-.main-content { /* view between navbar and footer */
+.main-content {                     /* view between navbar and footer */
 
  overflow:none;
  margin-top: 0px;
  margin-bottom:50px ; 
  padding: 0px;
- border: solid rgb(0, 255, 234) 1px; /*  visual guide  */
+ border: solid rgb(0, 255, 234) 4px; /*  visual guide  */
  flex: 1;
  display: flex;
  flex-direction: column;
@@ -433,6 +433,7 @@ font-size: 0.8rem;
     transform: scale(0.); /* Reduce size by 20% */
    }
   }
+}
 /* #endregion */
 
 /* #region=========== COLORS ========================*/
