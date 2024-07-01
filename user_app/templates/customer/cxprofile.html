@@ -26,7 +26,13 @@
             <p class="text-center">Welcome {{ user.first_name }} {{ user.last_name }}, you logged in successfully.</p>
             <br>
             <p class="text-center">Your username is {{ user.username }}. Your last connection was on {{ user.last_login }}.</p>
-
+            {% if messages %}
+                        <div class="alert alert-info">
+                            {% for message in messages %}
+                                <p>{{ message }}</p>
+                            {% endfor %}
+                        </div>
+            {% endif %}
             <div class="text-center">
                 <button onclick="openTab('edit')" class="btn btn-primary">Edit Profile</button>
                 <button onclick="openTab('view')" class="btn btn-primary">View Profile</button>
