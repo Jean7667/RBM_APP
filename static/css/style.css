@@ -74,7 +74,8 @@ overflow:none;
 margin-top: 0px;
 margin-bottom:50px ; 
 padding: 0px;
-border: solid rgb(255, 196, 0) 1px; /*  visual guide  */
+border-top: solid rgb(255, 0, 0) 3px; /*  visual guide  */
+border-bottom: solid rgb(255, 0, 0) 3px; /*  visual guide  */
 flex: 1;
 display: flex;
 flex-direction: column;
@@ -89,6 +90,7 @@ flex-direction: column;
   border: solid #ff00b3 4px;
   overflow-y: auto;
   overflow-x: hidden;
+  
 }
 
 .container-xl {
@@ -155,12 +157,7 @@ height:100%;
 
 /* #region Navigation bar  active page underline with border */
 /*  navbar height   */
-.navbar {
-  position: relative;
-  height: 40px;
-  padding: 0px;
-  
-  }
+
 
 .nav-link {
   position: relative;
@@ -186,30 +183,43 @@ height:100%;
   
 /* ==============#Region Sandwich button ===================== */
 
+
+
 .navbar-toggler {
   position: relative;
-  border: 0px solid black;
-  width: 28px; 
-  height: 28px; 
-  margin-right:5px;
+  border: none; /* Remove border */
+  width: 50px; /* Increase width by 3px */
+  height: 50px; /* Increase height by 3px */
+  margin-right: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  }
-
-  /* Sandwich button menu */
-  .navbar-collapse {
-    
-    margin-top: 0px; 
-    padding: 0px; 
-  }
-  
-  /* Sandwich button Icon - red color */
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 0, 0, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-  width: 35px; 
-  height:35px;   
 }
+
+/* On hover, focus, and active states remove border on hover, focus, and active state */
+.navbar-toggler:hover,
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  border: none; 
+  outline: none;
+  box-shadow: none;
+}
+
+/* Sandwich button menu */
+.navbar-collapse {
+  margin-top: 0;
+  padding: 0;
+}
+
+/* Sandwich button Icon - white color */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 35'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  width: 50px; /* Increase width by 3px */
+  height: 50px; /* Increase height by 3px */
+}
+
+
+
 /* #endregion */
 
 /* #region =========== CARDS ======================*/
