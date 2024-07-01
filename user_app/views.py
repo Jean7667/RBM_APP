@@ -12,7 +12,7 @@ from django.contrib import messages
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
-    success_url = reverse_lazy('login')
+    # success_url = reverse_lazy('login') remove auto redirection to login page
     template_name = 'registration/signup.html' 
     
     def form_valid(self, form):
@@ -20,7 +20,8 @@ class SignUpView(CreateView):
         user.is_customer =True 
         user.save()
         messages.success(self.request, 'Account created successfully! You can now log in.')
-        return super().form_valid(form)
+        return self.render_to_response(self.get_context_data(form=form))
+        #return super().form_valid(form)
     
     
 # template_name = 'base.html' start on base html 
