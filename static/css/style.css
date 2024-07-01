@@ -181,7 +181,7 @@ height:100%;
 .nav-link {
   position: relative;
   display: inline-block;
-  padding: 8px 15px; 
+  padding: 5px 15px; 
   }
   
   .nav-link[aria-current="page"] {
@@ -196,8 +196,8 @@ height:100%;
   left: 0;
   right: 0;
   bottom: 0px; /* position border */
-  height: 2px; /* height of the border */
-  background: rgb(245, 245, 245); /* Border color */
+  height: 3px; /* height of the border */
+  background: #167fb2; /* Border color */
   } 
   
   /* #endregion */
