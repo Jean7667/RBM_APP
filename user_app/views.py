@@ -22,6 +22,11 @@ class SignUpView(CreateView):
         messages.success(self.request, 'Account created successfully! You can now log in.')
         return self.render_to_response(self.get_context_data(form=form))
         #return super().form_valid(form)
+   
+    #in the form invalid entry 
+    def form_invalid(self, form):
+        messages.error(self.request, 'Account creation failed. Please check your input.')
+        return self.render_to_response(self.get_context_data(form=form))
     
     
 # template_name = 'base.html' start on base html 
