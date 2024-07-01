@@ -8,8 +8,9 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages 
 
+#https://docs.djangoproject.com/en/5.0/ref/forms/renderers/#overriding-built-in-form-templates
 
-
+#Built-in Django authentication
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
     # success_url = reverse_lazy('login') remove auto redirection to login page
@@ -19,13 +20,13 @@ class SignUpView(CreateView):
         user = form.save(commit=False)
         user.is_customer =True 
         user.save()
-        messages.success(self.request, 'Account created successfully! You can now log in.')
+        messages.success(self.request, 'Account created successfully! You can now log in.') #messages success
         return self.render_to_response(self.get_context_data(form=form))
         #return super().form_valid(form)
    
     #in the form invalid entry 
     def form_invalid(self, form):
-        messages.error(self.request, 'Account creation failed. Please check your input.')
+        messages.error(self.request, 'Account creation failed. Please check your input.')  #messages error
         return self.render_to_response(self.get_context_data(form=form))
     
     
@@ -61,7 +62,7 @@ class CxProfileView(View):
             return render(request, self.cx_profile_template, {'user': user, 'edit_mode':True})
         else:
             return redirect('home')
-        
+         # update user data
     def post(self, request):
         user = request.user
         if user.is_authenticated and user.is_customer:
@@ -70,9 +71,11 @@ class CxProfileView(View):
             user.location = request.POST.get('location', user.location)
             user.email = request.POST.get('email', user.email)
             user.save()
+            messages.success(request, 'Profile updated successfully.')
             return redirect('customer_profile')  
         else:
-            return redirect('login')
+            messages.error(request, 'Failed to update profile. Please try again.')
+            return redirect('customer_profile')
                 
 class DeleteCxProfileView(View):
     def post(self, request):
