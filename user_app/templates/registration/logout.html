@@ -5,16 +5,16 @@
 
 <div class="container-xl d-flex flex-column justify-content-center align-items-center background-div height9">
     <div class="row p-2 d-flex justify-content-center w-1"> 
-                <div class="card g-3 bg-light text-black justify-content-center align-items-center shadow rounded-2">
+                <div class="card g-5 bg-light text-black justify-content-center align-items-center shadow rounded-2">
                     <h1>RBM</h1>
                     <p>Thank you for visiting us today</p>
                     <h3 class="text-center">Sign out confirmation</h3>
-                    <form action="{% url 'logout' %}" method="post">
-                            {% csrf_token %}
-                    </form>
-                    <span>
+                    <form class="form-control" action="{% url 'logout' %}" method="post" style="text-align: center;">
+                        {% csrf_token %}
                         <button type="submit" class="btn btn-danger">Log out</button>
-                    </span>
+                    </form>
+                    
+                    
                </div>    
             </div>
         </div>
