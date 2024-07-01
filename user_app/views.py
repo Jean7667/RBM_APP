@@ -19,6 +19,7 @@ class SignUpView(CreateView):
         user = form.save(commit=False)
         user.is_customer =True 
         user.save()
+        messages.success(self.request, 'Account created successfully! You can now log in.')
         return super().form_valid(form)
     
     
