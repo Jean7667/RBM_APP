@@ -9,12 +9,12 @@
                     <h1>RBM</h1>
                     <p>Thank you for visiting us today</p>
                     <h3 class="text-center">Sign out confirmation</h3>
-                    <form class="form-control" action="{% url 'logout' %}" method="post">
+                    <form action="{% url 'logout' %}" method="post">
                             {% csrf_token %}
-                        <span class="align-middle">
-                            <button type="submit" class="btn m-3 btn-danger btn-block mt-3">Log out</button>
-                        </span>
                     </form>
+                    <span>
+                        <button type="submit" class="btn btn-danger">Log out</button>
+                    </span>
                </div>    
             </div>
         </div>
