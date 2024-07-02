@@ -25,15 +25,6 @@
             <div class="row  justify-content-center w-100">
                 <div class="col-lg-9">
                     <div class="container mt-5">
-                        <div class="alert alert-info" role="alert">
-                            {% if messages %}
-                               <ul class="messages">
-                                   {% for message in messages %}
-                                       <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                                   {% endfor %}
-                               </ul>
-                           {% endif %} 
-                           </div>
                     {% if request.user.is_authenticated and request.user.is_customer %}
                         <h3>Booking Form</h3>
                         <form method="post" action="{% url 'handle_booking_submission' expert.id %}" enctype="multipart/form-data">
