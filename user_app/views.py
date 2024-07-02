@@ -6,27 +6,27 @@ from .forms import BookingForm, CustomUserCreationForm, EditBookingForm
 from .models import Expert, Skill, Booking
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-from django.contrib import messages 
+from django.contrib import messages #Verified
 
 #https://docs.djangoproject.com/en/5.0/ref/forms/renderers/#overriding-built-in-form-templates
 
 #Built-in Django authentication
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
-    # success_url = reverse_lazy('login') remove auto redirection to login page
+    success_url = reverse_lazy('login')
     template_name = 'registration/signup.html' 
     
     def form_valid(self, form):
         user = form.save(commit=False)
         user.is_customer =True 
         user.save()
-        messages.success(self.request, 'Account created successfully! You can now log in.') #messages success
+        messages.success(self.request, 'Account created successfully! You can now log in.') 
         return self.render_to_response(self.get_context_data(form=form))
         #return super().form_valid(form)
    
     #in the form invalid entry 
     def form_invalid(self, form):
-        messages.error(self.request, 'Account creation failed. Please check your input.')  #messages error
+        messages.error(self.request, 'Account creation failed. Please check your input.')  
         return self.render_to_response(self.get_context_data(form=form))
     
     
@@ -82,6 +82,7 @@ class DeleteCxProfileView(View):
         user = request.user
         if user.is_authenticated and user.is_customer:
             user.delete()
+            messages.success(request, 'Your profile has been deleted successfully.')
             return redirect('home')
         else:
             return redirect('unauthorized')
@@ -171,16 +172,17 @@ def handle_booking_submission(request, expert_id):
                     notes=notes
                 )
                 # Redirect to the success page after booking creation
+                messages.success(request, 'Booking created successfully.')
                 return redirect('booking_success')
             except Exception as e:
-                # Catch exception
-                print("Error creating booking:", e)  
-                return HttpResponse("An error occurred while creating the booking.")  # Debug response
+                print("Error creating booking:", e)
+                messages.error(request, "An error occurred while creating the booking.")
+                return redirect('booking_form', expert_id=expert_id)
         else:
-            print("Form is not valid. Errors:", form.errors)  # Debug message
-            return HttpResponse("Form has errors")  # Debug response
+            print("Form is not valid. Errors:", form.errors)
+            messages.error(request, "Form has errors. Please check the date and if the expert has been already booked.")
+            return redirect('booking_form', expert_id=expert_id)
     else:
-        # Return a 404 response if accessed via GET method
         return HttpResponseNotFound()
 
 @login_required
@@ -196,11 +198,12 @@ def delete_booking(request, booking_id):
     
     if request.method == 'POST':
         booking.delete()
+        messages.success(request, 'You are going to edit the booking.')
         return redirect('booking_success')  # Redirect to booking list page
     
     return render(request, 'booking/deletebooking.html', {'booking': booking})
 
-# can't use crispy form 
+
 
 @login_required
 def edit_booking(request, booking_id):
