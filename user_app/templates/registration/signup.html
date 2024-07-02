@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% load crispy_forms_tags %}
 {% block title %}Signup{% endblock title %}
 {% block content %}
 
@@ -14,7 +17,7 @@
             </div>
 
             <div class="row g-3 w-100">
-                <div class="col-12 mb-3">
+                <div class="mb-3">
                     <h2>Sign Up</h2>
                     
                     {% if messages %}
@@ -26,7 +29,7 @@
                     {% endif %}      
                     <form method="post">
                         {% csrf_token %}
-                        {{ form.as_p }}
+                        {{ form|crispy }}
                         
                         <button type="submit" class="btn btn-primary">Sign Up</button>
                     </form>
