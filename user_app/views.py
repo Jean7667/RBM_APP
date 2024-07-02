@@ -198,7 +198,7 @@ def delete_booking(request, booking_id):
     
     if request.method == 'POST':
         booking.delete()
-        messages.success(request, 'You are going to edit the booking.')
+        messages.success(request, 'Booking deleted successfully')
         return redirect('booking_success')  # Redirect to booking list page
     
     return render(request, 'booking/deletebooking.html', {'booking': booking})
@@ -212,7 +212,7 @@ def edit_booking(request, booking_id):
         form = EditBookingForm(request.POST, instance=booking)
         if form.is_valid():
             form.save()
-            messages.success(request, 'You are going to edit the booking.')
+            messages.success(request, 'Booking changed successfully.')
             return redirect('booking_success')  # Redirect to booking detail page
     else:
         form = EditBookingForm(instance=booking)
