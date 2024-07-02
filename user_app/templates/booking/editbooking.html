@@ -29,24 +29,34 @@
     </div>
 {% endif %}
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <h3>Edit Booking</h3>
-                <form method="post">            
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    <button type="submit" class="btn btn-primary">Save Changes</button>
-                </form>
-                <!-- Delete Button -->
-                <br>
-                <a href="{% url 'delete_booking' booking.id %}" class="btn btn-danger">Delete Booking</a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <h3>Edit Booking</h3>
+                        <form method="post">            
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <div class="d-flex justify-content-between">
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+
+                                <!-- Delete Button -->
+                                <form action="{% url 'delete_booking' booking.id %}" method="post" style="display: inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger">Delete Booking</button>
+                                </form>
+
+                                <!-- Cancel Button -->
+                                <a href="javascript:history.back()" class="btn btn-secondary">Cancel</a>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                    </div>
+                </div>
             </div>
+            
         </div>
     </div>
-    
-{% endblock %}
+</div>
 
-</div><!-- Closing div -->
-</div><!-- Closing div -->
-</div><!-- Closing div -->
+{% endblock %}
