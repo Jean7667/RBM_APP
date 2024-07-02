@@ -32,6 +32,15 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 offset-md-3">
+                        <div class="alert alert-info" role="alert">
+                            {% if messages %}
+                               <ul class="messages">
+                                   {% for message in messages %}
+                                       <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                   {% endfor %}
+                               </ul>
+                           {% endif %} 
+                           </div>
                         <h3>Edit Booking</h3>
                         <form method="post">            
                             {% csrf_token %}
