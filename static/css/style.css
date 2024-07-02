@@ -7,6 +7,27 @@
 }
 /* #endregion */
 
+/* #region ================== Alert reduce size =============== */
+.alert {
+  max-width: 500px; /* Adjust the max-width as per your design */
+  max-height: 40px;
+  margin: 0 auto; /* Center the alert horizontally */
+  text-align: center; /* Center the text within the alert */
+}
+/* #endregion */
+
+/* #region ================== Customer Profile =============== */
+
+/* Menu JS animation cx profile   */
+
+.tab {
+  display: none;
+}
+.tab.active {
+  display: block;
+}
+
+/* #endregion */
 
 /* #region Typography Styles */
 /* Adjusting font size   */
@@ -41,16 +62,6 @@ h6 {
   font-size: 0.8rem; /* Reduced from 1rem */
 }
 /* #endregion */
-
-/* Menu JS animation cx profile   */
-
-.tab {
-  display: none;
-}
-.tab.active {
-  display: block;
-}
-
 
 /*#region Body Main content and sub-div */
 
