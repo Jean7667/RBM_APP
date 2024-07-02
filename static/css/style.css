@@ -9,9 +9,9 @@
 
 /* #region ================== Alert reduce size =============== */
 .alert {
-  max-width: 500px; /* Adjust the max-width as per your design */
-  max-height: 40px;
-  margin: 0 auto; /* Center the alert horizontally */
+  max-width: 800px; /* Adjust the max-width as per your design */
+  max-height: 30px;
+  margin: 2 px auto; /* Center the alert horizontally */
   text-align: center; /* Center the text within the alert */
 }
 /* #endregion */
