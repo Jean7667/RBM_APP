@@ -80,17 +80,17 @@
                     
         </div>
     </nav>
+    <br>
     <!--Main content section-->
     <!--Main content div height: calc(99dvh - 100px) and 100px equal footer height plus navbar height -->
-                    {% if messages %}
-                        <div class="alert alert-info" role="alert">
-                            <ul class="messages">
-                                {% for message in messages %}
-                                    <li> {% if message.tags %} class="{{ message.tags }}"{% endif %} {{ message }}</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    {% endif %}
+                {% if messages %}
+                <div class="alert alert-info" role="alert">
+                    {% for message in messages %}
+                    <p {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+    <br>
     <main class="container-fluid d-flex justify-content-center align-items-center main-content">
         {% block content %}
         
