@@ -9,10 +9,30 @@
 
 /* #region ================== Alert reduce size =============== */
 .alert {
-  max-width: 800px; /* Adjust the max-width as per your design */
-  max-height: 30px;
-  margin: 2 px auto; /* Center the alert horizontally */
+  line-height:15px ;
+  padding:0px 15px;
+  width: 100%; 
+  font-size: 10px;
+  margin: 0 auto; /* Center the alert horizontally */
   text-align: center; /* Center the text within the alert */
+  
+}
+/* conditional messaging depending on type of messages color will change */
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+.alert-warning {
+  background-color: #fff3cd;
+  color: #856404;
+}
+.alert-info {
+  background-color: #cce5ff;
+  color: #0c5460;
 }
 /* #endregion */
 
