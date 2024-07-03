@@ -22,3 +22,5 @@ user_app/templates/pinegrow.json
 CORE/.env
 env.py
 .htmlhintrc
+user.json
+rbmusers.json
