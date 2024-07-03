@@ -34,7 +34,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {% for booking in bookings %}
+                                    {% for booking in page_obj.object_list %}
                                     <tr>
                                         <td data-label="Expert Name">  {{ booking.BookingExpert }}</td>
                                         <td data-label="Customer Name">{{ booking.CustomerUser }}</td>
