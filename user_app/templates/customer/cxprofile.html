@@ -35,7 +35,7 @@
                 <form method="post" action="{% url 'delete_profile' %}" id="deleteForm">
                     {% csrf_token %}
                     <input type="hidden" name="_method" value="delete">
-                    <button class="btn m-2 btn-outline-primary" type="button" onclick="confirmDelete()">Delete Profile</button>
+                    <button class="btn m-2 btn-outline-danger" type="button" onclick="confirmDelete()">Delete Profile</button>
                 </form>
             </div>
             </div>
