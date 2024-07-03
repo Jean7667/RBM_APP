@@ -26,9 +26,18 @@
             <p class="text-center">Welcome {{ user.first_name }} {{ user.last_name }}, you logged in successfully.</p>
             <br>
             <p class="text-center">Your username is {{ user.username }}. Your last connection was on {{ user.last_login }}.</p>         
+            <div class="d-flex justify-content-center">
             <div class="text-center">
-                <button onclick="openTab('edit')" class="btn btn-primary">Edit Profile</button>
-                <button onclick="openTab('view')" class="btn btn-primary">View Profile</button>
+                <button onclick="openTab('edit')" class="btn m-2 btn-outline-primary">Edit Profile</button>
+                <button onclick="openTab('view')" class="btn m-2 btn-outline-primary">View Profile</button>
+            </div>
+            <div>
+                <form method="post" action="{% url 'delete_profile' %}" id="deleteForm">
+                    {% csrf_token %}
+                    <input type="hidden" name="_method" value="delete">
+                    <button class="btn m-2 btn-outline-primary" type="button" onclick="confirmDelete()">Delete Profile</button>
+                </form>
+            </div>
             </div>
             <br>
             <hr>
@@ -64,14 +73,11 @@
                             Please provide a location.
                         </div>
                     </div>
+                    
                     <button type="submit" class="btn btn-primary">Update Profile</button>
                 </form>
-                <h4 class="mt-3">Delete Profile</h4>
-                <form method="post" action="{% url 'delete_profile' %}" id="deleteForm">
-                    {% csrf_token %}
-                    <input type="hidden" name="_method" value="delete">
-                    <button class="btn btn-danger" type="button" onclick="confirmDelete()">Delete Profile</button>
-                </form>
+                
+                
             </div>
 
             <div id="viewTab" class="tab" style="display: none;">
