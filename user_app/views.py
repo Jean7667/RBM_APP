@@ -7,6 +7,7 @@ from .models import Expert, Skill, Booking
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages #Verified
+from django.core.paginator import Paginator
 
 #https://docs.djangoproject.com/en/5.0/ref/forms/renderers/#overriding-built-in-form-templates
 
@@ -185,12 +186,19 @@ def handle_booking_submission(request, expert_id):
     else:
         return HttpResponseNotFound()
 
+#stackoverflow.com/questions/74615456/how-to-add-pagination-in-django
+
 @login_required
 def booking_success(request):
     # Retrieve bookings for the current user
     bookings = Booking.objects.filter(CustomerUser=request.user)
     
-    return render(request, 'booking/bookingsuccess.html', {'bookings': bookings})
+    # Pagination
+    paginator = Paginator(bookings,5)  
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    
+    return render(request, 'booking/bookingsuccess.html', {'page_obj': page_obj})
 
 @login_required
 def delete_booking(request, booking_id):
