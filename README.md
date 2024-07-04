@@ -3,20 +3,19 @@
 Django 5.03 and Python 3.12.4 October 2023
 Upgraded heroku stack and added a new buildpack
 
+
 # Tools and settings
 Pyenv to manage different versions of python on the machine
 Virtualenv to create Python virtual environements
 Virtualwrapper to help to manage virtual environments
 automation of repositories creation and and remote repositories with gh
 
-# infrastructure
-building Docker images and setting up
-Using minikube with add-ons
 
 
 # Link to the project 
-https://rbm-io-72c53614ff57.herokuapp.com/
 
+https://rbm-app-aa6d3f2add38.herokuapp.com/
+ 
 
 # Title: Business Case for Customer Booking App for Consultant Services
 
@@ -45,14 +44,15 @@ By developing a customer booking app for consultant services, we aim to address 
 
 
 Booking Consultant: The website acts as a booking consultant, guiding clients through the process of finding the right expert for their requirements. Clients can input their needs, preferences, and desired skill sets into the platform, which then generates a curated list of experts who match those criteria.
-Check the List of Experts: Once the client has specified their requirements, they can browse through the list of experts provided by the website. Each expert is accompanied by a detailed profile outlining their skills, experience, and areas of expertise.
 
-Find the Skillset You Need: Clients can easily filter and search through the list of experts to find the specific skillset they require. Whether it's for IT consulting, marketing strategies, legal advice, or any other expertise, clients can quickly identify the experts who possess the skills necessary to meet their needs.
+Check the List of Experts: Once the client has specified their requirements, they can browse through the list of experts provided by the website. Each expert is accompanied by a detailed profile outlining their skills, areas of expertise.
+
+Find the Skillset You Need: Clients can easily filter and search through the list of experts to find the specific skillset they require. 
 
 Get the Expert Right to Your Door: After selecting the desired expert, clients can proceed to book their services directly through the website. RBM ensures a seamless experience by handling all the logistics, including scheduling and coordination, to ensure that the expert arrives at the client's location promptly.
-Next Morning Service: RBM prides itself on its swift service, offering clients the convenience of having the expert at their doorsteps as soon as the next morning after booking. This ensures that clients can receive timely assistance and support for their projects or tasks without any delays.
 
-<img src="./rbmdoc/Screenshot from 2024-03-24 21-18-31.png" width="auto" height="auto">
+
+<img src="/rbmdoc/Screenshot from 2024-03-25 09-26-58.png" width="auto" height="auto">
 
 
  # Customer need and business case
@@ -200,16 +200,19 @@ In our project, we utilized GitHub for project management, harnessing its robust
 
 > List of Mandatory User Stories
 
-[USER STORY] : book a consultant
+[USER STORY] : book a consultant 
 [USER STORY] : sign-up form
 [USER STORY] : login and sign up 
 [USER STORY] : view edit view my profile
 [USER STORY] : consult available consultants
 
+![alt text](<Screenshot from 2024-07-01 13-02-18.png>)
+
 
 
 ### Navbar and Footer:
-- The site is design for wide screens and not small design new to the design and the necessity of large tables to offer a complete view of skills experts and information.
+
+- The site is design for wide screens first but it is fully responsive.
 - Navbar and footer are present on every page
 - Navbar's content changes depending on user authentication, allowing access to profile and user bookings
 - Footer includes social links and address to provide the necessary informations in an easy way.
@@ -221,7 +224,9 @@ In our project, we utilized GitHub for project management, harnessing its robust
 
 ### About Us page:
 
+Generic about page 
 
+The "About Us" page introduces the company or individual, establishes credibility, and builds trust by sharing the history, mission, values, and team members. It differentiates the business from competitors by highlighting unique aspects. This page fosters connection and engagement with visitors while providing essential information and navigation links.
 
 ### Authentication and profile management:
 
@@ -243,9 +248,30 @@ https://learndjango.com/tutorials/django-custom-user-model
 
 ### Responsiveness:
 
-- Website is responsive thanks to Bootstrap and media queries applied.
+- Website is responsive 💯 thanks to Bootstrap and media queries applied.
 - There's a hamburger navbar on small devices.
-- Website is tested on iPhone 5s media query 320 and 540
+- Website is tested on multiple device available in chrome dev tools 
+- media query 992 768 320 and 540 have been added to css file.
+
+among the device tested 
+
+Device	Resolution	Device Pixel Ratio (DPR)	User Agent
+Apple iPhone SE	375 x 667	2	iPhone
+Apple iPhone XR	414 x 896	2	iPhone
+Apple iPhone 12 Pro	390 x 844	3	iPhone
+Apple iPhone 12 Pro Max	428 x 926	3	iPhone
+Apple iPad Mini	768 x 1024	2	iPad
+Apple iPad Pro	1024 x 1366	2	iPad
+Samsung Galaxy S20 Ultra	412 x 915	3.5	Galaxy
+Samsung Galaxy S21 Ultra	412 x 915	3.5	Galaxy
+Google Pixel 4	411 x 869	2.75	Pixel
+Google Pixel 5	393 x 851	2.75	Pixel
+Microsoft Surface Duo	540 x 720	2	Surface
+Microsoft Surface Pro 7	912 x 1368	1.5	Surface
+Samsung Galaxy Fold	280 x 653 (folded)	3.5	Galaxy
+
+<video controls src="rbmdoc/ResponsiveWebsite.mp4" title="Title"></video>
+
 
 ##### [ Back to Top ](#table-of-contents)
 
@@ -268,7 +294,7 @@ No feature left for implaementation
 - Python - for the backend
 - Javascript - for expert view, customer profile CRUD, menu navbar
 - JS Select2 Library
-- Django - framework used to build this project
+- Django 5.03 - framework used to build this project
 - Bootstrap 5 - front end framework used by me alongside Django, helps with fast and efficient styling
 - PostgreSQL - used as the database
 - Google Fonts- currently only for the hero image font
@@ -343,13 +369,19 @@ JavaScript filter on expert view is not taking into account an expert with multi
 
 > Create the Heroku app
 
+
+
 - Sign up / Log in to Heroku
 - In Heroku Dashboard page select 'New' and then 'Create New App'
 - Name a project - I decided on the  (the app's name must be unique)
 - Select EU as that was my region in the moment of creating the app
+- upgrade stack to 24 
+- and create a Python build pack
 - Select "Create App"
 - In the "Deploy" tab choose GitHub as the deployment method
 - Connect your GitHub account/ find and connect your GitHub repository
+
+Check the log
 
 > Set up enviroment variables
 
