@@ -270,7 +270,7 @@ Microsoft Surface Duo	540 x 720	2	Surface
 Microsoft Surface Pro 7	912 x 1368	1.5	Surface
 Samsung Galaxy Fold	280 x 653 (folded)	3.5	Galaxy
 
-<video controls src="rbmdoc/ResponsiveWebsite.mp4" title="Title"></video>
+<video controls src="rbmdoc/ResponsiveWebsite.mp4" title="Title">Test done with chrome dev tools</video>
 
 
 ##### [ Back to Top ](#table-of-contents)
