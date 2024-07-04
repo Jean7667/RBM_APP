@@ -116,7 +116,7 @@ align-items: center;
 }
 
 .content-div {
-  height: calc(100% - 75px);
+  height: calc(100% - 100px);
   overflow-y: scroll !important;
   overflow-x: hidden;
   width: calc(99% - 2rem); /* Force to be center */
@@ -297,11 +297,31 @@ height:100%;
 }
 /* #endregion */
 
+/*#region =========== Media Query 992  =============*/
+
+@media screen and (aspect-ratio: 16/9) {
+  .main-content {
+    overflow: visible; /* overflow auto on small screens */
+    padding-top:0px;
+    }
+}
+
+@media (max-width: 1280px) {
+
+  .main-content {
+    overflow: visible; /* overflow auto on small screens */
+    padding-top:0px;
+    }
+  }
+
+/* #endregion */
+
+
 /*#region =========== Media Query TABLE EXPERT ===============*/
 
 @media (max-width: 768px) {
 .content-div {
-  height: calc(100% - 70px);
+  height: calc(100% - 120px);
   overflow-y: scroll !important;
   overflow-x: hidden;
   width: calc(99% - 2rem); /* Force to be center */
@@ -313,7 +333,16 @@ height:100%;
   border: solid #ff00b3 0px;
   
 }
+
+html {
+  height: -webkit-fill-available;
+  font-size: 80%; /* Reduces text size to 80% of the original size */
+
 }
+
+}
+
+
 
 /* table card */
 
@@ -390,24 +419,7 @@ height:100%;
 
 /* #endregion */
 
-/*#region =========== Media Query 992  =============*/
 
-@media screen and (aspect-ratio: 16/9) {
-  .main-content {
-    overflow: visible; /* overflow auto on small screens */
-    padding-top:0px;
-    }
-}
-
-@media (max-width: 1280px) {
-
-  .main-content {
-    overflow: visible; /* overflow auto on small screens */
-    padding-top:0px;
-    }
-  }
-
-/* #endregion */
 
 /*#region =========== Media Query 540  =============*/
 
@@ -466,25 +478,39 @@ height:100%;
  
   html {
     height: 100vh;
-    font-size: 60%; /* Reduces text size to 60% of the original size */
+    font-size: 65%; /* Reduces text size to 60% of the original size */
   
   }
   
-  .small-device{
+/*   .small-device{
     margin-top: 100px;
     padding-top: 50px;
-  }
+  } */
 
-.main-content {                     /* view between navbar and footer */
+/* /* .main-content {                     /* view between navbar and footer */
 
- overflow:visible;
+overflow:visible;
  margin-top: 0px;
  margin-bottom:50px ; 
  padding: 0px;
  border: solid rgb(0, 255, 234) 0px; /*  visual guide  */
  flex: 1;
  display: flex;
- flex-direction: column;
+ flex-direction: column; 
+}  
+
+ .content-div {
+  height: calc(100% - 60px);
+  overflow-y: scroll !important;
+  overflow-x: hidden;
+  width: calc(99% - 2rem); /* Force to be center */
+  max-width: 1000px; /* allow small margin and to center the div */
+  margin-top:5px !important;
+  margin-bottom:150px !important;
+  padding-bottom:95px !important;
+  flex: 1; /* div to expand and fill the available vertical space within its flex container*/
+  border: solid #ff00b3 0px;
+  
 }
 
 /*Background for div inside Main Content    */
@@ -498,7 +524,7 @@ height:100%;
   }
 
   .card {
-    transform: scale(0.8); /* Reduce size by 20% */
+    transform: scale(0.9); /* Reduce size by 10% */
     padding-top: 25px;
     margin-top: 13px;
     margin-bottom: 15px;
