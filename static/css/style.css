@@ -487,10 +487,10 @@ html {
     padding-top: 50px;
   } */
 
-/* /* .main-content {                     /* view between navbar and footer */
+.main-content {                     /* view between navbar and footer */
 
-overflow:visible;
- margin-top: 0px;
+ overflow:visible;
+ margin-top : 0px;
  margin-bottom:50px ; 
  padding: 0px;
  border: solid rgb(0, 255, 234) 0px; /*  visual guide  */
