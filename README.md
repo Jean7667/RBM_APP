@@ -1,28 +1,28 @@
-# Python compatibility
+## Python compatibility
 
 Django 5.03 and Python 3.12.4 October 2023
 Upgraded heroku stack and added a new buildpack
 
 
-# Tools and settings
+## Tools and settings
 Pyenv to manage different versions of python on the machine
 Virtualenv to create Python virtual environements
 Virtualwrapper to help to manage virtual environments
 automation of repositories creation and and remote repositories with gh
 
 
-# Title: Business Case for Customer Booking App for Consultant Services
+##### Title: Business Case for Customer Booking App for Consultant Services
 
-# Objective:
+##### Objective:
 To develop an application that enables customers to easily book consultants and experts with specific skills.
 
-# Problem Statement:
+##### Problem Statement:
 Currently, there is a lack of efficient and user-friendly platforms for customers to book consultants and experts for project tasks. This results in time-consuming processes and potential delays in project delivery.
 
-# Solution:
+##### Solution:
 Developing a application that allows customers to browse available consultants and experts, select the ones suitable for their project needs, and book them directly through the app. The app will notify both the customer and the chosen consultant of the booking details, including the customer's address and all necessary information for the consultant to join the customer on-site.
 
-# Benefits:
+##### Benefits:
 
 Improved customer experience through a seamless booking process.
 Enhanced efficiency by streamlining consultant selection and booking.
@@ -30,11 +30,11 @@ Increased transparency with all relevant information provided upfront.
 Reduced administrative burden for both customers and consultants.
 Higher customer satisfaction leading to repeat business and referrals.
 
-# Conclusion:
+##### Conclusion:
 
 By developing a customer booking app for consultant services, we aim to address the current challenges in the booking process. This initiative aligns with our goal of providing innovative solutions to meet customer needs and stay ahead of the competition in the industry.
 
-# Link to the project 
+## Link to the project 
 
 🔗 https://rbm-app-aa6d3f2add38.herokuapp.com/ 
 
@@ -378,7 +378,14 @@ css code validation with W3C CSS Validation Service
 🔗 <img src="./rbmdoc/csrf.jpeg" width="50%" height="50%">
 
 
-### Manual testing
+# Manual testing
+
+
+#### Account Registration Tests
+| Test |Result  |
+|--|--|
+| User receives notificationm when profile is created or updated or deleted | Pass |
+| User receives notificationm when booking is created or updated or deleted  | Pass |
 
 #### Account Registration Tests
 | Test |Result  |
@@ -417,34 +424,38 @@ css code validation with W3C CSS Validation Service
 
 
 
-|User can see the confirmation information | Pass |
-|User can add skill from Admin interface the confirmation information | Pass |
 
-
-#### Account Registration Tests
+#### Back office section create an expert edit delete 
 | Test |Result  |
 |--|--|
-| User receives notificationm when profile is created or updated or deleted | Pass |
-| User receives notificationm when booking is created or updated or deleted  | Pass |
+|SuperUser can add expert and flag the user as an expert  | Pass |
+|SuperUser can see the list of expert and add edit one or multiples skills| Pass |
+
+🔗 📺 https://youtu.be/8goWMuRIrV8 video demo backoffice
+
+🔗 📺 https://youtu.be/qFmqEaqTb28 video demo after a new expert has been added 
+
+
+
 
 ##### [ Back to Top ](#table-of-contents)
 
 ---
  
-# Known bugs 
+### Known bugs 
 
 - function cleandata not finished to implement, this function was created to set valid data in the formbooking form. the validation is working partially, there is no error message yet booking is simply not allowed if done in the past or if it overlap
   
-- The username of the expert is not passed in the form t book the expert 
-
+- The username of the expert is not passed in the form to book the expert  
+- in the back office there is no rules to allow only the user with the flag expert to access to the skills and add skills.
 
 ##### [ Back to Top ](#table-of-contents)
 
 ---
 
-# Deployment
+### Deployment
 
-#### The deployment stage of the website should follow the steps below:
+##### The deployment stage of the website should follow the steps below:
 
 - You need to change the runtime to 3.12.4 this is the official version supported with Django 5.0 and it is the version supported on Stack24 of Heroku.
 - You need to update setting.py as follow:
