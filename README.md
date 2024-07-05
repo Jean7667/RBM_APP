@@ -205,13 +205,20 @@ In our project, we utilized GitHub for project management, harnessing its robust
 [USER STORY] : view edit view my profile
 [USER STORY] : consult available consultants
 
-![alt text](<Screenshot from 2024-07-01 13-02-18.png>)
+
+![alt text](<Rbm Project Moscow.png>)
 
 
+You can review the project management at https://github.com/users/Jean7667/projects/6
 
 ### Navbar and Footer:
 
 - The site is design for wide screens first but it is fully responsive.
+- The site has been tested on ResponsiveStack, physical device such as Honor phone, Iphone 13 and android tablet.
+
+A video is available on Youtube to demonstrate the responsiveness 
+
+
 - Navbar and footer are present on every page
 - Navbar's content changes depending on user authentication, allowing access to profile and user bookings
 - Footer includes social links and address to provide the necessary informations in an easy way.
@@ -269,8 +276,9 @@ Microsoft Surface Duo	540 x 720	2	Surface
 Microsoft Surface Pro 7	912 x 1368	1.5	Surface
 Samsung Galaxy Fold	280 x 653 (folded)	3.5	Galaxy
 
-<video controls src="rbmdoc/ResponsiveWebsite.mp4" title="Title">Test done with chrome dev tools</video>
+Test done with chrome dev tools check the video.
 
+https://youtu.be/A4cpX3HhbqU
 
 ##### [ Back to Top ](#table-of-contents)
 
@@ -355,7 +363,8 @@ Optmised for large and wide screens due dynamic tables
  
 # Known bugs 
 
-JavaScript filter on expert view is not taking into account an expert with multiple skills
+- function cleandata not finished to implement, this function was created to set valid data in the formbooking form.
+- The username of the expert is not passed in the form t book the expert 
 
 
 ##### [ Back to Top ](#table-of-contents)
@@ -465,10 +474,6 @@ Creating a clone enables you to make a copy of the current version of this repos
 ---
 
 # Credits and acknowledgements
-
-
-
-
 
 ##### [ Back to Top ](#table-of-contents)
 
