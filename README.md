@@ -60,7 +60,6 @@ Get the Expert Right to Your Door: After selecting the desired expert, clients c
 <img src="./rbmdoc/Core of RBM.png" width="auto" height="auto">
 
 
-Fourth Project Portfolio for Code Institute.
 
 ### [Link to the live site](https://.herokuapp.com/)
 ---
@@ -459,7 +458,7 @@ Creating a clone enables you to make a copy of the current version of this repos
 - [Bootstrap docs](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 - [Stack overflow](https://stackoverflow.com/)
 - [Multiple books and Youtube Videos]
-
+- [LearnDjango](https://learndjango.com/tutorials/django-custom-user-model)
 
 ##### [ Back to Top ](#table-of-contents)
 
