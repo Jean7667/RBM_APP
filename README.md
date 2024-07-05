@@ -222,18 +222,16 @@ In our project, we utilized GitHub for project management, harnessing its robust
 ![alt text](<Rbm Project Moscow.png>)
 
 
-You can review the project management at https://github.com/users/Jean7667/projects/6
+You can review the project management at 🔗 https://github.com/users/Jean7667/projects/6
 
 ### Navbar and Footer:
 
 - The site is design for wide screens first but it is fully responsive.
 - The site has been tested on ResponsiveStack, physical device such as Honor phone, Iphone 13 and android tablet.
 
-A video is available on Youtube to demonstrate the responsiveness 
+A video is available on Youtube to demonstrate the responsiveness for each media query
 
 https://youtu.be/uZGk-1jmttI
-
-
 
 - Navbar and footer are present on every page
 - Navbar's content changes depending on user authentication, allowing access to profile and user bookings
@@ -266,37 +264,17 @@ https://learndjango.com/tutorials/django-custom-user-model
 
 - User can pass their data to create a booking.
 - User can edit their selected booking.
-- Currently the initial version of booking cancellation view has not been fully implemented. I decided to implement an automatic delete_booking view, that allows User to quickly remove their booking from the system.
+------
+ Currently the initial version of booking cancellation view has not been fully implemented. I decided to implement an automatic delete_booking view, that allows User to quickly remove their booking from the system.
+-----
 
 ### Responsiveness:
 
 - Website is responsive 💯 thanks to Bootstrap and media queries applied.
 - There's a hamburger navbar on small devices.
-- Website is tested on multiple device available in chrome dev tools 
 - media query 992 768 320 and 540 have been added to css file.
 
-among the device tested 
 
-Device	Resolution	Device Pixel Ratio (DPR)	User Agent
-Apple iPhone SE	375 x 667	2	iPhone
-Apple iPhone XR	414 x 896	2	iPhone
-Apple iPhone 12 Pro	390 x 844	3	iPhone
-Apple iPhone 12 Pro Max	428 x 926	3	iPhone
-Apple iPad Mini	768 x 1024	2	iPad
-Apple iPad Pro	1024 x 1366	2	iPad
-Samsung Galaxy S20 Ultra	412 x 915	3.5	Galaxy
-Samsung Galaxy S21 Ultra	412 x 915	3.5	Galaxy
-Google Pixel 4	411 x 869	2.75	Pixel
-Google Pixel 5	393 x 851	2.75	Pixel
-Microsoft Surface Duo	540 x 720	2	Surface
-Microsoft Surface Pro 7	912 x 1368	1.5	Surface
-Samsung Galaxy Fold	280 x 653 (folded)	3.5	Galaxy
-
-Test done with chrome dev tools check the video.
-
-📺 🔗 https://youtu.be/uZGk-1jmttI
-
-📺 🔗 https://youtu.be/pTt0BiT5Jtk
 
 ##### [ Back to Top ](#table-of-contents)
 
@@ -309,11 +287,13 @@ Test done with chrome dev tools check the video.
 🔗 https://github.com/Jean7667/RBM_APP/issues/44
 
 
-No feature left for implaementation 
+- [USER STORY] As a Customer , I want to display my location on Google Maps So that I can easily share it with customers and consultants.
+#31
+🔗 https://github.com/Jean7667/RBM_APP/issues/31
 
 ##### [ Back to Top ](#table-of-contents)
 
----
+-----
 
 # Technology used 
 
@@ -337,9 +317,58 @@ No feature left for implaementation
 # Testing
 
 
+https://youtu.be/m6ZLSaCJsPM
+
 ### Responsiveness
 
+- Website is tested on multiple device available in chrome dev tools 
+
+among the device tested 
+
+Device	Resolution	Device Pixel Ratio (DPR)	User Agent
+Apple iPhone SE	375 x 667	2	iPhone
+Apple iPhone XR	414 x 896	2	iPhone
+Apple iPhone 12 Pro	390 x 844	3	iPhone
+Apple iPhone 12 Pro Max	428 x 926	3	iPhone
+Apple iPad Mini	768 x 1024	2	iPad
+Apple iPad Pro	1024 x 1366	2	iPad
+Samsung Galaxy S20 Ultra	412 x 915	3.5	Galaxy
+Samsung Galaxy S21 Ultra	412 x 915	3.5	Galaxy
+Google Pixel 4	411 x 869	2.75	Pixel
+Google Pixel 5	393 x 851	2.75	Pixel
+Microsoft Surface Duo	540 x 720	2	Surface
+Microsoft Surface Pro 7	912 x 1368	1.5	Surface
+Samsung Galaxy Fold	280 x 653 (folded)	3.5	Galaxy
+
+🔗 <img src="./rbmdoc/ipad.png" width="50%" height="50%">
+
+🔗 <img src="./rbmdoc/iphone.png" width="50%" height="50%">
+
+Test done with chrome dev tools check the video.
+
+📺 🔗 https://youtu.be/uZGk-1jmttI
+
+📺 🔗 https://youtu.be/pTt0BiT5Jtk
+
+
 Optmised for large and wide screens due dynamic tables
+📺 🔗 https://youtu.be/pTt0BiT5Jtk
+
+Html code fixed and  tested with Html Checker 
+
+👍 <img src="./rbmdoc/Html checker test.png" width="auto" height="auto">
+
+👍 <img src="./rbmdoc/html checker.png" width="auto" height="auto">
+
+🐍 Python code verified with flake8, pylint and pylinter CI
+
+🔗 <img src="./rbmdoc/Linter.png" width="50%" height="50%">
+
+css code validation with W3C CSS Validation Service
+
+🔗 <img src="./rbmdoc/css validator.png" width="50%" height="50%">
+
+
 
 ### Manual testing
 
@@ -349,6 +378,7 @@ Optmised for large and wide screens due dynamic tables
 | User can create profile | Pass |
 | User can log into profile | Pass |
 | User can log out of profile | Pass |
+
 
 ---
 
@@ -376,6 +406,7 @@ Optmised for large and wide screens due dynamic tables
 |User can edit their information | Pass |
 |User can see the confirmation information | Pass |
 |User can add skill from Admin interface the confirmation information | Pass |
+
 
 
 ##### [ Back to Top ](#table-of-contents)
