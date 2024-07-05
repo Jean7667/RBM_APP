@@ -209,12 +209,16 @@ In our project, we utilized GitHub for project management, harnessing its robust
 
 [USER STORY] : book a consultant 
 🔗 https://github.com/users/Jean7667/projects/6/views/8?pane=issue&itemId=56170260
+
 [USER STORY] : sign-up form
 🔗 https://github.com/users/Jean7667/projects/6/views/8?pane=issue&itemId=56170837
+
 [USER STORY] : login 
 🔗 https://github.com/users/Jean7667/projects/6/views/8?pane=issue&itemId=56179506
+
 [USER STORY] : view edit view my profile
 🔗 https://github.com/users/Jean7667/projects/6?pane=issue&itemId=56170838
+
 [USER STORY] : consult available consultants
 🔗 https://github.com/users/Jean7667/projects/6?pane=issue&itemId=56170695
 
