@@ -368,6 +368,14 @@ css code validation with W3C CSS Validation Service
 
 🔗 <img src="./rbmdoc/css validator.png" width="50%" height="50%">
 
+### Security 
+| Test |Result  |
+|--|--|
+| Prevention of brute force actions via URL   | Pass |
+| No secret available in the code   | Pass |
+| Redirect to sign-in page after attempted unauthorized action  | Pass |
+
+🔗 <img src="./rbmdoc/csrf.jpeg" width="50%" height="50%">
 
 
 ### Manual testing
@@ -393,6 +401,8 @@ css code validation with W3C CSS Validation Service
 | SuperUser can access admin page|Pass|
 | SuperUser can create a expert add skills add a flag for customer or expert admin page|Pass|
 
+
+
 #### Expert Booking and Profile Tests
 
 | Test |Result  |
@@ -404,10 +414,18 @@ css code validation with W3C CSS Validation Service
 |User can make more than one booking | Pass |
 |User can delete their account | Pass |
 |User can edit their information | Pass |
+
+
+
 |User can see the confirmation information | Pass |
 |User can add skill from Admin interface the confirmation information | Pass |
 
 
+#### Account Registration Tests
+| Test |Result  |
+|--|--|
+| User receives notificationm when profile is created or updated or deleted | Pass |
+| User receives notificationm when booking is created or updated or deleted  | Pass |
 
 ##### [ Back to Top ](#table-of-contents)
 
@@ -415,7 +433,8 @@ css code validation with W3C CSS Validation Service
  
 # Known bugs 
 
-- function cleandata not finished to implement, this function was created to set valid data in the formbooking form.
+- function cleandata not finished to implement, this function was created to set valid data in the formbooking form. the validation is working partially, there is no error message yet booking is simply not allowed if done in the past or if it overlap
+  
 - The username of the expert is not passed in the form t book the expert 
 
 
@@ -427,16 +446,22 @@ css code validation with W3C CSS Validation Service
 
 #### The deployment stage of the website should follow the steps below:
 
+- You need to change the runtime to 3.12.4 this is the official version supported with Django 5.0 and it is the version supported on Stack24 of Heroku.
+- You need to update setting.py as follow:
+
+🔗 <img src="./rbmdoc/Setting.py.png" width="50%" height="50%">
+
 > Create the Heroku app
-
-
 
 - Sign up / Log in to Heroku
 - In Heroku Dashboard page select 'New' and then 'Create New App'
 - Name a project - I decided on the  (the app's name must be unique)
 - Select EU as that was my region in the moment of creating the app
-- upgrade stack to 24 
-- and create a Python build pack
+- :arrow_right: upgrade stack to 24 
+- ➡️ create a Python build pack
+
+🔗 <img src="./rbmdoc/Heroku24stack config vars.png" width="50%" height="50%">
+
 - Select "Create App"
 - In the "Deploy" tab choose GitHub as the deployment method
 - Connect your GitHub account/ find and connect your GitHub repository
@@ -444,27 +469,22 @@ css code validation with W3C CSS Validation Service
 Check the log
 
 > Set up enviroment variables
-
 - In the Django app editor create env.py in the top level
 - In env.py import os
 - In env.py set up necessary enviroment variables:
   - add a secret key using: os.environ['SECRET_KEY'] = 'your secret key'
   - for the database variable the line should include os.environ['DATABASE_URL']= 'Paste the database link in here'
+
+🔗 <img src="./rbmdoc/Heroku24stack config vars.png" width="50%" height="50%">
+
   - in settings.py replace value of SECRET_KEY variable with os.environ.get('SECRET_KEY')
   - in settings.py change the value of DATABASES variable to 'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-- In Django app's settings.py on top of the file add:
-```
-from pathlib import Path
-import os
-import dj_database_url
-if os.path.isfile('env.py'):
-    import env
-```
-- Navigate to the "Settings" tab in Heroku.
-- Open the "Config Vars" section and add DATABASE_URL as Key and the database link from app's env.py as Value
-- Add SECRET_KEY for the Key value and the secret key value from env.py as the Value
-- In the terminal migrate the models over to the new database connection
-- In settings.py add the STATIC files settings as follows:
+  - Navigate to the "Settings" tab in Heroku.
+  - Open the "Config Vars" section and add DATABASE_URL as Key and the database link from app's env.py as Value
+  - Add SECRET_KEY for the Key value and the secret key value from env.py as the Value
+  - In the terminal migrate the models over to the new database connection
+  - In settings.py add the STATIC files settings as follows:
+  - 
 ```
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
@@ -485,8 +505,12 @@ web: guincorn PROJECT_NAME.wsgi
 
 - In Heroku, navigate to the Deployment tab and deploy the branch manually 
 - Heroku will display a build log- watch the build logs for any errors
+
+
+🔗 <img src="./rbmdoc/heroku deployement logs.png" width="50%" height="50%">
+
 - Once the build process is completed Heroku displays 'Your App Was Successfully Deployed' message and a link to the app to visit the live site
-- As my first 2 build attempts failed I needed to apply changes to my code (I forgot to set up the static files and templates) to successfully deploy on the 3rd time 
+
 
 #### Forking the repository
 
