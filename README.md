@@ -11,16 +11,10 @@ Virtualwrapper to help to manage virtual environments
 automation of repositories creation and and remote repositories with gh
 
 
-
-# Link to the project 
-
-https://rbm-app-aa6d3f2add38.herokuapp.com/
- 
-
 # Title: Business Case for Customer Booking App for Consultant Services
 
 # Objective:
-To develop an application that enables customers to easily book consultants and experts for specific project tasks, streamlining the process and enhancing customer experience.
+To develop an application that enables customers to easily book consultants and experts with specific skills.
 
 # Problem Statement:
 Currently, there is a lack of efficient and user-friendly platforms for customers to book consultants and experts for project tasks. This results in time-consuming processes and potential delays in project delivery.
@@ -39,6 +33,12 @@ Higher customer satisfaction leading to repeat business and referrals.
 # Conclusion:
 
 By developing a customer booking app for consultant services, we aim to address the current challenges in the booking process. This initiative aligns with our goal of providing innovative solutions to meet customer needs and stay ahead of the competition in the industry.
+
+# Link to the project 
+
+🔗 https://rbm-app-aa6d3f2add38.herokuapp.com/ 
+
+project demo :tv: in 3.16 minutes https://youtu.be/m6ZLSaCJsPM 
 
  # How it Works
 
@@ -98,7 +98,7 @@ I use Linux Pencil and hand drawing
 
 #### Data models
 
-CustomUser
+▶️ CustomUser
 Field Name	Field Type	Description
 location	CharField	User's location
 name	CharField	User's name
@@ -107,16 +107,20 @@ is_expert	BooleanField	Indicates if user is an expert
 is_manager	BooleanField	Indicates if user is a manager
 created_at	DateTimeField	Date and time of user creation
 updated_at	DateTimeField	Date and time of user profile update
-Skill
+
+▶️ Skill
 Field Name	Field Type	Description
 name	CharField	Name of the skill
 category	CharField	Category of the skill
 level	SmallIntegerField	Level of proficiency in the skill
+
+▶️ this part is manage in the backend of the application 
 Expert
 Field Name	Field Type	Description
 user	OneToOneField	Link to CustomUser model
 skills	ManyToManyField	Skills associated with the expert
 start_date	DateField	Start date of expertise
+
 Booking
 Field Name	Field Type	Description
 id	AutoField	Primary key for the booking
@@ -143,6 +147,7 @@ updated_at	DateTimeField	Date and time of booking update
 Early design stage of this project included making png versions of a homepage and login page prototypes.
 Thanks to that I could decide on the aesthetic choices before entering the coding stage.
 
+Color and 
 
 #### Goals for the website
 
@@ -159,24 +164,25 @@ Create minimalist and visual interface that is easy navigate.
 
 > Large to medium screens
 
-![Home Page]
+> [Home Page]
 
 <img src="./rbmdoc/Pencil Book expert Home.png" width="auto" height="auto">
 
 
-![Customer Profile]
+> Customer Profile
+
 <img src="./rbmdoc/Pencil Book expert CxProfile.png" width="auto" height="auto">
 
-![Welcome Page]
-<img src="./rbmdoc/Pencil Book expert logged.png" width="auto" height="auto">
+>[Welcome Page]
+<img src="./rbmdoc/Home.png" width="auto" height="auto">
 
-![Sign Up page]
+>[Sign Up page]
 <img src="./rbmdoc/Pencil Book expert signup.png" width="auto" height="auto">
 
-![Our Experts per skills ]
+>[Our Experts per skills ]
 <img src="./rbmdoc/Pencil Book expert.png" width="auto" height="auto">
 
-![Our Experts page with booking option delete edit]
+>[Our Experts page with booking option delete edit]
 
 <img src="./rbmdoc/Pencil Book expert filter.png" width="auto" height="auto">
 
@@ -190,8 +196,10 @@ In our project, we utilized GitHub for project management, harnessing its robust
 
 <img src="./rbmdoc/Projectmngt.png" width="auto" height="auto">
 
+
 <img src="./rbmdoc/issues .png" width="auto" height="auto">
 
+<img src="./rbmdoc/Rbm Project Moscow.png" width="auto" height="auto">
 
 ## Overview
 
@@ -200,10 +208,15 @@ In our project, we utilized GitHub for project management, harnessing its robust
 > List of Mandatory User Stories
 
 [USER STORY] : book a consultant 
+🔗 https://github.com/users/Jean7667/projects/6/views/8?pane=issue&itemId=56170260
 [USER STORY] : sign-up form
-[USER STORY] : login and sign up 
+🔗 https://github.com/users/Jean7667/projects/6/views/8?pane=issue&itemId=56170837
+[USER STORY] : login 
+🔗 https://github.com/users/Jean7667/projects/6/views/8?pane=issue&itemId=56179506
 [USER STORY] : view edit view my profile
+🔗 https://github.com/users/Jean7667/projects/6?pane=issue&itemId=56170838
 [USER STORY] : consult available consultants
+🔗 https://github.com/users/Jean7667/projects/6?pane=issue&itemId=56170695
 
 
 ![alt text](<Rbm Project Moscow.png>)
@@ -217,6 +230,9 @@ You can review the project management at https://github.com/users/Jean7667/proje
 - The site has been tested on ResponsiveStack, physical device such as Honor phone, Iphone 13 and android tablet.
 
 A video is available on Youtube to demonstrate the responsiveness 
+
+https://youtu.be/uZGk-1jmttI
+
 
 
 - Navbar and footer are present on every page
@@ -278,7 +294,9 @@ Samsung Galaxy Fold	280 x 653 (folded)	3.5	Galaxy
 
 Test done with chrome dev tools check the video.
 
-https://youtu.be/A4cpX3HhbqU
+📺 🔗 https://youtu.be/uZGk-1jmttI
+
+📺 🔗 https://youtu.be/pTt0BiT5Jtk
 
 ##### [ Back to Top ](#table-of-contents)
 
@@ -286,7 +304,10 @@ https://youtu.be/A4cpX3HhbqU
 
 # Features Left to Implement
 
-- [USER STORY: BOOKING CANCELLATION]
+- [USER STORY ] As a Client , I want to indicators of number of bookings and consultant available so I can check new profiles and skills on the platform
+#44
+🔗 https://github.com/Jean7667/RBM_APP/issues/44
+
 
 No feature left for implaementation 
 
