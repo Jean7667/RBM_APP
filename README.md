@@ -114,14 +114,13 @@ name	CharField	Name of the skill
 category	CharField	Category of the skill
 level	SmallIntegerField	Level of proficiency in the skill
 
-▶️ this part is manage in the backend of the application 
-Expert
+▶️ Expert (this part is manage in the backend of the application)
 Field Name	Field Type	Description
 user	OneToOneField	Link to CustomUser model
 skills	ManyToManyField	Skills associated with the expert
 start_date	DateField	Start date of expertise
 
-Booking
+▶️ Booking
 Field Name	Field Type	Description
 id	AutoField	Primary key for the booking
 BookingExpert	ForeignKey	Link to CustomUser model for the expert
@@ -135,8 +134,6 @@ updated_at	DateTimeField	Date and time of booking update
 
 
 ## UX design
-
-
 
 ### Overview
 
@@ -380,6 +377,15 @@ css code validation with W3C CSS Validation Service
 | Redirect to sign-in page after attempted unauthorized action  | Pass |
 
 🔗 <img src="./rbmdoc/csrf.jpeg" width="50%" height="50%">
+
+
+
+### Performance accessibility
+
+Light House Chrome extension
+
+🔗 <img src="./rbmdoc/LightHouse.png" width="50%" height="50%">
+
 
 
 # Manual testing
